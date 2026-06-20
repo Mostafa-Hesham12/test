@@ -670,8 +670,6 @@
       </div>
       <div class="cart__footer flex flex-col{% unless cart.item_count > 0 %} hidden{% endunless %}">
         <div class="sticky-element">
-          <div class="foxkit-cart-countdown-hook"></div>
-          <div class="foxkit-cart-goal-hook"></div>
           {%- liquid
             for block in section.blocks
               if block.type == 'free_shipping_goal'

@@ -1,7 +1,6 @@
 class CartDrawer extends DrawerComponent {
   constructor() {
     super();
-    window.FoxKitSections = ThemeCore.utils.getSectionId(this);
     this.onCartRefreshListener = this.onCartRefresh.bind(this);
     this.getSectionToRenderListener = this.getSectionToRender.bind(this);
   }
@@ -169,8 +168,6 @@ class CartItems extends HTMLElement {
         handleTabletUnmatch();
       }
     };
-
-    window.FoxKitSections = ThemeCore.utils.getSectionId(this);
   }
 
   cartUpdateUnsubscriber = undefined;
@@ -996,23 +993,3 @@ class FreeShippingGoal extends HTMLElement {
   }
 }
 customElements.define('free-shipping-goal', FreeShippingGoal);
-
-window.FoxKitAddToCart = async (payload) => {
-  if (!payload?.properties?.['_FoxKit offer']) return;
-
-  const cartJson = await (
-    await fetch(`${ThemeCore.routes.cart_url}`, {
-      ...ThemeCore.utils.fetchConfig(),
-    })
-  ).json();
-  cartJson['sections'] = payload['sections'];
-  ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
-
-  document.dispatchEvent(
-    new CustomEvent('product-ajax:added', {
-      detail: {
-        product: payload,
-      },
-    })
-  );
-};

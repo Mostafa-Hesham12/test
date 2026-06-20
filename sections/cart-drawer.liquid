@@ -112,8 +112,6 @@
           </div>
         </div>
         <div class="drawer__body flex-grow v-scrollable flex flex-col">
-          <div class="foxkit-cart-countdown-hook"></div>
-          <div class="foxkit-cart-goal-hook"></div>
           {%- liquid
             if section.settings.show_free_shipping_goal and settings.free_shipping_minimum_amount != blank
               assign minimum_amount = settings.free_shipping_minimum_amount | remove: ' '
@@ -461,17 +459,6 @@
                       </div>
                       
                     </div>
-                    {% liquid
-                      assign collections = ''
-                      for collection in item.product.collections
-                        assign collections = collections | append: collection.id | append: ','
-                      endfor
-                    %}
-                    <foxkit-incart-upsell
-                      data-collections="{{ collections | remove_last: ',' }}"
-                      data-product-title="{{ item.product.title }}"
-                      data-product-id="{{ item.product_id }}"
-                    ></foxkit-incart-upsell>
                   </li>
                 {%- endcapture -%}
 
