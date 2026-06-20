@@ -1,5 +1,5 @@
-window.StoreTheme = window.StoreTheme || {};
-StoreTheme.config = {
+window.FoxTheme = window.FoxTheme || {};
+FoxTheme.config = {
   hasLocalStorage: false,
   mqlMobile: false,
   mqlTablet: false,
@@ -17,20 +17,24 @@ StoreTheme.config = {
   })(),
   isRTL: document.documentElement.getAttribute('dir') === 'rtl',
 };
+console.log(
+  '%c' + window.FoxTheme.settings.themeName + ' theme (v' + window.FoxTheme.settings.themeVersion + ') by Foxecom',
+  'font-size: 14px; color: #FF5C00;'
+);
 (function () {
   // Detect browser has support local storage.
   try {
-    const key = 'storetheme:test';
+    const key = 'hyper:test';
     window.localStorage.setItem(key, 'test');
     window.localStorage.removeItem(key);
-    StoreTheme.config.hasLocalStorage = true;
+    FoxTheme.config.hasLocalStorage = true;
   } catch (err) {}
 
-  StoreTheme.DOMready = function (callback) {
+  FoxTheme.DOMready = function (callback) {
     document.readyState != 'loading' ? callback() : document.addEventListener('DOMContentLoaded', callback);
   };
 
-  StoreTheme.a11y = {
+  FoxTheme.a11y = {
     trapFocusHandlers: {},
     getFocusableElements: (container) => {
       return Array.from(
@@ -40,23 +44,23 @@ StoreTheme.config = {
       );
     },
     trapFocus: (container, elementToFocus = container) => {
-      var elements = StoreTheme.a11y.getFocusableElements(container);
+      var elements = FoxTheme.a11y.getFocusableElements(container);
       var first = elements[0];
       var last = elements[elements.length - 1];
 
-      StoreTheme.a11y.removeTrapFocus();
+      FoxTheme.a11y.removeTrapFocus();
 
-      StoreTheme.a11y.trapFocusHandlers.focusin = (event) => {
+      FoxTheme.a11y.trapFocusHandlers.focusin = (event) => {
         if (event.target !== container && event.target !== last && event.target !== first) return;
 
-        document.addEventListener('keydown', StoreTheme.a11y.trapFocusHandlers.keydown);
+        document.addEventListener('keydown', FoxTheme.a11y.trapFocusHandlers.keydown);
       };
 
-      StoreTheme.a11y.trapFocusHandlers.focusout = function () {
-        document.removeEventListener('keydown', StoreTheme.a11y.trapFocusHandlers.keydown);
+      FoxTheme.a11y.trapFocusHandlers.focusout = function () {
+        document.removeEventListener('keydown', FoxTheme.a11y.trapFocusHandlers.keydown);
       };
 
-      StoreTheme.a11y.trapFocusHandlers.keydown = function (event) {
+      FoxTheme.a11y.trapFocusHandlers.keydown = function (event) {
         if (event.code.toUpperCase() !== 'TAB') return; // If not TAB key
         // On the last focusable element and tab forward, focus the first element.
         if (event.target === last && !event.shiftKey) {
@@ -71,8 +75,8 @@ StoreTheme.config = {
         }
       };
 
-      document.addEventListener('focusout', StoreTheme.a11y.trapFocusHandlers.focusout);
-      document.addEventListener('focusin', StoreTheme.a11y.trapFocusHandlers.focusin);
+      document.addEventListener('focusout', FoxTheme.a11y.trapFocusHandlers.focusout);
+      document.addEventListener('focusin', FoxTheme.a11y.trapFocusHandlers.focusin);
 
       elementToFocus.focus();
 
@@ -85,15 +89,15 @@ StoreTheme.config = {
       }
     },
     removeTrapFocus: (elementToFocus = null) => {
-      document.removeEventListener('focusin', StoreTheme.a11y.trapFocusHandlers.focusin);
-      document.removeEventListener('focusout', StoreTheme.a11y.trapFocusHandlers.focusout);
-      document.removeEventListener('keydown', StoreTheme.a11y.trapFocusHandlers.keydown);
+      document.removeEventListener('focusin', FoxTheme.a11y.trapFocusHandlers.focusin);
+      document.removeEventListener('focusout', FoxTheme.a11y.trapFocusHandlers.focusout);
+      document.removeEventListener('keydown', FoxTheme.a11y.trapFocusHandlers.keydown);
 
       if (elementToFocus) elementToFocus.focus();
     },
   };
 
-  StoreTheme.utils = {
+  FoxTheme.utils = {
     throttle: (callback) => {
       let requestId = null,
         lastArgs;
@@ -188,7 +192,7 @@ StoreTheme.config = {
      * Use storage instead of cookie to make it work properly on Safari IOS (in iframe).
      */
     setStorage(key, value, expiryInDays = null) {
-      if (!StoreTheme.config.hasLocalStorage) return;
+      if (!FoxTheme.config.hasLocalStorage) return;
 
       const item = {
         value: value,
@@ -202,7 +206,7 @@ StoreTheme.config = {
       window.localStorage.setItem(key, JSON.stringify(item));
     },
     getStorage(key) {
-      if (!StoreTheme.config.hasLocalStorage) return null;
+      if (!FoxTheme.config.hasLocalStorage) return null;
 
       const itemStr = window.localStorage.getItem(key);
       // If the item doesn't exist, return null.
@@ -267,7 +271,7 @@ StoreTheme.config = {
     },
   };
 
-  StoreTheme.pubsub = {
+  FoxTheme.pubsub = {
     PUB_SUB_EVENTS: {
       cartUpdate: 'cart-update',
       quantityUpdate: 'quantity-update',
@@ -280,29 +284,29 @@ StoreTheme.config = {
     },
     subscribers: {},
     subscribe: (eventName, callback) => {
-      if (StoreTheme.pubsub.subscribers[eventName] === undefined) {
-        StoreTheme.pubsub.subscribers[eventName] = [];
+      if (FoxTheme.pubsub.subscribers[eventName] === undefined) {
+        FoxTheme.pubsub.subscribers[eventName] = [];
       }
 
-      StoreTheme.pubsub.subscribers[eventName] = [...StoreTheme.pubsub.subscribers[eventName], callback];
+      FoxTheme.pubsub.subscribers[eventName] = [...FoxTheme.pubsub.subscribers[eventName], callback];
 
       return function unsubscribe() {
-        StoreTheme.pubsub.subscribers[eventName] = StoreTheme.pubsub.subscribers[eventName].filter((cb) => {
+        FoxTheme.pubsub.subscribers[eventName] = FoxTheme.pubsub.subscribers[eventName].filter((cb) => {
           return cb !== callback;
         });
       };
     },
 
     publish: (eventName, data) => {
-      if (StoreTheme.pubsub.subscribers[eventName]) {
-        StoreTheme.pubsub.subscribers[eventName].forEach((callback) => {
+      if (FoxTheme.pubsub.subscribers[eventName]) {
+        FoxTheme.pubsub.subscribers[eventName].forEach((callback) => {
           callback(data);
         });
       }
     },
   };
 
-  StoreTheme.focusVisiblePolyfill = function () {
+  FoxTheme.focusVisiblePolyfill = function () {
     const navKeys = [
       'ARROWUP',
       'ARROWDOWN',
@@ -344,11 +348,11 @@ StoreTheme.config = {
     );
   };
 
-  StoreTheme.Carousel = (function () {
+  FoxTheme.Carousel = (function () {
     class Carousel {
       constructor(container, options, modules = null) {
         this.container = container;
-        let defaultModules = [StoreTheme.Swiper.Navigation, StoreTheme.Swiper.Pagination, StoreTheme.Swiper.A11y];
+        let defaultModules = [FoxTheme.Swiper.Navigation, FoxTheme.Swiper.Pagination, FoxTheme.Swiper.A11y];
         if (modules) {
           defaultModules = defaultModules.concat(modules);
         }
@@ -359,13 +363,13 @@ StoreTheme.config = {
       }
 
       init() {
-        this.slider = new StoreTheme.Swiper.Swiper(this.container, this.options);
+        this.slider = new FoxTheme.Swiper.Swiper(this.container, this.options);
       }
     }
     return Carousel;
   })();
 
-  StoreTheme.delayUntilInteraction = (function () {
+  FoxTheme.delayUntilInteraction = (function () {
     class ScriptLoader {
       constructor(callback, delay = 5000) {
         this.loadScriptTimer = setTimeout(callback, delay);
@@ -401,7 +405,7 @@ StoreTheme.config = {
     return ScriptLoader;
   })();
 
-  StoreTheme.Currency = (function () {
+  FoxTheme.Currency = (function () {
     const moneyFormat = '${{amount}}'; // eslint-disable-line camelcase
 
     function formatMoney(cents, format) {
@@ -473,57 +477,57 @@ StoreTheme.config = {
     };
   })();
 
-  new StoreTheme.delayUntilInteraction(() => {
+  new FoxTheme.delayUntilInteraction(() => {
     document.body.removeAttribute('data-initializing');
   });
 
-  StoreTheme.DOMready(StoreTheme.utils.setScrollbarWidth);
-  // window.addEventListener('resize', StoreTheme.utils.throttle(StoreTheme.utils.setScrollbarWidth));
+  FoxTheme.DOMready(FoxTheme.utils.setScrollbarWidth);
+  // window.addEventListener('resize', FoxTheme.utils.throttle(FoxTheme.utils.setScrollbarWidth));
 
-  const mql = window.matchMedia(StoreTheme.config.mediaQueryMobile);
-  StoreTheme.config.mqlMobile = mql.matches;
+  const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+  FoxTheme.config.mqlMobile = mql.matches;
   mql.onchange = (event) => {
     if (event.matches) {
-      StoreTheme.config.mqlMobile = true;
+      FoxTheme.config.mqlMobile = true;
       document.dispatchEvent(new CustomEvent('matchMobile'));
     } else {
-      StoreTheme.config.mqlMobile = false;
+      FoxTheme.config.mqlMobile = false;
       document.dispatchEvent(new CustomEvent('unmatchMobile'));
     }
   };
 
-  const mqlTablet = window.matchMedia(StoreTheme.config.mediaQueryTablet);
-  StoreTheme.config.mqlTablet = mqlTablet.matches;
+  const mqlTablet = window.matchMedia(FoxTheme.config.mediaQueryTablet);
+  FoxTheme.config.mqlTablet = mqlTablet.matches;
   mqlTablet.onchange = (event) => {
     if (event.matches) {
-      StoreTheme.config.mqlTablet = true;
+      FoxTheme.config.mqlTablet = true;
       document.dispatchEvent(new CustomEvent('matchTablet'));
     } else {
-      StoreTheme.config.mqlTablet = false;
+      FoxTheme.config.mqlTablet = false;
       document.dispatchEvent(new CustomEvent('unmatchTablet'));
     }
   };
 
-  const mqlLaptop = window.matchMedia(StoreTheme.config.mediaQueryLaptop);
-  StoreTheme.config.mqlLaptop = mqlLaptop.matches;
+  const mqlLaptop = window.matchMedia(FoxTheme.config.mediaQueryLaptop);
+  FoxTheme.config.mqlLaptop = mqlLaptop.matches;
   mqlLaptop.onchange = (event) => {
     if (event.matches) {
-      StoreTheme.config.mqlLaptop = true;
+      FoxTheme.config.mqlLaptop = true;
       document.dispatchEvent(new CustomEvent('matchLaptop'));
     } else {
-      StoreTheme.config.mqlLaptop = false;
+      FoxTheme.config.mqlLaptop = false;
       document.dispatchEvent(new CustomEvent('unmatchLaptop'));
     }
   };
 
-  const mqlSmallDesktop = window.matchMedia(StoreTheme.config.mediaQuerySmallDesktop);
-  StoreTheme.config.mqlSmallDesktop = mqlSmallDesktop.matches;
+  const mqlSmallDesktop = window.matchMedia(FoxTheme.config.mediaQuerySmallDesktop);
+  FoxTheme.config.mqlSmallDesktop = mqlSmallDesktop.matches;
   mqlSmallDesktop.onchange = (event) => {
     if (event.matches) {
-      StoreTheme.config.mqlSmallDesktop = true;
+      FoxTheme.config.mqlSmallDesktop = true;
       document.dispatchEvent(new CustomEvent('matchSmallDesktop'));
     } else {
-      StoreTheme.config.mqlSmallDesktop = false;
+      FoxTheme.config.mqlSmallDesktop = false;
       document.dispatchEvent(new CustomEvent('unmatchSmallDesktop'));
     }
   };
@@ -533,7 +537,7 @@ StoreTheme.config = {
 try {
   document.querySelector(':focus-visible');
 } catch (e) {
-  StoreTheme.focusVisiblePolyfill();
+  FoxTheme.focusVisiblePolyfill();
 }
 
 function pauseAllMedia() {
@@ -601,7 +605,7 @@ class PageTransition extends HTMLElement {
     });
 
     window.addEventListener('DOMContentLoaded', () => {
-      StoreTheme.Motion.animate(this, { visibility: 'hidden', opacity: 0 }, { duration: 1 });
+      FoxTheme.Motion.animate(this, { visibility: 'hidden', opacity: 0 }, { duration: 1 });
 
       document.body.classList.add('page-loaded');
       document.dispatchEvent(new CustomEvent('page:loaded'));
@@ -663,7 +667,7 @@ class ModalComponent extends HTMLElement {
     const button = this.querySelector('button');
     if (button) return button;
 
-    const focusableElements = StoreTheme.a11y.getFocusableElements(this);
+    const focusableElements = FoxTheme.a11y.getFocusableElements(this);
     return focusableElements[0] || this;
   }
 
@@ -756,7 +760,7 @@ class ModalComponent extends HTMLElement {
     this.prepareToHide();
     this.removeAttribute('open');
 
-    return StoreTheme.utils.waitForEvent(this, this.events.handleAfterHide);
+    return FoxTheme.utils.waitForEvent(this, this.events.handleAfterHide);
   }
 
   show(activeElement = null, animate = true) {
@@ -769,12 +773,12 @@ class ModalComponent extends HTMLElement {
       document.body.classList.add(this.classes.showing);
     }
 
-    return StoreTheme.utils.waitForEvent(this, this.events.handleAfterShow);
+    return FoxTheme.utils.waitForEvent(this, this.events.handleAfterShow);
   }
 
   handleAfterHide() {
     setTimeout(() => {
-      StoreTheme.a11y.removeTrapFocus(this.activeElement);
+      FoxTheme.a11y.removeTrapFocus(this.activeElement);
       if (this.isLockingNeeded) {
         const currentModalCount = clearModalComponentCount.get(ModalComponent) - 1;
         clearModalComponentCount.set(ModalComponent, currentModalCount);
@@ -784,7 +788,7 @@ class ModalComponent extends HTMLElement {
   }
 
   handleAfterShow() {
-    StoreTheme.a11y.trapFocus(this, this.focusElement);
+    FoxTheme.a11y.trapFocus(this, this.focusElement);
     if (this.isLockingNeeded) {
       const currentModalCount = clearModalComponentCount.get(ModalComponent) + 1;
       clearModalComponentCount.set(ModalComponent, currentModalCount);
@@ -996,7 +1000,7 @@ class AccordionDetails extends HTMLDetailsElement {
       this.setAttribute('open', '');
       this.parentElement.classList.add('active');
 
-      await StoreTheme.Motion.timeline([
+      await FoxTheme.Motion.timeline([
         [
           this,
           { height: [`${this.summaryElement.clientHeight + 1}px`, `${this.scrollHeight + 1}px`] },
@@ -1009,7 +1013,7 @@ class AccordionDetails extends HTMLDetailsElement {
         ],
       ]).finished;
     } else {
-      await StoreTheme.Motion.timeline([
+      await FoxTheme.Motion.timeline([
         [this.contentElement, { opacity: 0 }, { duration: 0.15 }],
         [
           this,
@@ -1074,7 +1078,7 @@ class ProgressBar extends HTMLElement {
       this.initProgress();
     }
 
-    StoreTheme.Motion.inView(this, this.init.bind(this));
+    FoxTheme.Motion.inView(this, this.init.bind(this));
   }
 
   init() {
@@ -1099,8 +1103,8 @@ class CartCount extends HTMLElement {
   cartUpdateUnsubscriber = undefined;
 
   connectedCallback() {
-    this.cartUpdateUnsubscriber = StoreTheme.pubsub.subscribe(
-      StoreTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
+    this.cartUpdateUnsubscriber = FoxTheme.pubsub.subscribe(
+      FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
       this.onCartUpdate.bind(this)
     );
   }
@@ -1188,16 +1192,16 @@ class QuantityInput extends HTMLElement {
 
     this.validateQtyRules();
 
-    this.quantityUpdateUnsubscriber = StoreTheme.pubsub.subscribe(
-      StoreTheme.pubsub.PUB_SUB_EVENTS.quantityUpdate,
+    this.quantityUpdateUnsubscriber = FoxTheme.pubsub.subscribe(
+      FoxTheme.pubsub.PUB_SUB_EVENTS.quantityUpdate,
       this.validateQtyRules.bind(this)
     );
-    this.quantityBoundriesUnsubscriber = StoreTheme.pubsub.subscribe(
-      StoreTheme.pubsub.PUB_SUB_EVENTS.quantityBoundries,
+    this.quantityBoundriesUnsubscriber = FoxTheme.pubsub.subscribe(
+      FoxTheme.pubsub.PUB_SUB_EVENTS.quantityBoundries,
       this.setQuantityBoundries.bind(this)
     );
-    this.quantityRulesUnsubscriber = StoreTheme.pubsub.subscribe(
-      StoreTheme.pubsub.PUB_SUB_EVENTS.quantityRules,
+    this.quantityRulesUnsubscriber = FoxTheme.pubsub.subscribe(
+      FoxTheme.pubsub.PUB_SUB_EVENTS.quantityRules,
       this.updateQuantityRules.bind(this)
     );
   }
@@ -1307,7 +1311,7 @@ class QuantityInput extends HTMLElement {
     }
     this.input.value = min;
 
-    StoreTheme.pubsub.publish(StoreTheme.pubsub.PUB_SUB_EVENTS.quantityUpdate, undefined);
+    FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.quantityUpdate, undefined);
   }
 }
 customElements.define('quantity-input', QuantityInput);
@@ -1360,7 +1364,7 @@ class VideoElement extends HTMLElement {
     }
 
     if (this.autoplay) {
-      StoreTheme.Motion.inView(this, () => {
+      FoxTheme.Motion.inView(this, () => {
         if (!this.paused) {
           this.play();
         }
@@ -1676,10 +1680,10 @@ class GridList extends HTMLElement {
   constructor() {
     super();
 
-    if (StoreTheme.config.motionReduced || this.hasAttribute('motion-reduced')) return;
+    if (FoxTheme.config.motionReduced || this.hasAttribute('motion-reduced')) return;
 
     this.hideGridItems();
-    StoreTheme.Motion.inView(this, this.showGridItems.bind(this), { margin: '0px 0px -50px 0px' });
+    FoxTheme.Motion.inView(this, this.showGridItems.bind(this), { margin: '0px 0px -50px 0px' });
   }
 
   get gridItems() {
@@ -1691,7 +1695,7 @@ class GridList extends HTMLElement {
   }
 
   hideGridItems() {
-    StoreTheme.Motion.animate(
+    FoxTheme.Motion.animate(
       this.gridItems,
       { transform: 'translateY(3.5rem)', opacity: 0.01, visibility: 'hidden' },
       { duration: 0 }
@@ -1699,22 +1703,22 @@ class GridList extends HTMLElement {
   }
 
   showGridItems() {
-    StoreTheme.Motion.animate(
+    FoxTheme.Motion.animate(
       this.gridItems,
       { transform: ['translateY(3.5rem)', 'translateY(0)'], opacity: [0.01, 1], visibility: ['hidden', 'visible'] },
       {
         duration: 0.5,
-        delay: StoreTheme.config.motionReduced ? 0 : StoreTheme.Motion.stagger(0.1),
+        delay: FoxTheme.config.motionReduced ? 0 : FoxTheme.Motion.stagger(0.1),
         easing: [0, 0, 0.3, 1],
       }
     );
   }
 
   reShowVisibleGridItems() {
-    StoreTheme.Motion.animate(
+    FoxTheme.Motion.animate(
       this.visibleGridItems,
       { transform: ['translateY(3.5rem)', 'translateY(0)'], opacity: [0.01, 1], visibility: ['hidden', 'visible'] },
-      { duration: 0.5, delay: StoreTheme.config.motionReduced ? 0 : StoreTheme.Motion.stagger(0.1), easing: [0, 0, 0.3, 1] }
+      { duration: 0.5, delay: FoxTheme.config.motionReduced ? 0 : FoxTheme.Motion.stagger(0.1), easing: [0, 0, 0.3, 1] }
     );
   }
 }
@@ -1725,7 +1729,7 @@ class AnnouncementBar extends HTMLElement {
     super();
     this.announcementItemsWrapper = this.querySelector('.swiper-wrapper');
 
-    StoreTheme.Motion.inView(this, this.initializeCarousel.bind(this), { margin: '200px 0px 200px 0px' });
+    FoxTheme.Motion.inView(this, this.initializeCarousel.bind(this), { margin: '200px 0px 200px 0px' });
   }
 
   getNextSlideButton() {
@@ -1750,7 +1754,7 @@ class AnnouncementBar extends HTMLElement {
 
   initializeCarousel() {
     if (this.getSlideItems.length > 1) {
-      this.carousel = new StoreTheme.Carousel(
+      this.carousel = new FoxTheme.Carousel(
         this,
         {
           navigation: {
@@ -1760,7 +1764,7 @@ class AnnouncementBar extends HTMLElement {
           loop: true,
           autoplay: this.isAutoplayEnabled() ? { delay: this.getAutoplaySpeed(), pauseOnMouseEnter: true } : false,
         },
-        [StoreTheme.Swiper.Autoplay]
+        [FoxTheme.Swiper.Autoplay]
       );
       this.carousel && this.carousel.init();
 
@@ -1778,7 +1782,7 @@ class SelectElement extends HTMLElement {
   constructor() {
     super();
 
-    StoreTheme.Motion.inView(this, this.init.bind(this), { margin: '200px 0px 200px 0px' });
+    FoxTheme.Motion.inView(this, this.init.bind(this), { margin: '200px 0px 200px 0px' });
 
     this.select = this.querySelector('select');
 
@@ -1814,9 +1818,9 @@ class ProductRecentlyViewed extends HTMLElement {
   constructor() {
     super();
 
-    if (StoreTheme.config.hasLocalStorage) {
+    if (FoxTheme.config.hasLocalStorage) {
       const productId = parseInt(this.dataset.productId);
-      const cookieName = 'storetheme:recently-viewed';
+      const cookieName = 'hypertheme:recently-viewed';
       const items = JSON.parse(window.localStorage.getItem(cookieName) || '[]');
 
       if (items.includes(productId)) {
@@ -1850,7 +1854,7 @@ class MotionObserverManager {
   }
 
   initialize() {
-    if (StoreTheme.config.motionReduced) return;
+    if (FoxTheme.config.motionReduced) return;
 
     this.observer = new IntersectionObserver(
       (entries) => {
@@ -1889,7 +1893,7 @@ class MotionObserverManager {
 }
 
 // Create singleton instance
-StoreTheme.MotionObserver = new MotionObserverManager();
+FoxTheme.MotionObserver = new MotionObserverManager();
 
 /**
  * MotionElement - Optimized custom element for animations
@@ -1916,7 +1920,7 @@ class MotionElement extends HTMLElement {
   }
 
   connectedCallback() {
-    if (StoreTheme.config.motionReduced) return;
+    if (FoxTheme.config.motionReduced) return;
 
     const parentMotionElement = this.closest('motion-element:not(:scope)');
 
@@ -1950,7 +1954,7 @@ class MotionElement extends HTMLElement {
 
     // Unobserve from IntersectionObserver
     if (this._isObserving) {
-      StoreTheme.MotionObserver.unobserve(this);
+      FoxTheme.MotionObserver.unobserve(this);
       this._isObserving = false;
     }
 
@@ -1992,10 +1996,10 @@ class MotionElement extends HTMLElement {
 
   setupObserver() {
     this._isObserving = true;
-    StoreTheme.MotionObserver.observe(this, async () => {
+    FoxTheme.MotionObserver.observe(this, async () => {
       try {
         if (!this.isInstant && this.mediaElements.length > 0) {
-          await StoreTheme.utils.imageReady(this.mediaElements);
+          await FoxTheme.utils.imageReady(this.mediaElements);
         }
         await this.initialize();
       } catch (error) {
@@ -2040,28 +2044,28 @@ class MotionElement extends HTMLElement {
     switch (this.animationType) {
       case 'fade-in':
         this.style.visibility = 'hidden';
-        StoreTheme.Motion.animate(this, { opacity: 0.01 }, { duration: 0 });
+        FoxTheme.Motion.animate(this, { opacity: 0.01 }, { duration: 0 });
         break;
 
       case 'fade-up':
         this.style.visibility = 'hidden';
-        StoreTheme.Motion.animate(this, { transform: 'translateY(2.5rem)', opacity: 0.01 }, { duration: 0 });
+        FoxTheme.Motion.animate(this, { transform: 'translateY(2.5rem)', opacity: 0.01 }, { duration: 0 });
         break;
 
       case 'zoom-in':
-        StoreTheme.Motion.animate(this, { transform: 'scale(0.8)' }, { duration: 0 });
+        FoxTheme.Motion.animate(this, { transform: 'scale(0.8)' }, { duration: 0 });
         break;
 
       case 'zoom-in-lg':
-        StoreTheme.Motion.animate(this, { transform: 'scale(0)' }, { duration: 0 });
+        FoxTheme.Motion.animate(this, { transform: 'scale(0)' }, { duration: 0 });
         break;
 
       case 'zoom-out':
-        StoreTheme.Motion.animate(this, { transform: 'scale(1.08)' }, { duration: 0 });
+        FoxTheme.Motion.animate(this, { transform: 'scale(1.08)' }, { duration: 0 });
         break;
 
       case 'zoom-out-sm':
-        StoreTheme.Motion.animate(this, { transform: 'scale(1.03)' }, { duration: 0 });
+        FoxTheme.Motion.animate(this, { transform: 'scale(1.03)' }, { duration: 0 });
         break;
     }
   }
@@ -2081,7 +2085,7 @@ class MotionElement extends HTMLElement {
       switch (this.animationType) {
         case 'fade-in':
           this.style.visibility = 'visible';
-          await StoreTheme.Motion.animate(
+          await FoxTheme.Motion.animate(
             this,
             { opacity: 1 },
             { duration: 1.5, delay: this.animationDelay, easing: [0, 0, 0.3, 1] }
@@ -2090,7 +2094,7 @@ class MotionElement extends HTMLElement {
 
         case 'fade-up':
           this.style.visibility = 'visible';
-          await StoreTheme.Motion.animate(
+          await FoxTheme.Motion.animate(
             this,
             { transform: 'translateY(0)', opacity: 1 },
             { duration: 0.5, delay: this.animationDelay, easing: [0, 0, 0.3, 1] }
@@ -2098,7 +2102,7 @@ class MotionElement extends HTMLElement {
           break;
 
         case 'zoom-in':
-          await StoreTheme.Motion.animate(
+          await FoxTheme.Motion.animate(
             this,
             { transform: 'scale(1)' },
             { duration: 1.3, delay: this.animationDelay, easing: [0, 0, 0.3, 1] }
@@ -2106,7 +2110,7 @@ class MotionElement extends HTMLElement {
           break;
 
         case 'zoom-in-lg':
-          await StoreTheme.Motion.animate(
+          await FoxTheme.Motion.animate(
             this,
             { transform: 'scale(1)' },
             { duration: 0.5, delay: this.animationDelay, easing: [0, 0, 0.3, 1] }
@@ -2114,7 +2118,7 @@ class MotionElement extends HTMLElement {
           break;
 
         case 'zoom-out':
-          await StoreTheme.Motion.animate(
+          await FoxTheme.Motion.animate(
             this,
             { transform: 'scale(1)' },
             { duration: 1.5, delay: this.animationDelay, easing: [0, 0, 0.3, 1] }
@@ -2122,7 +2126,7 @@ class MotionElement extends HTMLElement {
           break;
 
         case 'zoom-out-sm':
-          await StoreTheme.Motion.animate(
+          await FoxTheme.Motion.animate(
             this,
             { transform: 'scale(1)' },
             { duration: 1, delay: this.animationDelay, easing: [0, 0, 0.3, 1] }
@@ -2143,7 +2147,7 @@ class MotionElement extends HTMLElement {
     try {
       switch (this.animationType) {
         case 'fade-in':
-          await StoreTheme.Motion.animate(
+          await FoxTheme.Motion.animate(
             this,
             { opacity: 0 },
             {
@@ -2155,7 +2159,7 @@ class MotionElement extends HTMLElement {
           break;
 
         case 'fade-up':
-          await StoreTheme.Motion.animate(
+          await FoxTheme.Motion.animate(
             this,
             { transform: 'translateY(2.5rem)', opacity: 0 },
             {
@@ -2170,7 +2174,7 @@ class MotionElement extends HTMLElement {
         case 'zoom-in-lg':
         case 'zoom-out':
         case 'zoom-out-sm':
-          await StoreTheme.Motion.animate(
+          await FoxTheme.Motion.animate(
             this,
             { transform: 'scale(0)' },
             {
@@ -2209,7 +2213,7 @@ class TabsComponent extends HTMLElement {
       tabNavs: ['[role="tab"]'],
       tabNav: '.tabs__nav-js',
     };
-    this.domNodes = StoreTheme.utils.queryDomNodes(this.selectors, this);
+    this.domNodes = FoxTheme.utils.queryDomNodes(this.selectors, this);
 
     this.selectedIndex = 0;
     this.selectedTab = this.domNodes.tabPanels[this.selectedIndex];
@@ -2383,7 +2387,7 @@ class TabsComponent extends HTMLElement {
   }
 
   async transition(fromPanel, toPanel) {
-    await StoreTheme.Motion.animate(
+    await FoxTheme.Motion.animate(
       fromPanel,
       { transform: ['translateY(0)', 'translateY(2rem)'], opacity: [1, 0] },
       { duration: 0.3 }
@@ -2392,7 +2396,7 @@ class TabsComponent extends HTMLElement {
     fromPanel.hidden = true;
     toPanel.hidden = false;
 
-    StoreTheme.Motion.animate(
+    FoxTheme.Motion.animate(
       toPanel,
       { transform: ['translateY(2rem)', 'translateY(0)'], opacity: [0, 1] },
       { duration: 0.3 }
@@ -2443,7 +2447,7 @@ class Parallax extends HTMLElement {
   }
 
   shouldInitializeParallax() {
-    return !StoreTheme.config.motionReduced && this.parallax;
+    return !FoxTheme.config.motionReduced && this.parallax;
   }
 
   setupParallax() {
@@ -2475,8 +2479,8 @@ class Parallax extends HTMLElement {
       };
     }
 
-    StoreTheme.Motion.scroll(
-      StoreTheme.Motion.animate(this.parallaxMediaElements, parallaxTransformProperties, { easing: 'linear' }),
+    FoxTheme.Motion.scroll(
+      FoxTheme.Motion.animate(this.parallaxMediaElements, parallaxTransformProperties, { easing: 'linear' }),
       {
         target: this,
         offset: ['start end', 'end start'],
@@ -2508,7 +2512,7 @@ class ProductForm extends HTMLFormElement {
   }
 
   handleFormSubmit = (event) => {
-    if (StoreTheme.settings.cartType === 'page') return;
+    if (FoxTheme.settings.cartType === 'page') return;
 
     event.preventDefault();
     if (this.submitButtonElement.getAttribute('aria-disabled') === 'true') return;
@@ -2521,7 +2525,7 @@ class ProductForm extends HTMLFormElement {
       new CustomEvent('cart:grouped-sections', { bubbles: true, detail: { sections: sectionsToBundle } })
     );
 
-    const config = StoreTheme.utils.fetchConfig('javascript');
+    const config = FoxTheme.utils.fetchConfig('javascript');
     config.headers['X-Requested-With'] = 'XMLHttpRequest';
     delete config.headers['Content-Type'];
 
@@ -2560,13 +2564,13 @@ class ProductForm extends HTMLFormElement {
   }
 
   handleFormSubmission = (config) => {
-    fetch(`${StoreTheme.routes.cart_add_url}`, config)
+    fetch(`${FoxTheme.routes.cart_add_url}`, config)
       .then((response) => response.json())
       .then(async (parsedState) => {
         if (parsedState.status) {
           this.handleCartError(parsedState);
           const cartJsonSub = await (
-            await fetch(`${StoreTheme.routes.cart_url}`, { ...StoreTheme.utils.fetchConfig('json', 'GET') })
+            await fetch(`${FoxTheme.routes.cart_url}`, { ...FoxTheme.utils.fetchConfig('json', 'GET') })
           ).json();
 
           this.updateCartState(cartJsonSub);
@@ -2582,7 +2586,7 @@ class ProductForm extends HTMLFormElement {
         }
 
         const cartJson = await (
-          await fetch(`${StoreTheme.routes.cart_url}`, { ...StoreTheme.utils.fetchConfig('json', 'GET') })
+          await fetch(`${FoxTheme.routes.cart_url}`, { ...FoxTheme.utils.fetchConfig('json', 'GET') })
         ).json();
         cartJson['sections'] = parsedState['sections'];
 
@@ -2603,7 +2607,7 @@ class ProductForm extends HTMLFormElement {
   };
 
   handleCartError = (parsedState) => {
-    StoreTheme.pubsub.publish(StoreTheme.pubsub.PUB_SUB_EVENTS.cartError, {
+    FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartError, {
       source: 'product-form',
       productVariantId: this.formData.get('id'),
       errors: parsedState.errors || parsedState.description,
@@ -2621,7 +2625,7 @@ class ProductForm extends HTMLFormElement {
   };
 
   updateCartState = (cartJson) => {
-    StoreTheme.pubsub.publish(StoreTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
+    FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
   };
 
   dispatchProductAddedEvent = (parsedState) => {
@@ -2756,11 +2760,11 @@ customElements.define('color-swatch', ColorSwatch, { extends: 'ul' });
 class ScrollingPromotion extends HTMLElement {
   constructor() {
     super();
-    if (StoreTheme.config.motionReduced) return;
+    if (FoxTheme.config.motionReduced) return;
     this.promotion = this.querySelector('.promotion');
     this.repeatTimes = typeof this.dataset.repeats !== 'undefined' ? Number(this.dataset.repeats) : 10;
 
-    StoreTheme.Motion.inView(this, this.init.bind(this), { margin: '200px 0px 200px 0px' });
+    FoxTheme.Motion.inView(this, this.init.bind(this), { margin: '200px 0px 200px 0px' });
   }
   init() {
     if (this.childElementCount === 1) {
@@ -2950,7 +2954,7 @@ class ScrollProgressBar extends HTMLElement {
 
   connectedCallback() {
     // Create media query list
-    this.mediaQuery = window.matchMedia(StoreTheme.config.mediaQueryMobile);
+    this.mediaQuery = window.matchMedia(FoxTheme.config.mediaQueryMobile);
 
     // Create ResizeObserver
     this.resizeObserver = new ResizeObserver(() => {
@@ -3056,7 +3060,7 @@ class ScrollProgressBar extends HTMLElement {
   }
 
   updateProgress() {
-    const factor = StoreTheme.config.isRTL ? -1 : 1;
+    const factor = FoxTheme.config.isRTL ? -1 : 1;
     const viewportWidth = this.target.clientWidth - this.targetPadding;
     const scrolled = factor * this.targetScrollLeft;
     const maxScroll = this.totalWidth - viewportWidth;
@@ -3160,11 +3164,11 @@ class MasonryLayout extends HTMLElement {
     this.init();
     // const events = ['matchLaptop','unmatchLaptop','matchTablet','unmatchTablet','matchMobile','unmatchMobile'];
     // events.forEach(event => document.addEventListener(event, this.init.bind(this)));
-    window.addEventListener('resize', StoreTheme.utils.debounce(this.init.bind(this), 100), false);
+    window.addEventListener('resize', FoxTheme.utils.debounce(this.init.bind(this), 100), false);
   }
 
   init() {
-    if (StoreTheme.config.mqlMobile) {
+    if (FoxTheme.config.mqlMobile) {
       this.disable();
     } else {
       this.calculatePositioning();
@@ -3226,7 +3230,7 @@ if (!customElements.get('show-more')) {
     init() {
       this.maxHeight = parseInt(this.dataset.maxHeight);
 
-      if (StoreTheme.config.mqlMobile && this.dataset.maxHeightMobile) {
+      if (FoxTheme.config.mqlMobile && this.dataset.maxHeightMobile) {
         this.maxHeight = parseInt(this.dataset.maxHeightMobile);
       }
 
@@ -3250,7 +3254,7 @@ if (!customElements.get('show-more')) {
 
     disable() {
       return (
-        (StoreTheme.config.mqlMobile && this.disableOnMobile) ||
+        (FoxTheme.config.mqlMobile && this.disableOnMobile) ||
         this.maxHeight <= 0 ||
         this.originalHeight <= this.maxHeight
       );
@@ -3262,7 +3266,7 @@ if (!customElements.get('show-more')) {
 class HighlightText extends HTMLElement {
   constructor() {
     super();
-    StoreTheme.Motion.inView(this, this.init.bind(this));
+    FoxTheme.Motion.inView(this, this.init.bind(this));
   }
   init() {
     this.classList.add('animate');
@@ -3323,7 +3327,7 @@ customElements.define(
 
       const swipeMobile = this.swipeEl.classList.contains('swipe-mobile');
       if (swipeMobile) {
-        const mql = window.matchMedia(StoreTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
         const update = () => {
           this.setActive(mql.matches);
         };
@@ -3333,7 +3337,7 @@ customElements.define(
 
       const swipeTablet = this.swipeEl.classList.contains('swipe-tablet');
       if (swipeTablet) {
-        const mql = window.matchMedia(StoreTheme.config.mediaQueryTablet);
+        const mql = window.matchMedia(FoxTheme.config.mediaQueryTablet);
         const update = () => {
           this.setActive(mql.matches);
         };

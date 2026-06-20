@@ -39,17 +39,17 @@ if (!customElements.get('quick-view-modal')) {
       }
 
       getProductQuickViewSectionId() {
-        let sectionId = StoreTheme.QuickViewSectionId || false;
+        let sectionId = FoxTheme.QuickViewSectionId || false;
 
         if (!sectionId) {
           // Get section id from overlay groups.
           const productQuickView = document.querySelector('.section-group-overlay-quick-view');
           if (productQuickView) {
-            sectionId = StoreTheme.utils.getSectionId(productQuickView);
+            sectionId = FoxTheme.utils.getSectionId(productQuickView);
           }
 
           // Cache for better performance.
-          StoreTheme.QuickViewSectionId = sectionId;
+          FoxTheme.QuickViewSectionId = sectionId;
         }
 
         return sectionId;
@@ -76,7 +76,7 @@ if (!customElements.get('quick-view-modal')) {
 
             this.setInnerHTML(drawerContent, productElement.innerHTML);
 
-            StoreTheme.a11y.trapFocus(this, this.focusElement);
+            FoxTheme.a11y.trapFocus(this, this.focusElement);
             if (window.Shopify && Shopify.PaymentButton) {
               Shopify.PaymentButton.init();
             }

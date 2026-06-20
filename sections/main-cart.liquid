@@ -58,8 +58,8 @@
               {%- liquid
                 if collection.image
                   assign featured_image = collection.image
-                elsif collection.metafields.storetheme.collection_in_cart.value != blank
-                  assign featured_image = collection.metafields.storetheme.collection_in_cart.value
+                elsif collection.metafields.foxtheme.collection_in_cart.value != blank
+                  assign featured_image = collection.metafields.foxtheme.collection_in_cart.value
                 else
                   assign featured_image = collection.products.first.featured_media.preview_image
                 endif
@@ -670,8 +670,8 @@
       </div>
       <div class="cart__footer flex flex-col{% unless cart.item_count > 0 %} hidden{% endunless %}">
         <div class="sticky-element">
-          <div class="storekit-cart-countdown-hook"></div>
-          <div class="storekit-cart-goal-hook"></div>
+          <div class="foxkit-cart-countdown-hook"></div>
+          <div class="foxkit-cart-goal-hook"></div>
           {%- liquid
             for block in section.blocks
               if block.type == 'free_shipping_goal'

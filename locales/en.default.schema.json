@@ -3281,7 +3281,7 @@
                 "info": "Show different size chart for specific collection or product."
               },
               "paragraph_2": {
-                "content": "Create a custom metafield for product with namespace and key: \"storetheme.size_chart\". [Add metafield](/admin/metafields/product)"
+                "content": "Create a custom metafield for product with namespace and key: \"foxtheme.size_chart\". [Add metafield](/admin/metafields/product)"
               }
             }
           }
@@ -4519,7 +4519,7 @@
               "info": "Show different thumbnail images for specific collection."
             },
             "paragraph": {
-              "content": "Create a custom metafield for collection with namespace and key: \"storetheme.collection-thumbnails\". [Add metafield](/admin/metafields/collection)"
+              "content": "Create a custom metafield for collection with namespace and key: \"foxtheme.collection-thumbnails\". [Add metafield](/admin/metafields/collection)"
             }
           }
         }

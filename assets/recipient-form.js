@@ -31,14 +31,14 @@ if (!customElements.get('recipient-form')) {
       cartErrorUnsubscriber = undefined;
 
       connectedCallback() {
-        this.cartUpdateUnsubscriber = StoreTheme.pubsub.subscribe(StoreTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, (event) => {
+        this.cartUpdateUnsubscriber = FoxTheme.pubsub.subscribe(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, (event) => {
           if (event.source === 'product-form' && event.productVariantId.toString() === this.currentProductVariantId) {
             this.resetRecipientForm();
           }
         });
 
-        this.variantChangeUnsubscriber = StoreTheme.pubsub.subscribe(
-          StoreTheme.pubsub.PUB_SUB_EVENTS.variantChange,
+        this.variantChangeUnsubscriber = FoxTheme.pubsub.subscribe(
+          FoxTheme.pubsub.PUB_SUB_EVENTS.variantChange,
           (event) => {
             if (event.data.sectionId === this.dataset.sectionId) {
               this.currentProductVariantId = event.data.variant.id.toString();
@@ -46,7 +46,7 @@ if (!customElements.get('recipient-form')) {
           }
         );
 
-        this.cartUpdateUnsubscriber = StoreTheme.pubsub.subscribe(StoreTheme.pubsub.PUB_SUB_EVENTS.cartError, (event) => {
+        this.cartUpdateUnsubscriber = FoxTheme.pubsub.subscribe(FoxTheme.pubsub.PUB_SUB_EVENTS.cartError, (event) => {
           if (event.source === 'product-form' && event.productVariantId.toString() === this.currentProductVariantId) {
             this.displayErrorMessage(event.message, event.errors);
           }
@@ -70,12 +70,12 @@ if (!customElements.get('recipient-form')) {
       onChange() {
         if (this.checkboxInput.checked) {
           this.enableInputFields();
-          this.recipientFieldsLiveRegion.innerText = StoreTheme.accessibilityStrings.recipientFormExpanded;
+          this.recipientFieldsLiveRegion.innerText = FoxTheme.accessibilityStrings.recipientFormExpanded;
         } else {
           this.clearInputFields();
           this.disableInputFields();
           this.clearErrorMessage();
-          this.recipientFieldsLiveRegion.innerText = StoreTheme.accessibilityStrings.recipientFormCollapsed;
+          this.recipientFieldsLiveRegion.innerText = FoxTheme.accessibilityStrings.recipientFormCollapsed;
         }
       }
 

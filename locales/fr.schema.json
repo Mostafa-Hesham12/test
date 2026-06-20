@@ -3281,7 +3281,7 @@
                 "info": "Afficher un tableau de tailles différent pour une collection ou un produit spécifique."
               },
               "paragraph_2": {
-                "content": "Créez un champ méta personnalisé pour le produit avec un espace de noms et une clé : \"storetheme.size_chart\". [Ajouter un métachamp](/admin/metafields/product)"
+                "content": "Créez un champ méta personnalisé pour le produit avec un espace de noms et une clé : \"foxtheme.size_chart\". [Ajouter un métachamp](/admin/metafields/product)"
               }
             }
           }
@@ -4519,7 +4519,7 @@
               "info": "Affichez différentes images miniatures pour une collection spécifique."
             },
             "paragraph": {
-              "content": "Créez un métafield personnalisé pour la collection avec l'espace de noms et la clé: \"storetheme.collection-thumbnails\". [Ajouter MetaField] (/ Admin / MetaFields / Collection)"
+              "content": "Créez un métafield personnalisé pour la collection avec l'espace de noms et la clé: \"Foxtheme.collection-thumbnails\". [Ajouter MetaField] (/ Admin / MetaFields / Collection)"
             }
           }
         }

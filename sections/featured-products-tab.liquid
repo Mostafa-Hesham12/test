@@ -89,8 +89,8 @@
                     <div class="f-column">
                       {%- liquid
                         assign image_ratio = section.settings.pcard_image_ratio
-                        assign product_showcase_image = product.metafields.storetheme.showcase_image.value
-                        assign product_showcase_title = product.metafields.storetheme.showcase_title.value
+                        assign product_showcase_image = product.metafields.foxtheme.showcase_image.value
+                        assign product_showcase_title = product.metafields.foxtheme.showcase_title.value
                         assign featured_media = product.featured_media
                         if product_showcase_image == blank
                           assign product_showcase_image = featured_media

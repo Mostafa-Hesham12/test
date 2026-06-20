@@ -3281,7 +3281,7 @@
                 "info": "Zeigen Sie unterschiedliche Größentabellen für eine bestimmte Kollektion oder ein bestimmtes Produkt an."
               },
               "paragraph_2": {
-                "content": "Erstellen Sie ein benutzerdefiniertes Metafeld für das Produkt mit Namespace und Schlüssel: „storetheme.size_chart“. [Metafeld hinzufügen](/admin/metafields/product)"
+                "content": "Erstellen Sie ein benutzerdefiniertes Metafeld für das Produkt mit Namespace und Schlüssel: „foxtheme.size_chart“. [Metafeld hinzufügen](/admin/metafields/product)"
               }
             }
           }
@@ -4519,7 +4519,7 @@
               "info": "Zeigen Sie verschiedene Miniaturbilder für eine bestimmte Sammlung."
             },
             "paragraph": {
-              "content": "Erstellen Sie ein benutzerdefiniertes Metafield für die Sammlung mit Namespace und Schlüssel: \"storetheme.Collection-Thumbnails\". [Metafield hinzufügen] (/admin/metafields/Sammlung)"
+              "content": "Erstellen Sie ein benutzerdefiniertes Metafield für die Sammlung mit Namespace und Schlüssel: \"Foxtheme.Collection-Thumbnails\". [Metafield hinzufügen] (/admin/metafields/Sammlung)"
             }
           }
         }

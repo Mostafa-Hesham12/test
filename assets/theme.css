@@ -7656,10 +7656,10 @@ body:not(.header-pinned) .header-scrolled .header {
 .footer .list-social {
   justify-content: flex-end;
 }
-.footer__legal-content {
+.footer__copyright-content {
   margin: 0;
 }
-.footer__legal-content a:hover {
+.footer__copyright-content a:hover {
   color: rgba(var(--color-foreground), 1);
   text-decoration: none;
   text-decoration: underline;
@@ -7838,7 +7838,7 @@ body:not(.header-pinned) .header-scrolled .header {
     flex-direction: column;
     align-items: flex-start;
   }
-  .footer__legal {
+  .footer__copyright {
     order: 2;
   }
 }

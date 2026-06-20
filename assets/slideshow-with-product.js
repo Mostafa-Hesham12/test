@@ -14,7 +14,7 @@ if (!customElements.get('slideshow-with-product')) {
         this.sliderHeightAdapt = this.classList.contains('slideshow-with-product-height--adapt');
 
         this.calcSlideHeight();
-        window.addEventListener('resize', StoreTheme.utils.debounce(this.calcSlideHeight.bind(this), 100), false);
+        window.addEventListener('resize', FoxTheme.utils.debounce(this.calcSlideHeight.bind(this), 100), false);
 
         this.initSlider();
       }
@@ -32,7 +32,7 @@ if (!customElements.get('slideshow-with-product')) {
       }
 
       initSlider() {
-        const additionModules = [StoreTheme.Swiper.Autoplay, StoreTheme.Swiper.EffectFade];
+        const additionModules = [FoxTheme.Swiper.Autoplay, FoxTheme.Swiper.EffectFade];
 
         this.sliderOptions = {
           slidesPerView: 1,
@@ -73,7 +73,7 @@ if (!customElements.get('slideshow-with-product')) {
           };
         }
 
-        this.sliderInstance = new window.StoreTheme.Carousel(this, this.sliderOptions, additionModules);
+        this.sliderInstance = new window.FoxTheme.Carousel(this, this.sliderOptions, additionModules);
         this.sliderInstance.init();
 
         this.sliderInstance.slider.on('realIndexChange', this.handleSlideChange.bind(this));
@@ -83,7 +83,7 @@ if (!customElements.get('slideshow-with-product')) {
           this.onReady(this.selectedElement, this.sliderInstance.slider.slides);
 
           // Fix accessibility
-          const focusableElements = StoreTheme.a11y.getFocusableElements(this);
+          const focusableElements = FoxTheme.a11y.getFocusableElements(this);
           focusableElements.forEach((element) => {
             if (!element.classList.contains('swiper-button') && element.tagName.toLowerCase() !== 'a') {
               element.addEventListener('focusin', () => {
@@ -107,11 +107,11 @@ if (!customElements.get('slideshow-with-product')) {
 
       onReady(selectedElement) {
         if (selectedElement.dataset.type === 'video') {
-          const videoElement = StoreTheme.utils.displayedMedia(selectedElement.querySelectorAll('video-element'));
+          const videoElement = FoxTheme.utils.displayedMedia(selectedElement.querySelectorAll('video-element'));
           videoElement?.play();
         }
 
-        if (!StoreTheme.config.motionReduced) {
+        if (!FoxTheme.config.motionReduced) {
           const motionEls = selectedElement.querySelectorAll('motion-element');
           motionEls.forEach((motionEl) => {
             setTimeout(() => {
@@ -150,7 +150,7 @@ if (!customElements.get('slideshow-with-product')) {
 
           fromElements.forEach((fromElement) => {
             if (fromElement.dataset.type === 'video') {
-              const videoElement = StoreTheme.utils.displayedMedia([fromElement.querySelector('video-element')]);
+              const videoElement = FoxTheme.utils.displayedMedia([fromElement.querySelector('video-element')]);
               videoElement && videoElement.pause();
             }
 
@@ -167,7 +167,7 @@ if (!customElements.get('slideshow-with-product')) {
             setTimeout(() => {
               if (toElement.classList.contains('swiper-slide-active')) {
                 if (toElement.dataset.type === 'video') {
-                  const videoElement = StoreTheme.utils.displayedMedia([toElement.querySelector('video-element')]);
+                  const videoElement = FoxTheme.utils.displayedMedia([toElement.querySelector('video-element')]);
                   videoElement && videoElement.play();
                 }
 

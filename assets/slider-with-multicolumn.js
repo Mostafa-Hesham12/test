@@ -30,7 +30,7 @@ if (!customElements.get('multicolumn-slider')) {
       }
 
       initSlider() {
-        const additionModules = [StoreTheme.Swiper.Autoplay, StoreTheme.Swiper.EffectFade];
+        const additionModules = [FoxTheme.Swiper.Autoplay, FoxTheme.Swiper.EffectFade];
         this.sliderOptions = {
           slidesPerView: 1,
           loop: true,
@@ -62,7 +62,7 @@ if (!customElements.get('multicolumn-slider')) {
           };
         }
 
-        this.sliderInstance = new window.StoreTheme.Carousel(this.swiper, this.sliderOptions, additionModules);
+        this.sliderInstance = new window.FoxTheme.Carousel(this.swiper, this.sliderOptions, additionModules);
         this.sliderInstance.init();
 
         this.sliderInstance.slider.on('realIndexChange', this.handleSlideChange.bind(this));
@@ -91,7 +91,7 @@ if (!customElements.get('multicolumn-slider')) {
           this.selectedElement = this.sliderInstance.slider.slides[this.sliderInstance.slider.activeIndex];
           this.onReady(this.selectedElement, this.sliderInstance.slider.slides);
 
-          const focusableElements = StoreTheme.a11y.getFocusableElements(this);
+          const focusableElements = FoxTheme.a11y.getFocusableElements(this);
           focusableElements.forEach((element) => {
             if (!element.classList.contains('swiper-button')) {
               element.addEventListener('focusin', () => {
@@ -106,7 +106,7 @@ if (!customElements.get('multicolumn-slider')) {
       }
 
       onReady(selectedElement) {
-        if (!StoreTheme.config.motionReduced) {
+        if (!FoxTheme.config.motionReduced) {
           const motionEls = selectedElement.querySelectorAll('motion-element');
           motionEls.forEach((motionEl) => {
             motionEl && motionEl.refreshAnimation();

@@ -13,7 +13,7 @@ if (!customElements.get('press-element')) {
         this.testimonialsSlider = this.testimonials.querySelector('.swiper');
         this.thumbsSlider = this.thumbs.querySelector('.swiper');
 
-        const mql = window.matchMedia(StoreTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
         mql.onchange = this.init.bind(this);
       
         window.addEventListener('resize', () => {
@@ -62,16 +62,16 @@ if (!customElements.get('press-element')) {
       initSlider() {
         this.setSliderOptions();
       
-        const modules = [StoreTheme.Swiper.Thumbs];
+        const modules = [FoxTheme.Swiper.Thumbs];
       
-        this.thumbsInstance = new StoreTheme.Carousel(this.thumbsSlider, this.thumbsOptions, modules);
+        this.thumbsInstance = new FoxTheme.Carousel(this.thumbsSlider, this.thumbsOptions, modules);
         this.thumbsInstance.init();
       
         this.testimonialsOptions.thumbs = {
           swiper: this.thumbsInstance.slider,
         };
       
-        this.sliderInstance = new StoreTheme.Carousel(this.testimonialsSlider, this.testimonialsOptions, modules);
+        this.sliderInstance = new FoxTheme.Carousel(this.testimonialsSlider, this.testimonialsOptions, modules);
         this.sliderInstance.init();
       
         this.sliderInstance.slider.on('realIndexChange', (swiper) => {

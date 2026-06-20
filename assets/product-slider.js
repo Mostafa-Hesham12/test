@@ -24,7 +24,7 @@ if (!customElements.get('product-slider')) {
         };
 
         this.sectionId = this.dataset.sectionId;
-        this.elements = StoreTheme.utils.queryDomNodes(this.selectors, this);
+        this.elements = FoxTheme.utils.queryDomNodes(this.selectors, this);
         this.elements.section = this.closest(`.section-${this.sectionId}`);
 
         this.enableSlider = this.dataset.enableSlider === 'true';
@@ -39,20 +39,20 @@ if (!customElements.get('product-slider')) {
 
         if (!this.elements.productsWrap || !this.elements.products) return;
 
-        const mql = window.matchMedia(StoreTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
         mql.onchange = this.init.bind(this);
 
-        const mqlTablet = window.matchMedia(StoreTheme.config.mediaQueryTablet);
+        const mqlTablet = window.matchMedia(FoxTheme.config.mediaQueryTablet);
         mqlTablet.onchange = this.init.bind(this);
 
         this.init();
       }
 
       init() {
-        if (StoreTheme.config.mqlMobile) {
+        if (FoxTheme.config.mqlMobile) {
           this.destroySlider();
         } else {
-          const currentItems = StoreTheme.config.mqlTablet ? this.tabletItems : this.items;
+          const currentItems = FoxTheme.config.mqlTablet ? this.tabletItems : this.items;
 
           if (this.totalItems > currentItems) {
             this.initSlider();
@@ -99,8 +99,8 @@ if (!customElements.get('product-slider')) {
         this.elements.products.classList.remove(this.classes.grid);
         this.elements.products.classList.add(this.classes.swiperWrapper);
 
-        this.sliderInstance = new window.StoreTheme.Carousel(this.elements.productsWrap, this.sliderOptions, [
-          StoreTheme.Swiper.Mousewheel,
+        this.sliderInstance = new window.FoxTheme.Carousel(this.elements.productsWrap, this.sliderOptions, [
+          FoxTheme.Swiper.Mousewheel,
         ]);
         this.sliderInstance.init();
         this.handleAccessibility();
@@ -109,7 +109,7 @@ if (!customElements.get('product-slider')) {
       }
 
       handleAccessibility() {
-        const focusableElements = StoreTheme.a11y.getFocusableElements(this);
+        const focusableElements = FoxTheme.a11y.getFocusableElements(this);
 
         focusableElements.forEach((element) => {
           element.addEventListener('focusin', (event) => {

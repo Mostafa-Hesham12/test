@@ -30,16 +30,16 @@ if (!customElements.get('multiple-product-bundles')) {
         this.sliderInstance = false;
 
         this.init();
-        Array.from([StoreTheme.config.mediaQueryMobile, StoreTheme.config.mediaQueryTablet]).forEach((mediaQuery) => {
+        Array.from([FoxTheme.config.mediaQueryMobile, FoxTheme.config.mediaQueryTablet]).forEach((mediaQuery) => {
           const mql = window.matchMedia(mediaQuery);
           mql.onchange = this.init.bind(this);
         });
       }
 
       init() {
-        if (StoreTheme.config.mqlMobile) {
+        if (FoxTheme.config.mqlMobile) {
           this.enableSlider = false;
-        } else if (StoreTheme.config.mqlTablet) {
+        } else if (FoxTheme.config.mqlTablet) {
           this.enableSlider = this.total > this.tabletItems ? true : false;
         } else {
           this.enableSlider = this.dataset.enableSlider === 'true';
@@ -81,7 +81,7 @@ if (!customElements.get('multiple-product-bundles')) {
         this.sliderWrapper.classList.remove(this.classes.grid);
         this.sliderWrapper.classList.add(this.classes.swiperWrapper);
 
-        this.sliderInstance = new window.StoreTheme.Carousel(this, this.sliderOptions, [StoreTheme.Swiper.Mousewheel]);
+        this.sliderInstance = new window.FoxTheme.Carousel(this, this.sliderOptions, [FoxTheme.Swiper.Mousewheel]);
         this.sliderInstance.init();
 
         if (Shopify.designMode && typeof this.sliderInstance === 'object') {

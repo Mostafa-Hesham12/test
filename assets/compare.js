@@ -1,18 +1,18 @@
 class CompareUtils {
-  static cookieName = 'storetheme:compare-products';
+  static cookieName = 'hypertheme:compare-products';
 
   /**
    *
    * @returns {array}
    */
   static getSelectedProducts() {
-    const products = StoreTheme.utils.getStorage(this.cookieName);
+    const products = FoxTheme.utils.getStorage(this.cookieName);
     return products || [];
   }
 
   static setSelectedProducts(products) {
     if (products.length > 0) {
-      StoreTheme.utils.setStorage(this.cookieName, products);
+      FoxTheme.utils.setStorage(this.cookieName, products);
     } else {
       localStorage.removeItem(this.cookieName);
     }
@@ -40,9 +40,9 @@ class CompareUtils {
    * @returns {boolean} True if the product added to list.
    */
   static addToList(productId, productUrl) {
-    let products = StoreTheme.utils.getStorage(this.cookieName) || [];
+    let products = FoxTheme.utils.getStorage(this.cookieName) || [];
 
-    if (products.length < StoreTheme.compare.maxProductsInCompare) {
+    if (products.length < FoxTheme.compare.maxProductsInCompare) {
       if (!products.some((product) => product.id === productId)) {
         products.push({ id: productId, url: productUrl });
       }
@@ -50,11 +50,11 @@ class CompareUtils {
       this.setSelectedProducts(products);
       this.updateCompareCheckboxes(products);
 
-      StoreTheme.pubsub.publish('compare:add', { products: products, productId: productId, productUrl: productUrl });
+      FoxTheme.pubsub.publish('compare:add', { products: products, productId: productId, productUrl: productUrl });
 
       return true;
     } else {
-      alert(StoreTheme.compare.alertMessage);
+      alert(FoxTheme.compare.alertMessage);
 
       return false;
     }
@@ -67,7 +67,7 @@ class CompareUtils {
     }
     this.setSelectedProducts(products);
     this.updateCompareCheckboxes(products);
-    StoreTheme.pubsub.publish('compare:remove', { products: products, productId: productId });
+    FoxTheme.pubsub.publish('compare:remove', { products: products, productId: productId });
   }
 
   static clearList() {
@@ -116,7 +116,7 @@ class CompareSwitch extends HTMLElement {
   constructor() {
     super();
 
-    this.cookieName = 'storetheme:compare-is-active';
+    this.cookieName = 'hypertheme:compare-is-active';
 
     this.classes = {
       isActive: 'is-product-comparing',
@@ -136,7 +136,7 @@ class CompareSwitch extends HTMLElement {
   }
 
   init() {
-    if (StoreTheme.config.hasLocalStorage) {
+    if (FoxTheme.config.hasLocalStorage) {
       const isActive = window.localStorage.getItem(this.cookieName) === 'true';
       if (isActive) {
         this.checkboxEl.checked = isActive;
@@ -160,9 +160,9 @@ class CompareSwitch extends HTMLElement {
       }
     });
 
-    StoreTheme.pubsub.publish('compare:toggle', { isActive: isActive });
+    FoxTheme.pubsub.publish('compare:toggle', { isActive: isActive });
 
-    if (StoreTheme.config.hasLocalStorage) {
+    if (FoxTheme.config.hasLocalStorage) {
       window.localStorage.setItem(this.cookieName, isActive);
     }
   }
@@ -271,8 +271,8 @@ class CompareBar extends HTMLElement {
     };
 
     this.abortController = new AbortController();
-    this.elements = StoreTheme.utils.queryDomNodes(this.selectors, this);
-    this.atLeastItemToShow = Math.min(5, StoreTheme.compare.maxProductsInCompare); // Total compare products and placeholders.
+    this.elements = FoxTheme.utils.queryDomNodes(this.selectors, this);
+    this.atLeastItemToShow = Math.min(5, FoxTheme.compare.maxProductsInCompare); // Total compare products and placeholders.
 
     this.elements.clearBtns.forEach((clearBtn) => {
       clearBtn.addEventListener('click', this.handleClear.bind(this), {
@@ -284,8 +284,8 @@ class CompareBar extends HTMLElement {
       signal: this.abortController.signal,
     });
 
-    this.itemAddUnsubscriber = StoreTheme.pubsub.subscribe('compare:add', this.onItemAdded.bind(this));
-    this.itemRemoveUnsubscriber = StoreTheme.pubsub.subscribe('compare:remove', this.onItemRemoved.bind(this));
+    this.itemAddUnsubscriber = FoxTheme.pubsub.subscribe('compare:add', this.onItemAdded.bind(this));
+    this.itemRemoveUnsubscriber = FoxTheme.pubsub.subscribe('compare:remove', this.onItemRemoved.bind(this));
   }
 
   itemAddUnsubscriber = undefined;
@@ -293,7 +293,7 @@ class CompareBar extends HTMLElement {
 
   connectedCallback() {
     this.renderBar();
-    const mql = window.matchMedia(StoreTheme.config.mediaQueryMobile);
+    const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
     mql.onchange = this.setHeight.bind(this);
     this.setHeight();
   }
@@ -470,17 +470,17 @@ class CompareDrawer extends DrawerComponent {
   }
 
   getSectionId() {
-    let sectionId = StoreTheme.ProductCompareSectionId || false;
+    let sectionId = FoxTheme.ProductCompareSectionId || false;
 
     if (!sectionId) {
       // Get section id from overlay groups.
       const sectionEl = document.querySelector('.section-group-overlay-product-compare');
       if (sectionEl) {
-        sectionId = StoreTheme.utils.getSectionId(sectionEl);
+        sectionId = FoxTheme.utils.getSectionId(sectionEl);
       }
 
       // Cache for better performance.
-      StoreTheme.ProductCompareSectionId = sectionId;
+      FoxTheme.ProductCompareSectionId = sectionId;
     }
 
     return sectionId;
@@ -504,7 +504,7 @@ class CompareDrawer extends DrawerComponent {
 
     this.updateProductsCount();
 
-    this.elements = StoreTheme.utils.queryDomNodes(this.selectors, this);
+    this.elements = FoxTheme.utils.queryDomNodes(this.selectors, this);
     const tableRows = this.elements.table.querySelectorAll('tbody tr');
     let compareRows = await this.getCompareTableRows(products);
 

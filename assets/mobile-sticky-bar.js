@@ -11,7 +11,7 @@ if (!customElements.get('mobile-sticky-bar')) {
           isHide: 'mobile-sticky-bar-down',
         };
 
-        this.compareToggleUnsubscriber = StoreTheme.pubsub.subscribe('compare:toggle', this.onCompareToggle.bind(this));
+        this.compareToggleUnsubscriber = FoxTheme.pubsub.subscribe('compare:toggle', this.onCompareToggle.bind(this));
       }
 
       compareToggleUnsubscriber = undefined;
@@ -25,7 +25,7 @@ if (!customElements.get('mobile-sticky-bar')) {
         }
 
         this.lastScrollTop = 0;
-        this.scrollHandler = StoreTheme.utils.debounce(this.onScrollHandler.bind(this), 10);
+        this.scrollHandler = FoxTheme.utils.debounce(this.onScrollHandler.bind(this), 10);
         this.init();
       }
 

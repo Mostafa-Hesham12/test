@@ -61,15 +61,15 @@ if (!customElements.get('product-tabs')) {
           newTab = template.content.cloneNode(true).firstElementChild;
           this.tabPanels.appendChild(newTab);
         }
-        const translateY = StoreTheme.config.motionReduced ? 0 : 2.5;
+        const translateY = FoxTheme.config.motionReduced ? 0 : 2.5;
 
-        StoreTheme.Motion.animate(newTab, { transform: `translateY(${translateY}rem)`, opacity: 0.01 }, { duration: 0 });
+        FoxTheme.Motion.animate(newTab, { transform: `translateY(${translateY}rem)`, opacity: 0.01 }, { duration: 0 });
 
         newTab.hidden = false;
         this.fixBlurryImagesOnSafari(newTab);
 
         setTimeout(() => {
-          StoreTheme.Motion.animate(
+          FoxTheme.Motion.animate(
             newTab,
             { transform: 'translateY(0)', opacity: 1 },
             { duration: 0.5, delay: this.animationDelay, easing: [0, 0, 0.3, 1] }

@@ -25,13 +25,13 @@ if (!customElements.get('collection-item-slider')) {
         this.productsWrap = this.querySelector(this.selectors.productsWrap);
         this.products = this.querySelector(this.selectors.products);
         this.sliderInstance = false;
-        const mql = window.matchMedia(StoreTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
         mql.onchange = this.init.bind(this);
         this.init();
       }
 
       init() {
-        if (StoreTheme.config.mqlMobile) {
+        if (FoxTheme.config.mqlMobile) {
           if (this.enableSliderMobile) {
             this.initSlider();
           } else {
@@ -73,7 +73,7 @@ if (!customElements.get('collection-item-slider')) {
         this.productsWrap.classList.add(this.classes.swiper);
         this.products.classList.remove(this.classes.grid);
         this.products.classList.add(this.classes.swiperWrapper);
-        this.sliderInstance = new window.StoreTheme.Carousel(this.productsWrap, this.sliderOptions);
+        this.sliderInstance = new window.FoxTheme.Carousel(this.productsWrap, this.sliderOptions);
         this.sliderInstance.init();
 
         this.handleAccessibility();
@@ -81,7 +81,7 @@ if (!customElements.get('collection-item-slider')) {
       }
 
       handleAccessibility() {
-        const focusableElements = StoreTheme.a11y.getFocusableElements(this);
+        const focusableElements = FoxTheme.a11y.getFocusableElements(this);
 
         focusableElements.forEach((element) => {
           element.addEventListener('focusin', (event) => {

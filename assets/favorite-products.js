@@ -76,7 +76,7 @@ if (!customElements.get('favorite-products')) {
       }
 
       initProductSlider() {
-        const additionModules = [StoreTheme.Swiper.EffectFade];
+        const additionModules = [FoxTheme.Swiper.EffectFade];
         const sliderOptions = {
           slidesPerView: 1,
           loop: false,
@@ -91,7 +91,7 @@ if (!customElements.get('favorite-products')) {
           sliderOptions.autoHeight = true;
         }
 
-        this.ProductSlider = new window.StoreTheme.Carousel(this.productWrapper, sliderOptions, additionModules);
+        this.ProductSlider = new window.FoxTheme.Carousel(this.productWrapper, sliderOptions, additionModules);
         this.ProductSlider.init();
       }
 
@@ -103,7 +103,7 @@ if (!customElements.get('favorite-products')) {
           allowTouchMove: false,
         };
 
-        this.MediaSlider = new window.StoreTheme.Carousel(this.mediaWrapper.querySelector('.swiper'), sliderOptions);
+        this.MediaSlider = new window.FoxTheme.Carousel(this.mediaWrapper.querySelector('.swiper'), sliderOptions);
         this.MediaSlider.init();
       }
 
@@ -126,7 +126,7 @@ if (!customElements.get('favorite-products')) {
           },
         };
 
-        this.TestimonialSlider = new window.StoreTheme.Carousel(
+        this.TestimonialSlider = new window.FoxTheme.Carousel(
           this.testimonialsWrapper.querySelector('.swiper'),
           sliderOptions
         );

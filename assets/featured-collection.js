@@ -33,13 +33,13 @@ if (!customElements.get('featured-collection')) {
 
         if (!this.enableSlider) return;
 
-        const mql = window.matchMedia(StoreTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
         mql.onchange = this.init.bind(this);
         this.init();
       }
 
       init() {
-        if (StoreTheme.config.mqlMobile) {
+        if (FoxTheme.config.mqlMobile) {
           this.destroySlider();
         } else {
           this.initSlider();
@@ -86,10 +86,10 @@ if (!customElements.get('featured-collection')) {
         this.sliderWrapper.classList.remove(this.classes.grid);
         this.sliderWrapper.classList.add(this.classes.swiperWrapper);
 
-        this.sliderInstance = new window.StoreTheme.Carousel(this, this.sliderOptions, [StoreTheme.Swiper.Mousewheel]);
+        this.sliderInstance = new window.FoxTheme.Carousel(this, this.sliderOptions, [FoxTheme.Swiper.Mousewheel]);
         this.sliderInstance.init();
 
-        // const focusableElements = StoreTheme.a11y.getFocusableElements(this);
+        // const focusableElements = FoxTheme.a11y.getFocusableElements(this);
 
         // focusableElements.forEach((element) => {
         //   element.addEventListener('focusin', () => {

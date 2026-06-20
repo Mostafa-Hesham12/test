@@ -19,9 +19,9 @@ if (!customElements.get('subscription-popup')) {
 
         this.triggerOpen = this.dataset.triggerOpen;
         this.repeatOpen = this.dataset.repeatOpen;
-        this.cookieName = 'storetheme:popup';
+        this.cookieName = 'hypertheme:popup';
 
-        window.StoreTheme.DOMready(this.handleOpen.bind(this));
+        window.FoxTheme.DOMready(this.handleOpen.bind(this));
       }
 
       prepareToShow() {
@@ -32,7 +32,7 @@ if (!customElements.get('subscription-popup')) {
       handleOpen() {
         if (Shopify.designMode) return;
 
-        let savedData = StoreTheme.utils.getStorage(this.cookieName);
+        let savedData = FoxTheme.utils.getStorage(this.cookieName);
         if (savedData && savedData.opened) {
           return false;
         }
@@ -119,7 +119,7 @@ if (!customElements.get('subscription-popup')) {
             break;
         }
 
-        window.StoreTheme.utils.setStorage(this.cookieName, { opened: true }, expires);
+        window.FoxTheme.utils.setStorage(this.cookieName, { opened: true }, expires);
       }
     }
   );

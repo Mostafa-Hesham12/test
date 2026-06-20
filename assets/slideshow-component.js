@@ -52,7 +52,7 @@ if (!customElements.get('slideshow-component')) {
       }
 
       initSlider() {
-        const additionModules = [StoreTheme.Swiper.Autoplay, StoreTheme.Swiper.EffectFade];
+        const additionModules = [FoxTheme.Swiper.Autoplay, FoxTheme.Swiper.EffectFade];
 
         this.sliderOptions = {
           slidesPerView: 1,
@@ -92,7 +92,7 @@ if (!customElements.get('slideshow-component')) {
           };
         }
 
-        this.sliderInstance = new window.StoreTheme.Carousel(this, this.sliderOptions, additionModules);
+        this.sliderInstance = new window.FoxTheme.Carousel(this, this.sliderOptions, additionModules);
         this.sliderInstance.init();
 
         this.sliderInstance.slider.on('realIndexChange', this.handleSlideChange.bind(this));
@@ -102,7 +102,7 @@ if (!customElements.get('slideshow-component')) {
           this.onReady(this.selectedElement, this.sliderInstance.slider.slides);
 
           // Fix accessibility
-          const focusableElements = StoreTheme.a11y.getFocusableElements(this);
+          const focusableElements = FoxTheme.a11y.getFocusableElements(this);
           focusableElements.forEach((element) => {
             if (!element.classList.contains('swiper-button') && !element.classList.contains('btn')) {
               element.addEventListener('focusin', () => {
@@ -116,11 +116,11 @@ if (!customElements.get('slideshow-component')) {
 
       onReady(selectedElement) {
         if (selectedElement.dataset.type === 'video') {
-          const videoElement = StoreTheme.utils.displayedMedia(selectedElement.querySelectorAll('video-element'));
+          const videoElement = FoxTheme.utils.displayedMedia(selectedElement.querySelectorAll('video-element'));
           videoElement?.play();
         }
 
-        if (!StoreTheme.config.motionReduced) {
+        if (!FoxTheme.config.motionReduced) {
           const motionEls = selectedElement.querySelectorAll('motion-element');
           motionEls.forEach((motionEl) => {
             setTimeout(() => {
@@ -159,7 +159,7 @@ if (!customElements.get('slideshow-component')) {
 
           fromElements.forEach((fromElement) => {
             if (fromElement.dataset.type === 'video') {
-              const videoElement = StoreTheme.utils.displayedMedia([fromElement.querySelector('video-element')]);
+              const videoElement = FoxTheme.utils.displayedMedia([fromElement.querySelector('video-element')]);
               videoElement && videoElement.pause();
             }
 
@@ -176,7 +176,7 @@ if (!customElements.get('slideshow-component')) {
             setTimeout(() => {
               if (toElement.classList.contains('swiper-slide-active')) {
                 if (toElement.dataset.type === 'video') {
-                  const videoElement = StoreTheme.utils.displayedMedia([toElement.querySelector('video-element')]);
+                  const videoElement = FoxTheme.utils.displayedMedia([toElement.querySelector('video-element')]);
                   videoElement && videoElement.play();
                 }
 
@@ -218,8 +218,8 @@ if (!customElements.get('slideshow-component')) {
           const slideBg = slide.querySelector('.slideshow__bg');
 
           this.cleanupScrollAnimations.push(
-            StoreTheme.Motion.scroll(
-              StoreTheme.Motion.animate(slideBg, {
+            FoxTheme.Motion.scroll(
+              FoxTheme.Motion.animate(slideBg, {
                 transform: [`scale(1) translateZ(0)`, `scale(1.1) translateZ(0)`],
               }),
               motionTarget
@@ -228,8 +228,8 @@ if (!customElements.get('slideshow-component')) {
         });
 
         this.cleanupScrollAnimations.push(
-          StoreTheme.Motion.scroll(
-            StoreTheme.Motion.animate(this, {
+          FoxTheme.Motion.scroll(
+            FoxTheme.Motion.animate(this, {
               clipPath: [
                 `inset(0%)`,
                 `inset(${Math.min(50, this.zoom)}px ${this.zoom}px round ${this.borderRadius}px)`,
@@ -241,8 +241,8 @@ if (!customElements.get('slideshow-component')) {
 
         if (this.sliderControls) {
           this.cleanupScrollAnimations.push(
-            StoreTheme.Motion.scroll(
-              StoreTheme.Motion.animate(this.sliderControls, {
+            FoxTheme.Motion.scroll(
+              FoxTheme.Motion.animate(this.sliderControls, {
                 bottom: [`0`, `${Math.min(50, this.zoom)}px`],
               }),
               motionTarget

@@ -84,8 +84,8 @@
                   {% liquid
                     if collection.image
                       assign featured_image = collection.image
-                    elsif collection.metafields.storetheme.collection_in_cart.value != blank
-                      assign featured_image = collection.metafields.storetheme.collection_in_cart.value
+                    elsif collection.metafields.foxtheme.collection_in_cart.value != blank
+                      assign featured_image = collection.metafields.foxtheme.collection_in_cart.value
                     else
                       assign featured_image = collection.products.first.featured_media.preview_image
                     endif
@@ -112,8 +112,8 @@
           </div>
         </div>
         <div class="drawer__body flex-grow v-scrollable flex flex-col">
-          <div class="storekit-cart-countdown-hook"></div>
-          <div class="storekit-cart-goal-hook"></div>
+          <div class="foxkit-cart-countdown-hook"></div>
+          <div class="foxkit-cart-goal-hook"></div>
           {%- liquid
             if section.settings.show_free_shipping_goal and settings.free_shipping_minimum_amount != blank
               assign minimum_amount = settings.free_shipping_minimum_amount | remove: ' '
@@ -467,11 +467,11 @@
                         assign collections = collections | append: collection.id | append: ','
                       endfor
                     %}
-                    <storekit-incart-upsell
+                    <foxkit-incart-upsell
                       data-collections="{{ collections | remove_last: ',' }}"
                       data-product-title="{{ item.product.title }}"
                       data-product-id="{{ item.product_id }}"
-                    ></storekit-incart-upsell>
+                    ></foxkit-incart-upsell>
                   </li>
                 {%- endcapture -%}
 

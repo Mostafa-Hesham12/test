@@ -52,7 +52,7 @@ if (!customElements.get('variant-selects')) {
 
             const target = this.getInputForEventTarget(event.target);
             this.updateSelectedSwatchValue(event);
-            StoreTheme.pubsub.publish(StoreTheme.pubsub.PUB_SUB_EVENTS.optionValueSelectionChange, {
+            FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.optionValueSelectionChange, {
               data: {
                 event,
                 target,

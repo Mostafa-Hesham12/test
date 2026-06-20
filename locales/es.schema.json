@@ -3281,7 +3281,7 @@
                 "info": "Muestra una tabla de tallas diferente para una colección o producto específico."
               },
               "paragraph_2": {
-                "content": "Cree un metacampo personalizado para el producto con espacio de nombres y clave: \"storetheme.size_chart\". [Agregar metacampo](/admin/metafields/product)"
+                "content": "Cree un metacampo personalizado para el producto con espacio de nombres y clave: \"foxtheme.size_chart\". [Agregar metacampo](/admin/metafields/product)"
               }
             }
           }
@@ -4519,7 +4519,7 @@
               "info": "Muestre diferentes imágenes en miniatura para una colección específica."
             },
             "paragraph": {
-              "content": "Cree un MetaField personalizado para la colección con espacio de nombres y clave: \"storetheme.Collection-Thumbnails\". [Agregar metafield] (/admin/metafields/colección)"
+              "content": "Cree un MetaField personalizado para la colección con espacio de nombres y clave: \"Foxtheme.Collection-Thumbnails\". [Agregar metafield] (/admin/metafields/colección)"
             }
           }
         }
