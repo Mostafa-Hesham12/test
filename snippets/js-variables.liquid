@@ -5,10 +5,10 @@
   endif
 %}
 <script>
-  window.FoxTheme = window.FoxTheme || {};
+  window.ThemeCore = window.ThemeCore || {};
   document.documentElement.classList.replace('no-js', 'js');
   window.shopUrl = '{{ request.origin }}';
-  window.FoxTheme.routes = {
+  window.ThemeCore.routes = {
     cart_add_url: '{{ routes.cart_add_url }}',
     cart_change_url: '{{ routes.cart_change_url }}',
     cart_update_url: '{{ routes.cart_update_url }}',
@@ -18,26 +18,26 @@
     root_url: '{{ routes.root_url }}',
   };
 
-  FoxTheme.shippingCalculatorStrings = {
+  ThemeCore.shippingCalculatorStrings = {
     error: {{ 'general.cart.shipping_calculator.error' | t | json }},
     notFound: {{ 'general.cart.shipping_calculator.not_found' | t | json }},
     oneResult: {{ 'general.cart.shipping_calculator.one_result' | t | json }},
     multipleResults: {{ 'general.cart.shipping_calculator.multiple_results' | t | json }},
   };
 
-  FoxTheme.settings = {
+  ThemeCore.settings = {
     cartType: {{ settings.cart_type | json }},
     moneyFormat: {{ money_format | json }},
-    themeName: 'Hyper',
-    themeVersion: '1.3.3'
+    themeName: '',
+    themeVersion: ''
   }
 
-  FoxTheme.compare = {
+  ThemeCore.compare = {
     alertMessage: `{{ 'products.compare.alert_message' | t: maximum: settings.max_products_in_compare }}`,
     maxProductsInCompare: {{ settings.max_products_in_compare | json }}
   }
 
-  FoxTheme.variantStrings = {
+  ThemeCore.variantStrings = {
     addToCart: `{{ 'products.product.add_to_cart' | t }}`,
     addToCartShort: `{{ 'products.product.add_to_cart_short' | t }}`,
     soldOut: `{{ 'products.product.sold_out' | t }}`,
@@ -45,14 +45,14 @@
     unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
   };
 
-  FoxTheme.cartStrings = {
+  ThemeCore.cartStrings = {
     error: `{{ 'sections.cart.cart_error' | t }}`,
     quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
     duplicateDiscountError: `{{ 'general.cart.coupon.duplicate_error_message' | t }}`,
     applyDiscountError: `{{ 'general.cart.coupon.apply_error_message' | t }}`,
   };
 
-  FoxTheme.quickOrderListStrings = {
+  ThemeCore.quickOrderListStrings = {
     itemsAdded: {{ 'sections.quick_order_list.items_added.other' | t: quantity: '[quantity]' | json }},
     itemAdded: {{ 'sections.quick_order_list.items_added.one' | t: quantity: '[quantity]' | json }},
     itemsRemoved: {{ 'sections.quick_order_list.items_removed.other' | t: quantity: '[quantity]' | json }},
@@ -64,7 +64,7 @@
     stepError: {{ 'sections.quick_order_list.step_error' | t: step: '[step]' | json }}
   };
 
-  FoxTheme.accessibilityStrings = {
+  ThemeCore.accessibilityStrings = {
     imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
     shareSuccess: `{{ 'general.share.copied' | t }}`,
     pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,

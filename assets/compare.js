@@ -1,18 +1,18 @@
 class CompareUtils {
-  static cookieName = 'hypertheme:compare-products';
+  static cookieName = 'store:compare-products';
 
   /**
    *
    * @returns {array}
    */
   static getSelectedProducts() {
-    const products = FoxTheme.utils.getStorage(this.cookieName);
+    const products = ThemeCore.utils.getStorage(this.cookieName);
     return products || [];
   }
 
   static setSelectedProducts(products) {
     if (products.length > 0) {
-      FoxTheme.utils.setStorage(this.cookieName, products);
+      ThemeCore.utils.setStorage(this.cookieName, products);
     } else {
       localStorage.removeItem(this.cookieName);
     }
@@ -40,9 +40,9 @@ class CompareUtils {
    * @returns {boolean} True if the product added to list.
    */
   static addToList(productId, productUrl) {
-    let products = FoxTheme.utils.getStorage(this.cookieName) || [];
+    let products = ThemeCore.utils.getStorage(this.cookieName) || [];
 
-    if (products.length < FoxTheme.compare.maxProductsInCompare) {
+    if (products.length < ThemeCore.compare.maxProductsInCompare) {
       if (!products.some((product) => product.id === productId)) {
         products.push({ id: productId, url: productUrl });
       }
@@ -50,11 +50,11 @@ class CompareUtils {
       this.setSelectedProducts(products);
       this.updateCompareCheckboxes(products);
 
-      FoxTheme.pubsub.publish('compare:add', { products: products, productId: productId, productUrl: productUrl });
+      ThemeCore.pubsub.publish('compare:add', { products: products, productId: productId, productUrl: productUrl });
 
       return true;
     } else {
-      alert(FoxTheme.compare.alertMessage);
+      alert(ThemeCore.compare.alertMessage);
 
       return false;
     }
@@ -67,7 +67,7 @@ class CompareUtils {
     }
     this.setSelectedProducts(products);
     this.updateCompareCheckboxes(products);
-    FoxTheme.pubsub.publish('compare:remove', { products: products, productId: productId });
+    ThemeCore.pubsub.publish('compare:remove', { products: products, productId: productId });
   }
 
   static clearList() {
@@ -116,7 +116,7 @@ class CompareSwitch extends HTMLElement {
   constructor() {
     super();
 
-    this.cookieName = 'hypertheme:compare-is-active';
+    this.cookieName = 'store:compare-is-active';
 
     this.classes = {
       isActive: 'is-product-comparing',
@@ -136,7 +136,7 @@ class CompareSwitch extends HTMLElement {
   }
 
   init() {
-    if (FoxTheme.config.hasLocalStorage) {
+    if (ThemeCore.config.hasLocalStorage) {
       const isActive = window.localStorage.getItem(this.cookieName) === 'true';
       if (isActive) {
         this.checkboxEl.checked = isActive;
@@ -160,9 +160,9 @@ class CompareSwitch extends HTMLElement {
       }
     });
 
-    FoxTheme.pubsub.publish('compare:toggle', { isActive: isActive });
+    ThemeCore.pubsub.publish('compare:toggle', { isActive: isActive });
 
-    if (FoxTheme.config.hasLocalStorage) {
+    if (ThemeCore.config.hasLocalStorage) {
       window.localStorage.setItem(this.cookieName, isActive);
     }
   }
@@ -271,8 +271,8 @@ class CompareBar extends HTMLElement {
     };
 
     this.abortController = new AbortController();
-    this.elements = FoxTheme.utils.queryDomNodes(this.selectors, this);
-    this.atLeastItemToShow = Math.min(5, FoxTheme.compare.maxProductsInCompare); // Total compare products and placeholders.
+    this.elements = ThemeCore.utils.queryDomNodes(this.selectors, this);
+    this.atLeastItemToShow = Math.min(5, ThemeCore.compare.maxProductsInCompare); // Total compare products and placeholders.
 
     this.elements.clearBtns.forEach((clearBtn) => {
       clearBtn.addEventListener('click', this.handleClear.bind(this), {
@@ -284,8 +284,8 @@ class CompareBar extends HTMLElement {
       signal: this.abortController.signal,
     });
 
-    this.itemAddUnsubscriber = FoxTheme.pubsub.subscribe('compare:add', this.onItemAdded.bind(this));
-    this.itemRemoveUnsubscriber = FoxTheme.pubsub.subscribe('compare:remove', this.onItemRemoved.bind(this));
+    this.itemAddUnsubscriber = ThemeCore.pubsub.subscribe('compare:add', this.onItemAdded.bind(this));
+    this.itemRemoveUnsubscriber = ThemeCore.pubsub.subscribe('compare:remove', this.onItemRemoved.bind(this));
   }
 
   itemAddUnsubscriber = undefined;
@@ -293,7 +293,7 @@ class CompareBar extends HTMLElement {
 
   connectedCallback() {
     this.renderBar();
-    const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+    const mql = window.matchMedia(ThemeCore.config.mediaQueryMobile);
     mql.onchange = this.setHeight.bind(this);
     this.setHeight();
   }
@@ -470,17 +470,17 @@ class CompareDrawer extends DrawerComponent {
   }
 
   getSectionId() {
-    let sectionId = FoxTheme.ProductCompareSectionId || false;
+    let sectionId = ThemeCore.ProductCompareSectionId || false;
 
     if (!sectionId) {
       // Get section id from overlay groups.
       const sectionEl = document.querySelector('.section-group-overlay-product-compare');
       if (sectionEl) {
-        sectionId = FoxTheme.utils.getSectionId(sectionEl);
+        sectionId = ThemeCore.utils.getSectionId(sectionEl);
       }
 
       // Cache for better performance.
-      FoxTheme.ProductCompareSectionId = sectionId;
+      ThemeCore.ProductCompareSectionId = sectionId;
     }
 
     return sectionId;
@@ -504,7 +504,7 @@ class CompareDrawer extends DrawerComponent {
 
     this.updateProductsCount();
 
-    this.elements = FoxTheme.utils.queryDomNodes(this.selectors, this);
+    this.elements = ThemeCore.utils.queryDomNodes(this.selectors, this);
     const tableRows = this.elements.table.querySelectorAll('tbody tr');
     let compareRows = await this.getCompareTableRows(products);
 

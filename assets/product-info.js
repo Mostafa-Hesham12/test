@@ -39,8 +39,8 @@ if (!customElements.get('product-info')) {
       connectedCallback() {
         this.initializeProductSwapUtility();
 
-        this.onVariantChangeUnsubscriber = FoxTheme.pubsub.subscribe(
-          FoxTheme.pubsub.PUB_SUB_EVENTS.optionValueSelectionChange,
+        this.onVariantChangeUnsubscriber = ThemeCore.pubsub.subscribe(
+          ThemeCore.pubsub.PUB_SUB_EVENTS.optionValueSelectionChange,
           this.handleOptionValueChange.bind(this),
         );
 
@@ -60,7 +60,7 @@ if (!customElements.get('product-info')) {
       }
 
       handleBlocksPosition() {
-        const isMobile = FoxTheme.config.mqlMobile;
+        const isMobile = ThemeCore.config.mqlMobile;
         const blocks = this.querySelectorAll(`.product__block[data-show-below-media="true"]`);
 
         blocks.forEach((block) => {
@@ -204,7 +204,7 @@ if (!customElements.get('product-info')) {
           const addButtonUpdated = html.getElementById(`ProductSubmitButton-${this.sectionId}`);
           this.toggleAddButton(
             addButtonUpdated ? addButtonUpdated.hasAttribute('disabled') : true,
-            FoxTheme.variantStrings.soldOut,
+            ThemeCore.variantStrings.soldOut,
           );
 
           document.dispatchEvent(
@@ -215,7 +215,7 @@ if (!customElements.get('product-info')) {
             }),
           );
 
-          FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.variantChange, {
+          ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.variantChange, {
             data: {
               sectionId: this.sectionId,
               html,
@@ -329,14 +329,14 @@ if (!customElements.get('product-info')) {
           if (text) addButtonText.textContent = text;
         } else {
           addButton.removeAttribute('disabled');
-          addButtonText.innerHTML = FoxTheme.variantStrings.addToCart;
+          addButtonText.innerHTML = ThemeCore.variantStrings.addToCart;
         }
 
         if (!modifyClass) return;
       }
 
       setUnavailable() {
-        this.toggleAddButton(true, FoxTheme.variantStrings.unavailable);
+        this.toggleAddButton(true, ThemeCore.variantStrings.unavailable);
         const price = document.getElementById(`price-${this.dataset.section}`);
         const inventory = document.getElementById(`Inventory-${this.dataset.section}`);
         const sku = document.getElementById(`Sku-${this.dataset.section}`);
@@ -351,15 +351,15 @@ if (!customElements.get('product-info')) {
 
         this.setQuantityBoundries();
         if (!this.hasAttribute('data-original-section')) {
-          this.cartUpdateUnsubscriber = FoxTheme.pubsub.subscribe(
-            FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
+          this.cartUpdateUnsubscriber = ThemeCore.pubsub.subscribe(
+            ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate,
             this.fetchQuantityRules.bind(this),
           );
         }
       }
 
       setQuantityBoundries() {
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.quantityBoundries, {
+        ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.quantityBoundries, {
           data: {
             sectionId: this.sectionId,
             productId: this.productId,
@@ -390,7 +390,7 @@ if (!customElements.get('product-info')) {
       updateQuantityRules(sectionId, productId, parsedHTML) {
         if (!this.quantityInput) return;
 
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.quantityRules, {
+        ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.quantityRules, {
           data: {
             sectionId,
             productId,

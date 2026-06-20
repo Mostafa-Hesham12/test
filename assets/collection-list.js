@@ -26,13 +26,13 @@ if (!customElements.get('collection-list')) {
 
       this.sliderInstance = false;
 
-      const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+      const mql = window.matchMedia(ThemeCore.config.mediaQueryMobile);
       mql.onchange = this.init.bind(this);
       this.init();
     }
 
     init() {
-      if (FoxTheme.config.mqlMobile) {
+      if (ThemeCore.config.mqlMobile) {
         this.destroySlider();
       } else {
         this.initSlider();
@@ -41,7 +41,7 @@ if (!customElements.get('collection-list')) {
 
     initSlider() {
       const sliderOptions = {
-        modules: [FoxTheme.Swiper.Navigation, FoxTheme.Swiper.Pagination, FoxTheme.Swiper.Mousewheel],
+        modules: [ThemeCore.Swiper.Navigation, ThemeCore.Swiper.Pagination, ThemeCore.Swiper.Mousewheel],
         slidesPerView: 'auto',
         spaceBetween: 8,
         navigation: {
@@ -81,10 +81,10 @@ if (!customElements.get('collection-list')) {
         this.sliderWrapper.classList.remove(this.classes.grid);
         this.sliderWrapper.classList.add(this.classes.swiperWrapper);
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this, sliderOptions);
+        this.sliderInstance = new window.ThemeCore.Carousel(this, sliderOptions);
         this.sliderInstance.init();
 
-        const focusableElements = FoxTheme.a11y.getFocusableElements(this);
+        const focusableElements = ThemeCore.a11y.getFocusableElements(this);
 
         focusableElements.forEach((element) => {
           element.addEventListener('focusin', () => {

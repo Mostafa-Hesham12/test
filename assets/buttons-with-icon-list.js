@@ -37,7 +37,7 @@ if (!customElements.get('button-list')) {
     }
 
     init() {
-      if (FoxTheme.config.mqlMobile) {
+      if (ThemeCore.config.mqlMobile) {
         this.destroySlider();
       } else {
         this.initSlider();
@@ -63,10 +63,10 @@ if (!customElements.get('button-list')) {
         this.classList.add(this.classes.swiper);
         this.sliderWrapper.classList.remove(this.classes.grid);
         this.sliderWrapper.classList.add(this.classes.swiperWrapper);
-        this.sliderInstance = new window.FoxTheme.Carousel(this, sliderOptions);
+        this.sliderInstance = new window.ThemeCore.Carousel(this, sliderOptions);
         this.sliderInstance.init();
 
-        const focusableElements = FoxTheme.a11y.getFocusableElements(this);
+        const focusableElements = ThemeCore.a11y.getFocusableElements(this);
         focusableElements.forEach((element) => {
           element.addEventListener('focusin', () => {
             const slide = element.closest('.swiper-slide');

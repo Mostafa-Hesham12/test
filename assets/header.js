@@ -36,7 +36,7 @@ class BasicHeader extends HTMLElement {
   }
 
   init() {
-    new FoxTheme.delayUntilInteraction(this.setHeight.bind(this));
+    new ThemeCore.delayUntilInteraction(this.setHeight.bind(this));
 
     if (this.enableTransparent) {
       this.headerSection.classList.add('header-transparent');
@@ -274,7 +274,7 @@ class DetailsDropdown extends HTMLDetailsElement {
     // Event listeners for summary element
     this.summaryElement.addEventListener('click', this.handleSummaryClick.bind(this));
     
-    if (FoxTheme.config.isTouch) {
+    if (ThemeCore.config.isTouch) {
       this.summaryElement.addEventListener(
         'touchstart',
         (event) => {
@@ -310,7 +310,7 @@ class DetailsDropdown extends HTMLDetailsElement {
     // this.addEventListener('mouseenter', this.detectHoverListener.bind(this));
     // this.addEventListener('mouseleave', this.detectHoverListener.bind(this));
 
-    if (!FoxTheme.config.isTouch && this.trigger === 'hover') {
+    if (!ThemeCore.config.isTouch && this.trigger === 'hover') {
       this.addEventListener('mouseenter', (event) => {
         if (this.hoverLeaveTimer) {
           clearTimeout(this.hoverLeaveTimer);
@@ -361,7 +361,7 @@ class DetailsDropdown extends HTMLDetailsElement {
 
   get trigger() {
     // For touch devices, always use click events
-    if (FoxTheme.config.isTouch) {
+    if (ThemeCore.config.isTouch) {
       return 'click';
     }
 
@@ -382,7 +382,7 @@ class DetailsDropdown extends HTMLDetailsElement {
     event.preventDefault();
 
     // Check if the device is not touch-enabled and the trigger type is 'hover'
-    if (!FoxTheme.config.isTouch && this.trigger === 'hover' && this.summaryElement.hasAttribute('data-link')) {
+    if (!ThemeCore.config.isTouch && this.trigger === 'hover' && this.summaryElement.hasAttribute('data-link')) {
       // If conditions are met, navigate to the URL specified in 'data-link'
       window.location.href = this.summaryElement.getAttribute('data-link');
     } else {
@@ -421,7 +421,7 @@ class DetailsDropdown extends HTMLDetailsElement {
       this.needsReverse();
 
       // Wait for the after show event
-      return FoxTheme.utils.waitForEvent(this, this.events.handleAfterShow);
+      return ThemeCore.utils.waitForEvent(this, this.events.handleAfterShow);
     } else {
       // Decrement the lock count for dropdowns
       clearDropdownCount.set(DetailsDropdown, clearDropdownCount.get(DetailsDropdown) - 1);
@@ -445,46 +445,46 @@ class DetailsDropdown extends HTMLDetailsElement {
       }
 
       // Wait for the after hide event
-      return FoxTheme.utils.waitForEvent(this, this.events.handleAfterHide);
+      return ThemeCore.utils.waitForEvent(this, this.events.handleAfterHide);
     }
   }
 
   async showWithTransition() {
-    FoxTheme.Motion.animate(
+    ThemeCore.Motion.animate(
       this.contentElement,
       { opacity: [0, 1], visibility: 'visible' },
       {
-        duration: FoxTheme.config.motionReduced ? 0 : 0.6,
+        duration: ThemeCore.config.motionReduced ? 0 : 0.6,
         easing: [0.7, 0, 0.2, 1],
-        delay: FoxTheme.config.motionReduced ? 0 : 0.1,
+        delay: ThemeCore.config.motionReduced ? 0 : 0.1,
       }
     );
     const translateY = this.level === 'top' ? '-105%' : '2rem';
-    return FoxTheme.Motion.animate(
+    return ThemeCore.Motion.animate(
       this.contentElement.firstElementChild,
       { transform: [`translateY(${translateY})`, 'translateY(0)'] },
       {
-        duration: FoxTheme.config.motionReduced ? 0 : 0.6,
+        duration: ThemeCore.config.motionReduced ? 0 : 0.6,
         easing: [0.7, 0, 0.2, 1],
       }
     ).finished;
   }
 
   async hideWithTransition() {
-    FoxTheme.Motion.animate(
+    ThemeCore.Motion.animate(
       this.contentElement,
       { opacity: 0, visibility: 'hidden' },
       {
-        duration: FoxTheme.config.motionReduced ? 0 : 0.3,
+        duration: ThemeCore.config.motionReduced ? 0 : 0.3,
         easing: [0.7, 0, 0.2, 1],
       }
     );
     const translateY = this.level === 'top' ? '-105%' : '2rem';
-    return FoxTheme.Motion.animate(
+    return ThemeCore.Motion.animate(
       this.contentElement.firstElementChild,
       { transform: `translateY(${translateY})` },
       {
-        duration: FoxTheme.config.motionReduced ? 0 : 0.6,
+        duration: ThemeCore.config.motionReduced ? 0 : 0.6,
         easing: [0.7, 0, 0.2, 1],
       }
     ).finished;
@@ -547,28 +547,28 @@ class DetailsMega extends DetailsDropdown {
 
   async showWithTransition() {
     // Perform the animation on the first child of the content element
-    return FoxTheme.Motion.animate(
+    return ThemeCore.Motion.animate(
       this.contentElement.firstElementChild,
       {
         visibility: 'visible',
         transform: ['translateY(-100%)', 'translateY(0)'],
       },
       {
-        duration: FoxTheme.config.motionReduced ? 0 : 0.5,
+        duration: ThemeCore.config.motionReduced ? 0 : 0.5,
         easing: [0.39, 0.575, 0.565, 1.0],
       }
     ).finished;
   }
 
   async hideWithTransition() {
-    return FoxTheme.Motion.animate(
+    return ThemeCore.Motion.animate(
       this.contentElement.firstElementChild,
       {
         visibility: 'hidden',
         transform: 'translateY(-100%)',
       },
       {
-        duration: FoxTheme.config.motionReduced ? 0 : 0.5,
+        duration: ThemeCore.config.motionReduced ? 0 : 0.5,
         easing: [0.39, 0.575, 0.565, 1.0],
       }
     ).finished;
@@ -673,7 +673,7 @@ class MenuDrawer extends DrawerComponent {
   }
 
   // animateMenuItems() {
-  //   FoxTheme.Motion.animate(
+  //   ThemeCore.Motion.animate(
   //     this.menuItems,
   //     {
   //       transform: ['translateX(-20px)', 'translateX(0)'],
@@ -682,7 +682,7 @@ class MenuDrawer extends DrawerComponent {
   //     {
   //       duration: 0.6,
   //       easing: [0.075, 0.82, 0.165, 1],
-  //       delay: FoxTheme.Motion.stagger(0.1),
+  //       delay: ThemeCore.Motion.stagger(0.1),
   //     }
   //   ).finished.then(() => {
   //     this.menuItems.forEach((item) => item.removeAttribute('style'));
@@ -728,7 +728,7 @@ class MenuProductList extends HTMLElement {
   }
 
   initSlide() {
-    const slider = new FoxTheme.Carousel(this.container, {
+    const slider = new ThemeCore.Carousel(this.container, {
       spaceBetween: 10,
       slidesPerView: this.numberOfColumns,
       loop: false,
@@ -740,7 +740,7 @@ class MenuProductList extends HTMLElement {
     });
     slider.init();
 
-    const focusableElements = FoxTheme.a11y.getFocusableElements(this);
+    const focusableElements = ThemeCore.a11y.getFocusableElements(this);
 
     focusableElements.forEach((element) => {
       element.addEventListener('focusin', function () {

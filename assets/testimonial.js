@@ -46,7 +46,7 @@ if (!customElements.get('testimonials-component')) {
     }
 
     init() {
-      if (FoxTheme.config.mqlMobile && this.swipeMobile) {
+      if (ThemeCore.config.mqlMobile && this.swipeMobile) {
         this.destroySlider()
       } else {
         this.initSlider();
@@ -111,7 +111,7 @@ if (!customElements.get('testimonials-component')) {
           }
         };
       } else {
-        additionModules.push(FoxTheme.Swiper.Mousewheel);
+        additionModules.push(ThemeCore.Swiper.Mousewheel);
         this.settings = {
           mousewheel: {
             enabled: true,
@@ -126,10 +126,10 @@ if (!customElements.get('testimonials-component')) {
         this.classList.add(this.classes.swiper);
         this.sliderWrapper.classList.remove(this.classes.grid);
         this.sliderWrapper.classList.add(this.classes.swiperWrapper);
-        this.sliderInstance = new window.FoxTheme.Carousel(this, {...this.defaultOptions,...this.settings}, additionModules);
+        this.sliderInstance = new window.ThemeCore.Carousel(this, {...this.defaultOptions,...this.settings}, additionModules);
         this.sliderInstance.init();
 
-        const focusableElements = FoxTheme.a11y.getFocusableElements(this);
+        const focusableElements = ThemeCore.a11y.getFocusableElements(this);
 
         focusableElements.forEach((element) => {
           element.addEventListener('focusin', () => {

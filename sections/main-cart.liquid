@@ -58,8 +58,8 @@
               {%- liquid
                 if collection.image
                   assign featured_image = collection.image
-                elsif collection.metafields.foxtheme.collection_in_cart.value != blank
-                  assign featured_image = collection.metafields.foxtheme.collection_in_cart.value
+                elsif collection.metafields.themedata.collection_in_cart.value != blank
+                  assign featured_image = collection.metafields.themedata.collection_in_cart.value
                 else
                   assign featured_image = collection.products.first.featured_media.preview_image
                 endif

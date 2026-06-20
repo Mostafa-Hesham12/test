@@ -4,7 +4,7 @@ class PredictiveSearch extends HTMLElement {
     this.cachedMap = new Map();
     this.focusElement = this.input;
     this.resetButton.addEventListener('click', this.clear.bind(this));
-    this.input.addEventListener('input', FoxTheme.utils.debounce(this.onChange.bind(this), 300));
+    this.input.addEventListener('input', ThemeCore.utils.debounce(this.onChange.bind(this), 300));
     this.input.addEventListener('focus', this.onFocus.bind(this));
     this.searchContent = this.querySelector('.search__content');
     this.searchRecommendationEmpty = this.dataset.searchRecommendationEmpty === 'true';
@@ -86,7 +86,7 @@ class PredictiveSearch extends HTMLElement {
   }
 
   setupURL() {
-    const url = new URL(`${window.shopUrl}${FoxTheme.routes.predictive_search_url}`);
+    const url = new URL(`${window.shopUrl}${ThemeCore.routes.predictive_search_url}`);
     let search_term = this.getQuery();
     if (this.searchProductTypes && this.searchProductTypes.value != '') {
       search_term = `product_type:${this.searchProductTypes.value} AND ${encodeURIComponent(search_term)}`;
@@ -95,7 +95,7 @@ class PredictiveSearch extends HTMLElement {
       url.searchParams.set('q', search_term),
       url.searchParams.set('resources[limit]', this.dataset.resultsLimit || 3),
       url.searchParams.set('resources[limit_scope]', 'each'),
-      url.searchParams.set('section_id', FoxTheme.utils.getSectionId(this)),
+      url.searchParams.set('section_id', ThemeCore.utils.getSectionId(this)),
       url
     );
   }
@@ -137,7 +137,7 @@ class PredictiveSearch extends HTMLElement {
       .finally(() => this.setLoadingState(false));
   }
   renderSearchResults(responseText) {
-    const id = 'PredictiveSearchResults-' + FoxTheme.utils.getSectionId(this);
+    const id = 'PredictiveSearchResults-' + ThemeCore.utils.getSectionId(this);
     const targetElement = document.getElementById(id);
 
     if (targetElement) {

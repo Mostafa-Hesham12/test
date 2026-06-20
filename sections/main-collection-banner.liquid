@@ -13,14 +13,14 @@
   endif
 
   # Override if it set in metafield.
-  if collection.metafields.foxtheme.collection_banner.value != blank
-    assign banner = collection.metafields.foxtheme.collection_banner.value
+  if collection.metafields.themedata.collection_banner.value != blank
+    assign banner = collection.metafields.themedata.collection_banner.value
     # Inherit from desktop in case has only desktop metafield.
     assign banner_mobile = banner
   endif
 
-  if collection.metafields.foxtheme.collection_banner_mobile.value != blank
-    assign banner_mobile = collection.metafields.foxtheme.collection_banner_mobile.value
+  if collection.metafields.themedata.collection_banner_mobile.value != blank
+    assign banner_mobile = collection.metafields.themedata.collection_banner_mobile.value
   endif
 
   assign show_collection_image = section.settings.show_collection_image

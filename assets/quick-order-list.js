@@ -17,11 +17,11 @@ if (!customElements.get('quick-order-list')) {
       initializeComponent() {
         this.addEventListener(
           'change',
-          FoxTheme.utils.debounce(this.handleQuantityChange.bind(this), QuickOrderList.DEBOUNCE_TIME)
+          ThemeCore.utils.debounce(this.handleQuantityChange.bind(this), QuickOrderList.DEBOUNCE_TIME)
         );
 
-        this.cartUpdateUnsubscriber = FoxTheme.pubsub.subscribe(
-          FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
+        this.cartUpdateUnsubscriber = ThemeCore.pubsub.subscribe(
+          ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate,
           this.handleCartUpdate.bind(this)
         );
 
@@ -70,15 +70,15 @@ if (!customElements.get('quick-order-list')) {
         const validationRules = [
           {
             isInvalid: inputValue < minValue,
-            message: FoxTheme.quickOrderListStrings.minError.replace('[min]', minValue),
+            message: ThemeCore.quickOrderListStrings.minError.replace('[min]', minValue),
           },
           {
             isInvalid: inputValue > maxValue,
-            message: FoxTheme.quickOrderListStrings.maxError.replace('[max]', maxValue),
+            message: ThemeCore.quickOrderListStrings.maxError.replace('[max]', maxValue),
           },
           {
             isInvalid: inputValue % stepValue !== 0,
-            message: FoxTheme.quickOrderListStrings.stepError.replace('[step]', stepValue),
+            message: ThemeCore.quickOrderListStrings.stepError.replace('[step]', stepValue),
           },
         ];
 
@@ -144,8 +144,8 @@ if (!customElements.get('quick-order-list')) {
           sections_url: this.getAttribute('data-product-url'),
         });
 
-        fetch(`${FoxTheme.routes.cart_update_url}`, {
-          ...FoxTheme.utils.fetchConfig(),
+        fetch(`${ThemeCore.routes.cart_update_url}`, {
+          ...ThemeCore.utils.fetchConfig(),
           body: requestBody,
         })
           .then((response) => response.json())
@@ -162,7 +162,7 @@ if (!customElements.get('quick-order-list')) {
        * @param {string} name - Input name
        */
       handleCartUpdateSuccess(data, target, line, name) {
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, {
+        ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate, {
           source: 'quick-order-list',
           cart: data,
           target,
@@ -180,7 +180,7 @@ if (!customElements.get('quick-order-list')) {
           console.log('Request cancelled');
         } else {
           console.error('Cart update error:', error);
-          this.showErrorMessage(FoxTheme.cartStrings.error);
+          this.showErrorMessage(ThemeCore.cartStrings.error);
         }
       }
 
@@ -234,9 +234,9 @@ if (!customElements.get('quick-order-list')) {
         const lineItem = document.getElementById(`VariantItem-${this.sectionId}-${event.line}`);
 
         if (lineItem && lineItem.querySelector(`[name="${event.name}"]`)) {
-          FoxTheme.a11y.trapFocus(mainQuickOrderList, lineItem.querySelector(`[name="${event.name}"]`));
+          ThemeCore.a11y.trapFocus(mainQuickOrderList, lineItem.querySelector(`[name="${event.name}"]`));
         } else {
-          FoxTheme.a11y.trapFocus(mainQuickOrderList, mainQuickOrderList.querySelector('.variant-item__title'));
+          ThemeCore.a11y.trapFocus(mainQuickOrderList, mainQuickOrderList.querySelector('.variant-item__title'));
         }
       }
 
@@ -259,7 +259,7 @@ if (!customElements.get('quick-order-list')) {
        */
       handleCartError(errors, target) {
         if (!target) {
-          window.location.href = FoxTheme.routes.cart_url;
+          window.location.href = ThemeCore.routes.cart_url;
           return;
         }
 

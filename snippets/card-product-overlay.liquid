@@ -15,13 +15,13 @@
 
     assign product_thumbnail = product.featured_media
     assign product_showcase_image = product_thumbnail
-    if product.metafields.foxtheme.showcase_image.value != blank
-      assign product_showcase_image = product.metafields.foxtheme.showcase_image.value
+    if product.metafields.themedata.showcase_image.value != blank
+      assign product_showcase_image = product.metafields.themedata.showcase_image.value
     endif
 
     assign product_showcase_video = blank
-    if product.metafields.foxtheme.showcase_video.value != blank
-      assign product_showcase_video = product.metafields.foxtheme.showcase_video.value
+    if product.metafields.themedata.showcase_video.value != blank
+      assign product_showcase_video = product.metafields.themedata.showcase_video.value
     elsif first_media_type == 'video'
       assign product_showcase_video = product.media.first
     endif

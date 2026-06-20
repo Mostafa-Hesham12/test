@@ -32,7 +32,7 @@ if (!customElements.get('image-with-text-slider')) {
       }
 
       initSlider() {
-        const additionModules = [FoxTheme.Swiper.Autoplay, FoxTheme.Swiper.EffectFade];
+        const additionModules = [ThemeCore.Swiper.Autoplay, ThemeCore.Swiper.EffectFade];
 
         this.swipers.forEach((swiper) => {
           const autoplayDelay = parseInt(swiper.dataset.autoplay);
@@ -62,7 +62,7 @@ if (!customElements.get('image-with-text-slider')) {
             }),
           };
 
-          const sliderInstance = new window.FoxTheme.Carousel(swiper, sliderOptions, additionModules);
+          const sliderInstance = new window.ThemeCore.Carousel(swiper, sliderOptions, additionModules);
           sliderInstance.init();
           this.swiperInstances.push(sliderInstance);
 
@@ -106,7 +106,7 @@ if (!customElements.get('image-with-text-slider')) {
       }
 
       onReady(selectedElement) {
-        if (!FoxTheme.config.motionReduced) {
+        if (!ThemeCore.config.motionReduced) {
           const motionEls = selectedElement.querySelectorAll('motion-element');
           motionEls.forEach((motionEl) => {
             motionEl && motionEl.refreshAnimation();

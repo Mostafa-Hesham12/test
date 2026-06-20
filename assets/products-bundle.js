@@ -25,8 +25,8 @@ if (!customElements.get('products-bundle')) {
           }))
         };
 
-        if (document.body.classList.contains('cart-template') || FoxTheme.settings.cartType != 'drawer') {
-          FoxTheme.utils.postLink(FoxTheme.routes.cart_add_url, {
+        if (document.body.classList.contains('cart-template') || ThemeCore.settings.cartType != 'drawer') {
+          ThemeCore.utils.postLink(ThemeCore.routes.cart_add_url, {
             parameters: {
               ...items,
             },
@@ -48,7 +48,7 @@ if (!customElements.get('products-bundle')) {
           section_url: window.pathname,
         });
 
-        fetch(`${FoxTheme.routes.cart_add_url}`, { ...FoxTheme.utils.fetchConfig('javascript'), ...{ body } })
+        fetch(`${ThemeCore.routes.cart_add_url}`, { ...ThemeCore.utils.fetchConfig('javascript'), ...{ body } })
           .then((response) => response.json())
           .then(async (parsedState) => {
             if (parsedState.status) {
@@ -65,11 +65,11 @@ if (!customElements.get('products-bundle')) {
               );
             } else {
               const cartJson = await (
-                await fetch(`${FoxTheme.routes.cart_url}`, { ...FoxTheme.utils.fetchConfig() })
+                await fetch(`${ThemeCore.routes.cart_url}`, { ...ThemeCore.utils.fetchConfig() })
               ).json();
               cartJson['sections'] = parsedState['sections'];
 
-              FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
+              ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
               document.dispatchEvent(
                 new CustomEvent('product-ajax:added', {
                   detail: {
@@ -227,26 +227,26 @@ if (!customElements.get('product-bundle-variant-selector')) {
 
         // Change price
         const regularPriceElement = this.querySelector('.f-price__regular');
-        regularPriceElement.querySelector('.f-price-item--regular').innerHTML = `${FoxTheme.Currency.formatMoney(
+        regularPriceElement.querySelector('.f-price-item--regular').innerHTML = `${ThemeCore.Currency.formatMoney(
           price,
-          FoxTheme.settings.moneyFormat
+          ThemeCore.settings.moneyFormat
         )}`;
 
         const salePriceElement = this.querySelector('.f-price__sale');
-        salePriceElement.querySelector('.f-price-item--regular').innerHTML = `<s>${FoxTheme.Currency.formatMoney(
+        salePriceElement.querySelector('.f-price-item--regular').innerHTML = `<s>${ThemeCore.Currency.formatMoney(
           compareAtPrice,
-          FoxTheme.settings.moneyFormat
+          ThemeCore.settings.moneyFormat
         )}</s>`;
-        salePriceElement.querySelector('.f-price-item--sale').innerHTML = `${FoxTheme.Currency.formatMoney(
+        salePriceElement.querySelector('.f-price-item--sale').innerHTML = `${ThemeCore.Currency.formatMoney(
           price,
-          FoxTheme.settings.moneyFormat
+          ThemeCore.settings.moneyFormat
         )}`;
       }
 
       updateQuantityRules(sectionId, productId, parsedHTML) {
         if (!this.quantityInput) return;
 
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.quantityRules, {
+        ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.quantityRules, {
           data: {
             sectionId,
             productId,
@@ -258,7 +258,7 @@ if (!customElements.get('product-bundle-variant-selector')) {
       }
 
       setQuantityBoundries() {
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.quantityBoundries, {
+        ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.quantityBoundries, {
           data: {
             sectionId: this.blockId,
             productId: this.productId,
@@ -305,7 +305,7 @@ if (!customElements.get('products-bundle-slider')) {
         this.sliderInstance = false;
 
         this.init();
-        Array.from([FoxTheme.config.mediaQueryMobile, FoxTheme.config.mediaQueryTablet, FoxTheme.config.mediaQueryLaptop]).forEach((mediaQuery) => {
+        Array.from([ThemeCore.config.mediaQueryMobile, ThemeCore.config.mediaQueryTablet, ThemeCore.config.mediaQueryLaptop]).forEach((mediaQuery) => {
           const mql = window.matchMedia(mediaQuery);
           mql.onchange = this.init.bind(this);
         });
@@ -321,11 +321,11 @@ if (!customElements.get('products-bundle-slider')) {
       }
 
       init() {
-        if (FoxTheme.config.mqlMobile) {
+        if (ThemeCore.config.mqlMobile) {
           this.enableSlider = this.total > this.mobileItems && !this.enableSwipeMobile ? true : false;
-        } else if (FoxTheme.config.mqlTablet) {
+        } else if (ThemeCore.config.mqlTablet) {
           this.enableSlider = this.total > this.tabletItems ? true : false;
-        } else if (FoxTheme.config.mqlLaptop) {
+        } else if (ThemeCore.config.mqlLaptop) {
           this.enableSlider = this.total > this.laptopItems ? true : false;
         } else {
           this.enableSlider = this.dataset.enableSlider === 'true';
@@ -364,7 +364,7 @@ if (!customElements.get('products-bundle-slider')) {
         this.sliderWrapper.classList.add(this.classes.swiperWrapper);
         this.productsBundle.querySelector(this.selectors.controls)?.classList.remove('hidden');
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this, this.sliderOptions);
+        this.sliderInstance = new window.ThemeCore.Carousel(this, this.sliderOptions);
         this.sliderInstance.init();
 
         if (Shopify.designMode && typeof this.sliderInstance === 'object') {
@@ -406,7 +406,7 @@ if (!customElements.get('products-bundle-hotspot')) {
 
       connectedCallback() {
         this.init();
-        Array.from([FoxTheme.config.mediaQueryMobile, FoxTheme.config.mediaQuerySmallDesktop]).forEach((mediaQuery) => {
+        Array.from([ThemeCore.config.mediaQueryMobile, ThemeCore.config.mediaQuerySmallDesktop]).forEach((mediaQuery) => {
           const mql = window.matchMedia(mediaQuery);
           mql.onchange = this.init.bind(this);
         });
@@ -448,7 +448,7 @@ if (!customElements.get('products-bundle-hotspot')) {
           }
           
           // Handle scroll to selected item
-          if (FoxTheme.config.mqlMobile) {
+          if (ThemeCore.config.mqlMobile) {
             this.scrollToTop(selectedItem);
             if (this.bundleSlider.enableSwipeMobile) {
               const totalWidth = this.bundleSlider.columnEls[0].offsetWidth * parseInt(this.index);

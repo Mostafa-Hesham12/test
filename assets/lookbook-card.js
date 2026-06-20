@@ -7,7 +7,7 @@ if (!customElements.get('lookbook-card')) {
 
         this.card = this.closest('.lbcard');
 
-        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(ThemeCore.config.mediaQueryMobile);
         mql.onchange = () => {
           this.removeAttribute('open');
           document.body.classList.remove(this.classes.show);
@@ -15,11 +15,11 @@ if (!customElements.get('lookbook-card')) {
       }
 
       get isLockingNeeded() {
-        return FoxTheme.config.mqlMobile;
+        return ThemeCore.config.mqlMobile;
       }
     
       get requiresBodyAppended() {
-        return FoxTheme.config.mqlMobile;
+        return ThemeCore.config.mqlMobile;
       }
 
       prepareToShow() {

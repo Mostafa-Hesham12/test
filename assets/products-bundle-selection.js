@@ -12,7 +12,7 @@ if (!customElements.get('products-bundle-selection')) {
 
         this.rawItems = this.bundleBarListEl.querySelectorAll('.products-bundle-selection__bar-item');
 
-        FoxTheme.Motion.inView(this.querySelector('.products-bundle-selection-bar-trigger'), () => {
+        ThemeCore.Motion.inView(this.querySelector('.products-bundle-selection-bar-trigger'), () => {
           this.hideBlur();
 
           return () => {
@@ -105,7 +105,7 @@ if (!customElements.get('products-bundle-selection')) {
           new CustomEvent('cart:grouped-sections', { bubbles: true, detail: { sections: sectionsToBundle } })
         );
 
-        const config = FoxTheme.utils.fetchConfig('javascript');
+        const config = ThemeCore.utils.fetchConfig('javascript');
         config.headers['X-Requested-With'] = 'XMLHttpRequest';
         config.body = JSON.stringify({
           sections: sectionsToBundle,
@@ -120,7 +120,7 @@ if (!customElements.get('products-bundle-selection')) {
       }
 
       handleFormSubmission = (config) => {
-        fetch(`${FoxTheme.routes.cart_add_url}`, config)
+        fetch(`${ThemeCore.routes.cart_add_url}`, config)
           .then((response) => response.json())
           .then(async (parsedState) => {
             if (parsedState.status) {
@@ -129,7 +129,7 @@ if (!customElements.get('products-bundle-selection')) {
             }
 
             const cartJson = await (
-              await fetch(`${FoxTheme.routes.cart_url}`, { ...FoxTheme.utils.fetchConfig() })
+              await fetch(`${ThemeCore.routes.cart_url}`, { ...ThemeCore.utils.fetchConfig() })
             ).json();
             cartJson['sections'] = parsedState['sections'];
 
@@ -163,7 +163,7 @@ if (!customElements.get('products-bundle-selection')) {
       }
 
       updateCartState = (cartJson) => {
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
+        ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
       };
 
       dispatchProductAddedEvent = (parsedState) => {
@@ -248,7 +248,7 @@ if (!customElements.get('products-bundle-selection')) {
         }, 0);
         const totalEl = this.bundleBarEl.querySelector('.products-bundle-selection__bar-total');
         if (totalEl) {
-          totalEl.innerHTML = FoxTheme.Currency.formatMoney(totalPrice, FoxTheme.settings.moneyFormat);
+          totalEl.innerHTML = ThemeCore.Currency.formatMoney(totalPrice, ThemeCore.settings.moneyFormat);
         }
 
         this.bunderBarHelpEl.classList.toggle('hidden', this.getCount() < this.minItems);
@@ -431,14 +431,14 @@ if (!customElements.get('products-bundle-selection-bar-toggle')) {
       }
 
       connectedCallback() {
-        this.open = !(FoxTheme.config.mqlMobile || FoxTheme.config.mqlTablet);
+        this.open = !(ThemeCore.config.mqlMobile || ThemeCore.config.mqlTablet);
 
         document.addEventListener('matchTablet', () => {
           this.open = false;
         });
 
         document.addEventListener('unmatchTablet', () => {
-          this.open = FoxTheme.config.mqlMobile ? false : true;
+          this.open = ThemeCore.config.mqlMobile ? false : true;
         });
       }
     },

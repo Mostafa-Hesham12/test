@@ -22,12 +22,12 @@ if (!customElements.get('sticky-atc-bar-minimalist')) {
 
         this.init();
 
-        this.cartErrorUnsubscriber = FoxTheme.pubsub.subscribe(FoxTheme.pubsub.PUB_SUB_EVENTS.cartError, () => {
+        this.cartErrorUnsubscriber = ThemeCore.pubsub.subscribe(ThemeCore.pubsub.PUB_SUB_EVENTS.cartError, () => {
           this.resetButtonLoading();
           this.scrollToTop(this.productFormActions);
         });
 
-        this.cartUpdateUnsubscriber = FoxTheme.pubsub.subscribe(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, () => {
+        this.cartUpdateUnsubscriber = ThemeCore.pubsub.subscribe(ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate, () => {
           this.resetButtonLoading();
         });
       }
@@ -93,7 +93,7 @@ if (!customElements.get('sticky-atc-bar-minimalist')) {
           if (text) addButtonText.textContent = text;
         } else {
           addButton.removeAttribute('disabled');
-          addButtonText.textContent = FoxTheme.variantStrings.addToCartShort;
+          addButtonText.textContent = ThemeCore.variantStrings.addToCartShort;
         }
       }
 
@@ -108,8 +108,8 @@ if (!customElements.get('sticky-atc-bar-minimalist')) {
           compareAtPrice: ['.f-price-item--regular'],
           unitPriceWrapper: '.f-price__unit-wrapper',
         };
-        const moneyFormat = FoxTheme.settings.moneyFormat;
-        const { priceWrapper, salePrice, unitPriceWrapper, compareAtPrice } = FoxTheme.utils.queryDomNodes(
+        const moneyFormat = ThemeCore.settings.moneyFormat;
+        const { priceWrapper, salePrice, unitPriceWrapper, compareAtPrice } = ThemeCore.utils.queryDomNodes(
           selectors,
           this
         );
@@ -131,19 +131,19 @@ if (!customElements.get('sticky-atc-bar-minimalist')) {
           priceWrapper.classList.remove(classes.soldOut);
         }
 
-        if (salePrice) salePrice.innerHTML = FoxTheme.Currency.formatMoney(price, moneyFormat);
+        if (salePrice) salePrice.innerHTML = ThemeCore.Currency.formatMoney(price, moneyFormat);
 
         if (compareAtPrice && compareAtPrice.length && compare_at_price > price) {
           compareAtPrice.forEach(
-            (item) => (item.innerHTML = `<s>${FoxTheme.Currency.formatMoney(compare_at_price, moneyFormat)}</s>`)
+            (item) => (item.innerHTML = `<s>${ThemeCore.Currency.formatMoney(compare_at_price, moneyFormat)}</s>`)
           );
         } else {
-          compareAtPrice.forEach((item) => (item.innerHTML = FoxTheme.Currency.formatMoney(price, moneyFormat)));
+          compareAtPrice.forEach((item) => (item.innerHTML = ThemeCore.Currency.formatMoney(price, moneyFormat)));
         }
 
         if (unit_price_measurement && unitPrice) {
           unitPriceWrapper.classList.remove('hidden');
-          const unitPriceContent = `<span>${FoxTheme.Currency.formatMoney(
+          const unitPriceContent = `<span>${ThemeCore.Currency.formatMoney(
             variant.unit_price,
             moneyFormat
           )}</span>/<span data-unit-price-base-unit>${this._getBaseUnit()}</span>`;
@@ -154,7 +154,7 @@ if (!customElements.get('sticky-atc-bar-minimalist')) {
       }
 
       syncWithMainProductForm() {
-        FoxTheme.pubsub.subscribe(FoxTheme.pubsub.PUB_SUB_EVENTS.variantChange, (event) => {
+        ThemeCore.pubsub.subscribe(ThemeCore.pubsub.PUB_SUB_EVENTS.variantChange, (event) => {
           const isMainProduct = event.data.sectionId === this.mainProductInfo.dataset.section;
           if (!isMainProduct) return;
           const variant = event.data.variant;
@@ -163,7 +163,7 @@ if (!customElements.get('sticky-atc-bar-minimalist')) {
           if (!variant) {
             this.updateButton(true, '', true);
           } else {
-            this.updateButton(!variant.available, FoxTheme.variantStrings.soldOut);
+            this.updateButton(!variant.available, ThemeCore.variantStrings.soldOut);
           }
         });
       }

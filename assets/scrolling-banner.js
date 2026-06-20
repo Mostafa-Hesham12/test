@@ -3,7 +3,7 @@ if ( !customElements.get('scrolling-banner') ) {
     constructor() {
       super();
 
-      const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+      const mql = window.matchMedia(ThemeCore.config.mediaQueryMobile);
       mql.onchange = this.init.bind(this);
       this.init();
     }
@@ -51,8 +51,8 @@ if ( !customElements.get('scrolling-banner') ) {
 
         // Zoom
         if (this.zoom) {
-          FoxTheme.Motion.scroll(
-            FoxTheme.Motion.animate(
+          ThemeCore.Motion.scroll(
+            ThemeCore.Motion.animate(
               card,
               {
                 clipPath: [`inset(0 round ${this.borderRadius}px)`, `inset(0 ${cardZoom}% round ${this.borderRadius}px)`],
@@ -67,8 +67,8 @@ if ( !customElements.get('scrolling-banner') ) {
             }
           );
 
-          FoxTheme.Motion.scroll(
-            FoxTheme.Motion.animate(
+          ThemeCore.Motion.scroll(
+            ThemeCore.Motion.animate(
               content,
               {
                 transform: [`scale(1)`, `scale(${100 - cardZoom * 2 }%)`],
@@ -84,8 +84,8 @@ if ( !customElements.get('scrolling-banner') ) {
           );
 
           if (product) {
-            FoxTheme.Motion.scroll(
-              FoxTheme.Motion.animate(
+            ThemeCore.Motion.scroll(
+              ThemeCore.Motion.animate(
                 product,
                 {
                   transform: [`translateY(0)`, `translateY(${itemHeight / 100 * 4}px)`],
@@ -105,8 +105,8 @@ if ( !customElements.get('scrolling-banner') ) {
         // Parallax
         if (this.parallax) {
           if ( i == 0 ) {
-            FoxTheme.Motion.scroll(
-              FoxTheme.Motion.animate(
+            ThemeCore.Motion.scroll(
+              ThemeCore.Motion.animate(
                 cardMedia,
                 { transform: [`translateY(0)`, `translateY(${-translateY}px)`], transformOrigin: ['top', 'top'] },
                 { easing: "ease-out" }
@@ -120,8 +120,8 @@ if ( !customElements.get('scrolling-banner') ) {
               }
             );
           } else {
-            FoxTheme.Motion.scroll(
-              FoxTheme.Motion.animate(
+            ThemeCore.Motion.scroll(
+              ThemeCore.Motion.animate(
                 cardMedia,
                 { transform: [`translateY(${-translateY}px)`, `translateY(0)`], transformOrigin: ['bottom', 'bottom'] },
                 { easing: "ease-out" }
@@ -136,8 +136,8 @@ if ( !customElements.get('scrolling-banner') ) {
             );
 
             if (i < this.items.length - 1 ) {
-              FoxTheme.Motion.scroll(
-                FoxTheme.Motion.animate(
+              ThemeCore.Motion.scroll(
+                ThemeCore.Motion.animate(
                   cardMediaChild,
                   { transform: [`translateY(0)`, `translateY(${-translateY}px)`], transformOrigin: ['top', 'top'] },
                   { easing: "ease-out" }

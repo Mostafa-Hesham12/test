@@ -3281,7 +3281,7 @@
                 "info": "Hiển thị biểu đồ kích thước khác nhau cho bộ sưu tập hoặc sản phẩm cụ thể."
               },
               "paragraph_2": {
-                "content": "Tạo siêu trường dữ liệu tùy chỉnh cho sản phẩm có không gian tên và khóa: \"foxtheme.size_chart\". [Thêm siêu trường](/admin/metafields/product)"
+                "content": "Tạo siêu trường dữ liệu tùy chỉnh cho sản phẩm có không gian tên và khóa: \"themedata.size_chart\". [Thêm siêu trường](/admin/metafields/product)"
               }
             }
           }
@@ -4519,7 +4519,7 @@
               "info": "Hiển thị hình ảnh hình thu nhỏ khác nhau cho bộ sưu tập cụ thể."
             },
             "paragraph": {
-              "content": "Tạo một metafield tùy chỉnh cho bộ sưu tập với không gian tên và khóa: \"foxtheme.collection-Thumbnails\". [Thêm metafield] (/admin/metafield/thu thập)"
+              "content": "Tạo một metafield tùy chỉnh cho bộ sưu tập với không gian tên và khóa: \"themedata.collection-Thumbnails\". [Thêm metafield] (/admin/metafield/thu thập)"
             }
           }
         }

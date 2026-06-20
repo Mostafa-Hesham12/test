@@ -3281,7 +3281,7 @@
                 "info": "Mostra una tabella delle taglie diversa per una collezione o un prodotto specifico."
               },
               "paragraph_2": {
-                "content": "Crea un metafield personalizzato per il prodotto con spazio dei nomi e chiave: \"foxtheme.size_chart\". [Aggiungi metacampo](/admin/metafields/prodotto)"
+                "content": "Crea un metafield personalizzato per il prodotto con spazio dei nomi e chiave: \"themedata.size_chart\". [Aggiungi metacampo](/admin/metafields/prodotto)"
               }
             }
           }
@@ -4519,7 +4519,7 @@
               "info": "Mostra diverse immagini in miniatura per una raccolta specifica."
             },
             "paragraph": {
-              "content": "Crea un metafield personalizzato per la raccolta con spazio dei nomi e chiave: \"Foxtheme.Collection-Thumbnails\". [Aggiungi metafield] (/admin/metafields/raccolta)"
+              "content": "Crea un metafield personalizzato per la raccolta con spazio dei nomi e chiave: \"themedata.Collection-Thumbnails\". [Aggiungi metafield] (/admin/metafields/raccolta)"
             }
           }
         }

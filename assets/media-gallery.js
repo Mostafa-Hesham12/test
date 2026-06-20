@@ -18,13 +18,13 @@ if (!customElements.get('media-gallery')) {
       }
 
       connectedCallback() {
-        FoxTheme.Motion.inView(this, this.init.bind(this));
+        ThemeCore.Motion.inView(this, this.init.bind(this));
       }
 
       init() {
         if (this.initialized === true) return;
 
-        this.elements = window.FoxTheme.utils.queryDomNodes(this.selectors, this);
+        this.elements = window.ThemeCore.utils.queryDomNodes(this.selectors, this);
         this.mediaLayout = this.dataset.mediaLayout;
         this.onlyImage = this.dataset.onlyImage === 'true';
         this.enableDesktopSlider = this.dataset.enableDesktopSlider === 'true';
@@ -33,7 +33,7 @@ if (!customElements.get('media-gallery')) {
         this.context = this.dataset.context;
         this.setSliderOptions();
 
-        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(ThemeCore.config.mediaQueryMobile);
         mql.onchange = this.updateMediaLayout.bind(this);
         this.updateMediaLayout();
 
@@ -119,7 +119,7 @@ if (!customElements.get('media-gallery')) {
       }
 
       updateMediaLayout() {
-        if (FoxTheme.config.mqlMobile) {
+        if (ThemeCore.config.mqlMobile) {
           this.initSlider();
         } else {
           if (this.enableDesktopSlider) {
@@ -133,7 +133,7 @@ if (!customElements.get('media-gallery')) {
       initSlider() {
         if (typeof this.sliderInstance !== 'object') {
           if ((this.enableDesktopSlider || this.enableMobileThumbnails) && this.elements.thumbnails) {
-            this.thumbsInstance = new window.FoxTheme.Carousel(this.elements.thumbnails, this.thumbsOptions);
+            this.thumbsInstance = new window.ThemeCore.Carousel(this.elements.thumbnails, this.thumbsOptions);
             this.thumbsInstance.init();
 
             this.sliderOptions.thumbs = {
@@ -142,8 +142,8 @@ if (!customElements.get('media-gallery')) {
             };
           }
 
-          this.sliderInstance = new window.FoxTheme.Carousel(this.elements.viewer, this.sliderOptions, [
-            FoxTheme.Swiper.Thumbs,
+          this.sliderInstance = new window.ThemeCore.Carousel(this.elements.viewer, this.sliderOptions, [
+            ThemeCore.Swiper.Thumbs,
           ]);
           this.sliderInstance.init();
 
@@ -163,7 +163,7 @@ if (!customElements.get('media-gallery')) {
 
       initThumbsSlider() {
         if (typeof this.thumbsInstance !== 'object') {
-          this.thumbsInstance = new window.FoxTheme.Carousel(this.selectors.thumbnails, this.thumbsOptions);
+          this.thumbsInstance = new window.ThemeCore.Carousel(this.selectors.thumbnails, this.thumbsOptions);
           this.thumbsInstance.init();
         }
       }
@@ -205,9 +205,9 @@ if (!customElements.get('media-gallery')) {
           });
         }
 
-        this.lightbox = new window.FoxTheme.PhotoSwipeLightbox({
+        this.lightbox = new window.ThemeCore.PhotoSwipeLightbox({
           dataSource: dataSource,
-          pswpModule: window.FoxTheme.PhotoSwipe,
+          pswpModule: window.ThemeCore.PhotoSwipe,
           bgOpacity: 1,
           arrowPrev: false,
           arrowNext: false,
@@ -326,7 +326,7 @@ if (!customElements.get('media-gallery')) {
 
         this.lightbox.init();
 
-        FoxTheme.utils.addEventDelegate({
+        ThemeCore.utils.addEventDelegate({
           selector: '.js-photoswipe--zoom',
           context: this,
           handler: (e, media) => {
@@ -435,7 +435,7 @@ if (!customElements.get('media-gallery')) {
           this.elements.mediaList.appendChild(media);
         });
 
-        if (!FoxTheme.config.mqlMobile && this.context !== 'quickview') {
+        if (!ThemeCore.config.mqlMobile && this.context !== 'quickview') {
           const selectedMedia = this.querySelector(`[data-media-id="${featuredMedia.id}"]`);
           if (selectedMedia) {
             window.scrollTo({ top: selectedMedia.offsetTop, behavior: 'smooth' });

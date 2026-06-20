@@ -39,16 +39,16 @@ if (!customElements.get('price-per-item')) {
         }
 
         // Update variantId if variant is switched on product page
-        this.variantIdChangedUnsubscriber = FoxTheme.pubsub.subscribe(
-          FoxTheme.pubsub.PUB_SUB_EVENTS.variantChange,
+        this.variantIdChangedUnsubscriber = ThemeCore.pubsub.subscribe(
+          ThemeCore.pubsub.PUB_SUB_EVENTS.variantChange,
           (event) => {
             this.variantId = event.data.variant.id.toString();
             this.getVolumePricingArray();
           }
         );
 
-        this.updatePricePerItemUnsubscriber = FoxTheme.pubsub.subscribe(
-          FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
+        this.updatePricePerItemUnsubscriber = ThemeCore.pubsub.subscribe(
+          ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate,
           (response) => {
             if (!response.cart) return;
 
@@ -101,7 +101,7 @@ if (!customElements.get('price-per-item')) {
             );
             pricePerItemsCurrent.forEach((pricePerItemCurrent) => {
               this.classList.contains('variant-item__price-per-item')
-                ? (pricePerItemCurrent.innerHTML = FoxTheme.quickOrderListStrings.each.replace('[money]', pair[1]))
+                ? (pricePerItemCurrent.innerHTML = ThemeCore.quickOrderListStrings.each.replace('[money]', pair[1]))
                 : (pricePerItemCurrent.innerHTML = pair[1]);
             });
             break;

@@ -1,7 +1,7 @@
 class CartDrawer extends DrawerComponent {
   constructor() {
     super();
-    window.FoxKitSections = FoxTheme.utils.getSectionId(this);
+    window.FoxKitSections = ThemeCore.utils.getSectionId(this);
     this.onCartRefreshListener = this.onCartRefresh.bind(this);
     this.getSectionToRenderListener = this.getSectionToRender.bind(this);
   }
@@ -28,14 +28,14 @@ class CartDrawer extends DrawerComponent {
   }
 
   getSectionToRender(event) {
-    event.detail.sections.push(FoxTheme.utils.getSectionId(this));
+    event.detail.sections.push(ThemeCore.utils.getSectionId(this));
   }
 
   show(focusElement = null, animate = true) {
     super.show(focusElement, animate);
 
     if (this.open && !Shopify.designMode) {
-      FoxTheme.a11y.trapFocus(this, this.focusElement);
+      ThemeCore.a11y.trapFocus(this, this.focusElement);
     }
   }
 
@@ -43,8 +43,8 @@ class CartDrawer extends DrawerComponent {
     try {
       // Fetch both HTML and JSON data in parallel for better performance
       const [htmlResponse, cartResponse] = await Promise.all([
-        fetch(`${FoxTheme.routes.root_url}?section_id=${this.sectionId}`),
-        fetch(`${FoxTheme.routes.cart_url}.js`),
+        fetch(`${ThemeCore.routes.root_url}?section_id=${this.sectionId}`),
+        fetch(`${ThemeCore.routes.cart_url}.js`),
       ]);
 
       if (!htmlResponse.ok || !cartResponse.ok) {
@@ -66,7 +66,7 @@ class CartDrawer extends DrawerComponent {
       cartData.sections = {};
       cartData.sections[this.sectionId] = sectionToRender.innerHTML;
 
-      FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, {
+      ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate, {
         cart: cartData,
       });
 
@@ -105,11 +105,11 @@ class CartItems extends HTMLElement {
     this.addEventListener('change', (event) => {
       const target = event.target;
       if (target && target.closest('quantity-input')) {
-        FoxTheme.utils.debounce(this.onChange(event), 300);
+        ThemeCore.utils.debounce(this.onChange(event), 300);
       }
     });
-    this.cartUpdateUnsubscriber = FoxTheme.pubsub.subscribe(
-      FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
+    this.cartUpdateUnsubscriber = ThemeCore.pubsub.subscribe(
+      ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate,
       this.onCartUpdate.bind(this)
     );
 
@@ -152,10 +152,10 @@ class CartItems extends HTMLElement {
       loadTemplateContent(this.cartItemQuantitys, '.cart-item__quantity-wrapper');
     };
 
-    const mqlTablet = window.matchMedia(FoxTheme.config.mediaQueryTablet);
-    FoxTheme.config.mqlTablet = mqlTablet.matches;
+    const mqlTablet = window.matchMedia(ThemeCore.config.mediaQueryTablet);
+    ThemeCore.config.mqlTablet = mqlTablet.matches;
 
-    if (FoxTheme.config.mqlTablet) {
+    if (ThemeCore.config.mqlTablet) {
       handleTabletMatch();
     } else {
       handleTabletUnmatch();
@@ -165,12 +165,12 @@ class CartItems extends HTMLElement {
       if (event.matches) {
         handleTabletMatch();
       } else {
-        FoxTheme.config.mqlTablet = false;
+        ThemeCore.config.mqlTablet = false;
         handleTabletUnmatch();
       }
     };
 
-    window.FoxKitSections = FoxTheme.utils.getSectionId(this);
+    window.FoxKitSections = ThemeCore.utils.getSectionId(this);
   }
 
   cartUpdateUnsubscriber = undefined;
@@ -196,7 +196,7 @@ class CartItems extends HTMLElement {
       this.setValidity(target, errors);
       return;
     } else {
-      window.location.href = FoxTheme.routes.cart_url;
+      window.location.href = ThemeCore.routes.cart_url;
     }
     alert(errors);
   }
@@ -231,7 +231,7 @@ class CartItems extends HTMLElement {
       return;
     }
 
-    const sectionId = FoxTheme.utils.getSectionId(this);
+    const sectionId = ThemeCore.utils.getSectionId(this);
     const sectionToRender = new DOMParser().parseFromString(event.cart.sections[sectionId], 'text/html');
 
     const cartDrawer = document.querySelector(`#CartDrawer-${sectionId}`);
@@ -285,15 +285,15 @@ class CartItems extends HTMLElement {
       document.getElementById(`CartItem-${event.line}`) || document.getElementById(`CartDrawer-Item-${event.line}`);
 
     if (lineItem && lineItem.querySelector(`[name="${event.name}"]`)) {
-      FoxTheme.a11y.trapFocus(mainCart || cartDrawer, lineItem.querySelector(`[name="${event.name}"]`));
+      ThemeCore.a11y.trapFocus(mainCart || cartDrawer, lineItem.querySelector(`[name="${event.name}"]`));
     } else if (event.cart.item_count === 0) {
       cartDrawer
-        ? FoxTheme.a11y.trapFocus(cartDrawer, cartDrawer.querySelector('a'))
-        : FoxTheme.a11y.trapFocus(document.querySelector('.cart__empty'), document.querySelector('a'));
+        ? ThemeCore.a11y.trapFocus(cartDrawer, cartDrawer.querySelector('a'))
+        : ThemeCore.a11y.trapFocus(document.querySelector('.cart__empty'), document.querySelector('a'));
     } else {
       cartDrawer
-        ? FoxTheme.a11y.trapFocus(cartDrawer, cartDrawer.querySelector('.cart-item__title'))
-        : FoxTheme.a11y.trapFocus(mainCart, mainCart.querySelector('.cart-item__title'));
+        ? ThemeCore.a11y.trapFocus(cartDrawer, cartDrawer.querySelector('.cart-item__title'))
+        : ThemeCore.a11y.trapFocus(mainCart, mainCart.querySelector('.cart-item__title'));
     }
 
     document.dispatchEvent(
@@ -319,10 +319,10 @@ class CartItems extends HTMLElement {
       sections: sectionsToBundle,
     });
 
-    fetch(`${FoxTheme.routes.cart_change_url}`, { ...FoxTheme.utils.fetchConfig(), ...{ body } })
+    fetch(`${ThemeCore.routes.cart_change_url}`, { ...ThemeCore.utils.fetchConfig(), ...{ body } })
       .then((response) => response.json())
       .then((parsedState) => {
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: parsedState, target, line, name });
+        ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: parsedState, target, line, name });
       })
       .catch((error) => {
         console.log(error);
@@ -330,7 +330,7 @@ class CartItems extends HTMLElement {
   }
 
   showLoader(line) {
-    const sectionId = FoxTheme.utils.getSectionId(this);
+    const sectionId = ThemeCore.utils.getSectionId(this);
     const loaders = document.querySelectorAll(`#Loader-${sectionId}-${line}`);
     if (loaders) {
       loaders.forEach((loader) => {
@@ -340,7 +340,7 @@ class CartItems extends HTMLElement {
   }
 
   hideLoader(line) {
-    const sectionId = FoxTheme.utils.getSectionId(this);
+    const sectionId = ThemeCore.utils.getSectionId(this);
     const loaders = document.querySelectorAll(`#Loader-${sectionId}-${line}`);
     if (loaders) {
       loaders.forEach((loader) => {
@@ -369,7 +369,7 @@ class CartNote extends HTMLElement {
   constructor() {
     super();
 
-    this.addEventListener('change', FoxTheme.utils.debounce(this.onChange.bind(this), 300));
+    this.addEventListener('change', ThemeCore.utils.debounce(this.onChange.bind(this), 300));
 
     if (this.button && this.cartNoteDetailsSummary) {
       this.button.addEventListener('click', () => {
@@ -388,7 +388,7 @@ class CartNote extends HTMLElement {
 
   onChange(event) {
     const body = JSON.stringify({ note: event.target.value });
-    fetch(`${FoxTheme.routes.cart_update_url}`, { ...FoxTheme.utils.fetchConfig(), ...{ body } });
+    fetch(`${ThemeCore.routes.cart_update_url}`, { ...ThemeCore.utils.fetchConfig(), ...{ body } });
   }
 }
 customElements.define('cart-note', CartNote);
@@ -445,7 +445,7 @@ class CartDiscount extends HTMLFormElement {
     const discounts = this.getDiscounts();
 
     if (discounts.includes(newDiscountCode)) {
-      this.displayFormErrors(FoxTheme.cartStrings.duplicateDiscountError);
+      this.displayFormErrors(ThemeCore.cartStrings.duplicateDiscountError);
       return;
     }
 
@@ -456,7 +456,7 @@ class CartDiscount extends HTMLFormElement {
       new CustomEvent('cart:grouped-sections', { bubbles: true, detail: { sections: sectionsToBundle } })
     );
 
-    const config = FoxTheme.utils.fetchConfig('javascript');
+    const config = ThemeCore.utils.fetchConfig('javascript');
     config.headers['X-Requested-With'] = 'XMLHttpRequest';
     delete config.headers['Content-Type'];
 
@@ -470,7 +470,7 @@ class CartDiscount extends HTMLFormElement {
     this.submitEl.setAttribute('aria-disabled', 'true');
     this.submitEl.classList.add('btn--loading');
 
-    fetch(FoxTheme.routes.cart_update_url, config)
+    fetch(ThemeCore.routes.cart_update_url, config)
       .then((response) => response.json())
       .then(async (parsedState) => {
         if (
@@ -479,7 +479,7 @@ class CartDiscount extends HTMLFormElement {
           })
         ) {
           this.couponEl.value = '';
-          this.displayFormErrors(FoxTheme.cartStrings.applyDiscountError);
+          this.displayFormErrors(ThemeCore.cartStrings.applyDiscountError);
           return;
         }
 
@@ -487,7 +487,7 @@ class CartDiscount extends HTMLFormElement {
           this.cartAddonDrawer.hide();
         }
 
-        const cartJson = await (await fetch(`${FoxTheme.routes.cart_url}`, { ...FoxTheme.utils.fetchConfig() })).json();
+        const cartJson = await (await fetch(`${ThemeCore.routes.cart_url}`, { ...ThemeCore.utils.fetchConfig() })).json();
         cartJson['sections'] = parsedState['sections'];
 
         this.updateCartState(cartJson);
@@ -502,7 +502,7 @@ class CartDiscount extends HTMLFormElement {
   }
 
   updateCartState = (cartJson) => {
-    FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
+    ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
   };
 
   displayFormErrors = (errorMessage = false) => {
@@ -569,7 +569,7 @@ class CartDiscountRemove extends HTMLButtonElement {
       new CustomEvent('cart:grouped-sections', { bubbles: true, detail: { sections: sectionsToBundle } })
     );
 
-    const config = FoxTheme.utils.fetchConfig('javascript');
+    const config = ThemeCore.utils.fetchConfig('javascript');
     config.headers['X-Requested-With'] = 'XMLHttpRequest';
     delete config.headers['Content-Type'];
 
@@ -580,10 +580,10 @@ class CartDiscountRemove extends HTMLButtonElement {
 
     config.body = formData;
 
-    fetch(FoxTheme.routes.cart_update_url, config)
+    fetch(ThemeCore.routes.cart_update_url, config)
       .then((response) => response.json())
       .then(async (parsedState) => {
-        const cartJson = await (await fetch(`${FoxTheme.routes.cart_url}`, { ...FoxTheme.utils.fetchConfig() })).json();
+        const cartJson = await (await fetch(`${ThemeCore.routes.cart_url}`, { ...ThemeCore.utils.fetchConfig() })).json();
         cartJson['sections'] = parsedState['sections'];
 
         this.updateCartState(cartJson);
@@ -594,7 +594,7 @@ class CartDiscountRemove extends HTMLButtonElement {
   }
 
   updateCartState = (cartJson) => {
-    FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
+    ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
   };
 }
 customElements.define('cart-discount-remove', CartDiscountRemove, { extends: 'button' });
@@ -696,11 +696,11 @@ class ShippingCalculator extends HTMLFormElement {
     const body = JSON.stringify({
       shipping_address: { zip, country, province },
     });
-    let sectionUrl = `${FoxTheme.routes.cart_url}/shipping_rates.json`;
+    let sectionUrl = `${ThemeCore.routes.cart_url}/shipping_rates.json`;
 
     sectionUrl = sectionUrl.replace('//', '/');
 
-    fetch(sectionUrl, { ...FoxTheme.utils.fetchConfig('javascript'), ...{ body } })
+    fetch(sectionUrl, { ...ThemeCore.utils.fetchConfig('javascript'), ...{ body } })
       .then((response) => response.json())
       .then((parsedState) => {
         if (parsedState.shipping_rates) {
@@ -724,7 +724,7 @@ class ShippingCalculator extends HTMLFormElement {
     });
     this.resultsElement.innerHTML = `
       <div class="alert alert--error blocks-radius grid gap-2">
-        <p class="font-body-bolder m-0">${FoxTheme.shippingCalculatorStrings.error}</p>
+        <p class="font-body-bolder m-0">${ThemeCore.shippingCalculatorStrings.error}</p>
         <ul class="list-disc grid gap-1 text-sm" role="list">${shippingRatesList.join('')}</ul>
       </div>
     `;
@@ -740,10 +740,10 @@ class ShippingCalculator extends HTMLFormElement {
       } grid gap-2 leading-tight">
         <p class="font-body-bolder m-0">${
           shippingRates.length === 0
-            ? FoxTheme.shippingCalculatorStrings.notFound
+            ? ThemeCore.shippingCalculatorStrings.notFound
             : shippingRates.length === 1
-            ? FoxTheme.shippingCalculatorStrings.oneResult
-            : FoxTheme.shippingCalculatorStrings.multipleResults
+            ? ThemeCore.shippingCalculatorStrings.oneResult
+            : ThemeCore.shippingCalculatorStrings.multipleResults
         }</p>
         ${
           shippingRatesList === ''
@@ -774,14 +774,14 @@ class CartDrawerProductsRecommendation extends HTMLElement {
     if (isSafari) {
       this.init();
     } else {
-      FoxTheme.Motion.inView(this, this.init.bind(this), { margin: '600px 0px 600px 0px' });
+      ThemeCore.Motion.inView(this, this.init.bind(this), { margin: '600px 0px 600px 0px' });
     }
   }
 
   disconnectedCallback() {
     // Cleanup
     this.destroyCarousel();
-    const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+    const mql = window.matchMedia(ThemeCore.config.mediaQueryMobile);
     mql.removeEventListener('change', this.handleCarousel.bind(this));
   }
 
@@ -806,7 +806,7 @@ class CartDrawerProductsRecommendation extends HTMLElement {
         const recommendations = sectionInnerHTML.querySelector('cart-drawer-products-recommendation');
         if (recommendations?.innerHTML.trim().length) {
           this.innerHTML = recommendations.innerHTML;
-          const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+          const mql = window.matchMedia(ThemeCore.config.mediaQueryMobile);
           mql.addEventListener('change', this.handleCarousel.bind(this));
           this.handleCarousel();
           this.dispatchEvent(new CustomEvent('recommendations:loaded'));
@@ -858,7 +858,7 @@ class CartDrawerProductsRecommendation extends HTMLElement {
           };
         }
 
-        this.carousel = new FoxTheme.Carousel(this.slideContainer, options);
+        this.carousel = new ThemeCore.Carousel(this.slideContainer, options);
 
         if (this.carousel) {
           this.carousel.init();
@@ -876,7 +876,7 @@ class CartDrawerProductsRecommendation extends HTMLElement {
     this.columns = containerEl.dataset.columns;
     this.enableSliderMobile = containerEl.dataset.enableSliderMobile === 'true';
 
-    if (FoxTheme.config.mqlMobile) {
+    if (ThemeCore.config.mqlMobile) {
       this.enableSliderMobile ? this.initCarousel() : this.destroyCarousel();
     } else {
       this.initCarousel();
@@ -939,7 +939,7 @@ class MainCart extends HTMLElement {
   }
 
   getSectionToRender(event) {
-    event.detail.sections.push(FoxTheme.utils.getSectionId(this));
+    event.detail.sections.push(ThemeCore.utils.getSectionId(this));
   }
 }
 customElements.define('main-cart', MainCart);
@@ -952,7 +952,7 @@ class FreeShippingGoal extends HTMLElement {
     };
     this.goal = Number(this.dataset.minimumAmount) * Number(window.Shopify.currency.rate || 1) || 0;
     this.progress = this.querySelector('progress-bar');
-    this.money_format = window.FoxTheme.settings.moneyFormat;
+    this.money_format = window.ThemeCore.settings.moneyFormat;
   }
 
   connectedCallback() {
@@ -984,7 +984,7 @@ class FreeShippingGoal extends HTMLElement {
       this.progress.dataset.max = this.goal;
     } else {
       let spend = (this.goal - this.cartTotal) * 100;
-      this.querySelector(this.selectors.leftToSpend).innerHTML = FoxTheme.Currency.formatMoney(
+      this.querySelector(this.selectors.leftToSpend).innerHTML = ThemeCore.Currency.formatMoney(
         spend,
         this.money_format
       );
@@ -1001,12 +1001,12 @@ window.FoxKitAddToCart = async (payload) => {
   if (!payload?.properties?.['_FoxKit offer']) return;
 
   const cartJson = await (
-    await fetch(`${FoxTheme.routes.cart_url}`, {
-      ...FoxTheme.utils.fetchConfig(),
+    await fetch(`${ThemeCore.routes.cart_url}`, {
+      ...ThemeCore.utils.fetchConfig(),
     })
   ).json();
   cartJson['sections'] = payload['sections'];
-  FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
+  ThemeCore.pubsub.publish(ThemeCore.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
 
   document.dispatchEvent(
     new CustomEvent('product-ajax:added', {
