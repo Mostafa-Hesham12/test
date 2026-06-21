@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -18,7 +27,7 @@
             "highlight_text_color": "",
             "heading_size": "text-base",
             "heading_font": "heading",
-            "text": "<p>Mon-Sat, 9am-6pm EST.</p>",
+            "text": "<p>sat-thur, 10am-11pm .</p>",
             "text_size": "text-base",
             "button_label": "",
             "button_link": "",
@@ -29,17 +38,17 @@
         "column_xNjRtG": {
           "type": "column",
           "settings": {
-            "icon": "phone",
+            "icon": "smiley",
             "max_width": 28,
             "max_width_mb": 28,
-            "title": "Call Us",
+            "title": "contact us",
             "highlight_style": "none",
             "highlight_font_style": "italic",
             "highlight_style_color": "",
             "highlight_text_color": "",
             "heading_size": "text-base",
             "heading_font": "heading",
-            "text": "<p>+1 888-234-1234 (tool-free)</p>",
+            "text": "<p>01515196477</p>",
             "text_size": "text-base",
             "button_label": "",
             "button_link": "",
@@ -60,7 +69,7 @@
             "highlight_text_color": "",
             "heading_size": "text-base",
             "heading_font": "heading",
-            "text": "<p><a href=\"mailto:touch@garacestore.com\" title=\"mailto:touch@garacestore.com\">touch@garacestore.com</a></p>",
+            "text": "<p><a href=\"mailto:contact@koreanbeautys.com\" title=\"mailto:contact@koreanbeautys.com\">contact@koreanbeautys.com</a></p>",
             "text_size": "text-base",
             "button_label": "",
             "button_link": "",
@@ -70,6 +79,7 @@
         },
         "column_ngN6XL": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "icon": "map-pin",
             "max_width": 32,
@@ -102,6 +112,7 @@
       "settings": {
         "container": "fixed",
         "color_scheme": "",
+        "header_layout": "vertical",
         "section_header_alignment": "left",
         "section_header_alignment_mobile": "inherit",
         "subheading": "",
@@ -117,6 +128,7 @@
         "button_link": "",
         "button_style": "btn--underline",
         "button_icon": "none",
+        "enable_sticky": false,
         "card_color_scheme": "",
         "content_alignment": "left",
         "image_position": "left",
@@ -157,26 +169,7 @@
             "block_width": 15,
             "heading": "Company",
             "heading_size": "h6",
-            "open_default": false,
-            "show_divider": false
-          }
-        },
-        "menu_4eCrBB": {
-          "type": "menu",
-          "settings": {
-            "block_width": 15,
-            "heading": "Collection",
-            "heading_size": "h6",
-            "open_default": false,
-            "show_divider": false
-          }
-        },
-        "menu_6cjHfA": {
-          "type": "menu",
-          "settings": {
-            "block_width": 15,
-            "heading": "Shop",
-            "heading_size": "h6",
+            "menu": "footer",
             "open_default": false,
             "show_divider": false
           }
@@ -184,9 +177,7 @@
       },
       "block_order": [
         "newsletter_3qCrWc",
-        "menu_DEKGYP",
-        "menu_4eCrBB",
-        "menu_6cjHfA"
+        "menu_DEKGYP"
       ],
       "custom_css": [],
       "settings": {
@@ -194,10 +185,13 @@
         "color_scheme": "scheme-1",
         "enable_follow_on_shop": true,
         "show_social": true,
+        "social_button_style": "btn--icon",
         "enable_country_selector": true,
         "enable_language_selector": false,
         "payment_enable": true,
-        "footer_bottom_menu": "footer-bottom",
+        "footer_layout": "standard",
+        "footer_bottom_menu": "",
+        "show_sperator_line": false,
         "show_section_divider": true,
         "divider_width": "fixed",
         "padding_top": 40,
@@ -222,13 +216,15 @@
         "products_eYYkE8": {
           "type": "products",
           "settings": {
-            "text": "Products"
+            "text": "Products",
+            "collection": ""
           }
         },
         "link_mJ6QMc": {
           "type": "link",
           "settings": {
             "text": "About",
+            "url": "",
             "icon": "map-pin"
           }
         }

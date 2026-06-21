@@ -490,78 +490,41 @@
         "featured_collection_d8XGnb": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
-            "title": "Press Tables"
+            "collection": "moisturizers-1",
+            "image": "shopify://shop_images/korean-moisturizers.png",
+            "title": "Moisturizers"
           }
         },
         "featured_collection_FzRWDn": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
-            "title": "Lighting"
+            "collection": "serums",
+            "image": "shopify://shop_images/korean-serums.png",
+            "title": "Serums"
           }
         },
         "featured_collection_at4gCr": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
-            "title": "Spoke Sofa"
+            "collection": "toners",
+            "image": "shopify://shop_images/korean-toners.png",
+            "title": "Toners"
           }
         },
         "featured_collection_F69pQy": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
-            "title": "Storage"
+            "collection": "eye-care-1",
+            "image": "shopify://shop_images/korean-eye-care.png",
+            "title": "Eye care"
           }
         },
         "featured_collection_JV9tDT": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
-            "title": "Turn Chairs"
-          }
-        },
-        "featured_collection_WLrpbE": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "title": "Longe Chairs"
-          }
-        },
-        "featured_collection_qdrbEr": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "title": "Curve Coat"
-          }
-        },
-        "featured_collection_Pa8kFP": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "title": "Cross Tables"
-          }
-        },
-        "featured_collection_UTWiiY": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "title": "Bend Chairs"
-          }
-        },
-        "featured_collection_rkynNN": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "title": "Bar Chairs"
-          }
-        },
-        "featured_collection_8t9tJr": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "title": "Accessories"
+            "collection": "sunscreens",
+            "image": "shopify://shop_images/korean-sun-care.png",
+            "title": "Sun Care"
           }
         }
       },
@@ -571,13 +534,7 @@
         "featured_collection_FzRWDn",
         "featured_collection_at4gCr",
         "featured_collection_F69pQy",
-        "featured_collection_JV9tDT",
-        "featured_collection_WLrpbE",
-        "featured_collection_qdrbEr",
-        "featured_collection_Pa8kFP",
-        "featured_collection_UTWiiY",
-        "featured_collection_rkynNN",
-        "featured_collection_8t9tJr"
+        "featured_collection_JV9tDT"
       ],
       "custom_css": [],
       "settings": {
@@ -662,6 +619,7 @@
         "collection_qxfNFe",
         "collection_j3wCpz"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (min-width: 1280px) {collection-tabs {padding-inline: 5rem; }}"
       ],
@@ -679,66 +637,6 @@
         "collection_heading_size": "h1",
         "padding_top": 60,
         "padding_bottom": 60,
-        "show_section_divider": false,
-        "divider_width": "fixed"
-      }
-    },
-    "favorite_products_6Tg9Pn": {
-      "type": "favorite-products",
-      "blocks": {
-        "product_XrLWzM": {
-          "type": "product",
-          "settings": {
-            "color_scheme": "scheme-7",
-            "product": "",
-            "text": "<p>“All products are authentic and imported from the country of origin.”</p>",
-            "text_size": "h2",
-            "author": "Jenny Wilson",
-            "bio": "New Mexico"
-          }
-        },
-        "product_wByADN": {
-          "type": "product",
-          "settings": {
-            "color_scheme": "scheme-4",
-            "product": "",
-            "text": "<p>“Each piece is authentic and carefully sourced from its place of origin.”</p>",
-            "text_size": "h2",
-            "author": "Julie Mathers",
-            "bio": "Australia"
-          }
-        },
-        "product_8UUtBe": {
-          "type": "product",
-          "settings": {
-            "color_scheme": "scheme-6",
-            "product": "",
-            "text": "<p>“Crafted with care using local materials, each piece reflects the character of its origin.”</p>",
-            "text_size": "h2",
-            "author": "John Doe",
-            "bio": "New York"
-          }
-        }
-      },
-      "block_order": [
-        "product_XrLWzM",
-        "product_wByADN",
-        "product_8UUtBe"
-      ],
-      "custom_css": [
-        ".testimonial__content {max-width: 46rem;}"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "layout": "content-right",
-        "heading": "Our Favorite Products",
-        "highlight_style": "none",
-        "highlight_font_style": "italic",
-        "highlight_style_color": "",
-        "highlight_text_color": "",
-        "slide_height": "small",
-        "pcard_style": "boxed",
-        "pcard_image_ratio": "",
         "show_section_divider": false,
         "divider_width": "fixed"
       }
@@ -824,6 +722,7 @@
         "lookbook_card_8BaXc6",
         "lookbook_card_DtRhzC"
       ],
+      "disabled": true,
       "settings": {
         "container": "fixed",
         "color_scheme": "",
@@ -941,6 +840,7 @@
         "image_card_mL7WWJ",
         "image_card_Vj69GM"
       ],
+      "disabled": true,
       "settings": {
         "container": "fixed",
         "color_scheme": "",
@@ -1062,6 +962,7 @@
         "button_item_FrFqff",
         "button_item_mKVJW4"
       ],
+      "disabled": true,
       "settings": {
         "container": "fixed",
         "color_scheme": "",
@@ -1091,7 +992,7 @@
         "collection_tqdqYc": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "bundles",
             "title": "",
             "show_banner": false,
             "color_scheme": "",
@@ -1132,7 +1033,7 @@
         "highlight_style_color": "",
         "highlight_text_color": "",
         "heading_size": "h2",
-        "description": "<p>Traditional divides between personal and professional space.</p>",
+        "description": "",
         "text_size": "text-base",
         "button_label": "Shop All Products",
         "button_link": "",
@@ -1246,6 +1147,7 @@
         "icon_with_text_pcaqTj",
         "button_aegkDr"
       ],
+      "disabled": true,
       "custom_css": [
         ".image-with-text__content {max-width: 45rem; --text-margin-top: 2rem;}",
         "@media (min-width: 1280px) {.image-with-text__media {padding-inline-start: 5rem; }}"
@@ -1262,88 +1164,6 @@
         "divider_width": "fixed",
         "padding_top": 60,
         "padding_bottom": 60
-      }
-    },
-    "testimonials_mLThk7": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial_EtxFFg": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "none",
-            "heading": "Testimonials",
-            "text": "<p>“The products are artful, fun, have a story just as unique as the designers who made it.”</p>",
-            "author": "Jenny Wilson",
-            "bio": "New Mexico",
-            "product": ""
-          }
-        },
-        "testimonial_QPUyLy": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "none",
-            "heading": "Testimonials",
-            "text": "<p>“The best coat I have found.Great colors and materials for life style.”</p>",
-            "author": "Samantha Taylor",
-            "bio": "Portland, Oregon",
-            "product": ""
-          }
-        },
-        "testimonial_iTzQDb": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "none",
-            "heading": "Testimonials",
-            "text": "<p>“Every item feels like a masterpiece, blending creativity and authenticity beautifully.”</p>",
-            "author": "David Martinez",
-            "bio": "Austin, Texas",
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_EtxFFg",
-        "testimonial_QPUyLy",
-        "testimonial_iTzQDb"
-      ],
-      "custom_css": [
-        ".testimonial__inner {max-width: 64rem; margin-left: auto; margin-right: auto;}"
-      ],
-      "settings": {
-        "container": "full",
-        "color_scheme": "scheme-3",
-        "section_header_alignment": "center",
-        "section_header_alignment_mobile": "inherit",
-        "subheading": "",
-        "heading": "What Clients Talk About Us",
-        "highlight_style": "none",
-        "highlight_font_style": "italic",
-        "highlight_style_color": "",
-        "highlight_text_color": "",
-        "heading_size": "h6",
-        "description": "",
-        "text_size": "text-base",
-        "layout": "focused",
-        "card_color_scheme": "scheme-3",
-        "card_content_color_scheme": "",
-        "card_image_ratio": "adapt",
-        "card_heading_size": "h4",
-        "card_text_size": "h2",
-        "author_info_layout": "vertical",
-        "card_trigger_behavior": "click",
-        "show_image": false,
-        "show_author_image": false,
-        "columns_desktop": 2,
-        "column_gap": "medium",
-        "row_gap": "medium",
-        "enable_slider": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "show_progress_bar": true,
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "show_section_divider": false,
-        "divider_width": "fixed"
       }
     },
     "slider_with_multicolumn_aJwbrc": {
@@ -1468,6 +1288,7 @@
         "image_card_7KqpyL",
         "image_card_ag7Eb3"
       ],
+      "disabled": true,
       "custom_css": [
         ".slide__text {max-width: 37rem; --text-margin-top: 2rem;}"
       ],
@@ -1559,6 +1380,7 @@
         "text_ETiRz6",
         "image_ypAQyf"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "direction": "left",
@@ -1568,290 +1390,6 @@
         "show_section_divider": false,
         "padding_top": 20,
         "padding_bottom": 20
-      }
-    },
-    "buttons_with_icon_c8CzHV": {
-      "type": "buttons-with-icon",
-      "blocks": {
-        "button_item_TXLwjF": {
-          "type": "button_item",
-          "settings": {
-            "button_label": "All eco-certified",
-            "button_link": "",
-            "icon": "check"
-          }
-        },
-        "button_item_tpCdia": {
-          "type": "button_item",
-          "settings": {
-            "button_label": "Product protection",
-            "button_link": "",
-            "icon": "check"
-          }
-        },
-        "button_item_wKgxpM": {
-          "type": "button_item",
-          "settings": {
-            "button_label": "Make it yours",
-            "button_link": "",
-            "icon": "check"
-          }
-        },
-        "button_item_Ngk44m": {
-          "type": "button_item",
-          "settings": {
-            "button_label": "Unique tailored",
-            "button_link": "",
-            "icon": "check"
-          }
-        }
-      },
-      "block_order": [
-        "button_item_TXLwjF",
-        "button_item_tpCdia",
-        "button_item_wKgxpM",
-        "button_item_Ngk44m"
-      ],
-      "custom_css": [
-        ".section__header {--header-padding-bottom: 2.4rem;}",
-        ".section__heading {max-width: 45rem;}"
-      ],
-      "settings": {
-        "container": "fixed",
-        "color_scheme": "scheme-9",
-        "section_header_alignment": "center",
-        "section_header_alignment_mobile": "inherit",
-        "subheading": "",
-        "heading": "This approach resulted in the beautiful structure",
-        "highlight_style": "none",
-        "highlight_font_style": "italic",
-        "highlight_style_color": "",
-        "highlight_text_color": "",
-        "heading_size": "h2",
-        "item_alignment": "center",
-        "item_button_style": "btn--primary",
-        "item_button_font": "button",
-        "enable_slider": true,
-        "swipe_on_mobile": true,
-        "show_section_divider": true,
-        "divider_width": "full",
-        "padding_top": 60,
-        "padding_bottom": 0
-      }
-    },
-    "multicolumn_Ff4Wbj": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_YWTLnF": {
-          "type": "column",
-          "settings": {
-            "title": "Comfortable",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h4",
-            "text": "<p>Bow Chair is available in Natural or Black-stained Oak with full EU Ecolabel certification. </p>",
-            "text_size": "text-base",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "btn--underline",
-            "button_icon": "none"
-          }
-        },
-        "column_AwmLJY": {
-          "type": "column",
-          "settings": {
-            "title": "Price transparency",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h4",
-            "text": "<p>Fair pricing ensures you know exactly what you’re paying for, with no hidden costs or markups.</p>",
-            "text_size": "text-base",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "btn--underline",
-            "button_icon": "none"
-          }
-        },
-        "column_j3Pdbn": {
-          "type": "column",
-          "settings": {
-            "title": "All eco-certified",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h4",
-            "text": "<p>All products consider a more holistic environmental impact and are designed for a longer lifetime in a way.</p>",
-            "text_size": "text-base",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "btn--underline",
-            "button_icon": "none"
-          }
-        },
-        "column_MikwAx": {
-          "type": "column",
-          "settings": {
-            "title": "Sustainability",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h4",
-            "text": "<p>Committed to sustainable practices, ethical sourcing, and reducing environmental impact.</p>",
-            "text_size": "text-base",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "btn--underline",
-            "button_icon": "none"
-          }
-        }
-      },
-      "block_order": [
-        "column_YWTLnF",
-        "column_AwmLJY",
-        "column_j3Pdbn",
-        "column_MikwAx"
-      ],
-      "settings": {
-        "container": "fixed",
-        "color_scheme": "",
-        "section_header_alignment": "left",
-        "section_header_alignment_mobile": "inherit",
-        "subheading": "",
-        "heading": "",
-        "highlight_style": "none",
-        "highlight_font_style": "italic",
-        "highlight_style_color": "",
-        "highlight_text_color": "",
-        "heading_size": "h1",
-        "description": "",
-        "text_size": "text-base",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "btn--underline",
-        "button_icon": "none",
-        "content_alignment": "left",
-        "show_col_count": false,
-        "show_image": true,
-        "columns_desktop": 4,
-        "column_gap": "medium",
-        "row_gap": "inherit",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "show_section_divider": false,
-        "divider_width": "fixed",
-        "padding_top": 40,
-        "padding_bottom": 60
-      }
-    },
-    "scrolling_gallery_image_wJyLJr": {
-      "type": "scrolling-gallery-image",
-      "blocks": {
-        "gallery_zMzedj": {
-          "type": "gallery",
-          "settings": {
-            "color_scheme": "",
-            "image_link": "",
-            "social_media": "instagram",
-            "heading": "thisisaaccount"
-          }
-        },
-        "gallery_PALf8b": {
-          "type": "gallery",
-          "settings": {
-            "color_scheme": "",
-            "image_link": "",
-            "social_media": "instagram",
-            "heading": "furniturelover"
-          }
-        },
-        "gallery_t8EfbE": {
-          "type": "gallery",
-          "settings": {
-            "color_scheme": "",
-            "image_link": "",
-            "social_media": "instagram",
-            "heading": "thisisaaccount"
-          }
-        },
-        "gallery_HjXBVX": {
-          "type": "gallery",
-          "settings": {
-            "color_scheme": "",
-            "image_link": "",
-            "social_media": "instagram",
-            "heading": "baddyjam"
-          }
-        },
-        "gallery_Hdq7y7": {
-          "type": "gallery",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "image_link": "",
-            "social_media": "instagram",
-            "heading": "liamwealthy"
-          }
-        },
-        "gallery_xaTeHP": {
-          "type": "gallery",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "image_link": "",
-            "social_media": "instagram",
-            "heading": "baddyjam"
-          }
-        },
-        "gallery_gf99Q7": {
-          "type": "gallery",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "image_link": "",
-            "social_media": "instagram",
-            "heading": "liamwealthy"
-          }
-        }
-      },
-      "block_order": [
-        "gallery_zMzedj",
-        "gallery_PALf8b",
-        "gallery_t8EfbE",
-        "gallery_HjXBVX",
-        "gallery_Hdq7y7",
-        "gallery_xaTeHP",
-        "gallery_gf99Q7"
-      ],
-      "custom_css": [],
-      "settings": {
-        "color_scheme": "scheme-2",
-        "section_header_alignment": "center",
-        "section_header_alignment_mobile": "inherit",
-        "subheading": "",
-        "heading": "We’re on Gram",
-        "highlight_style": "none",
-        "highlight_font_style": "italic",
-        "highlight_style_color": "",
-        "highlight_text_color": "",
-        "heading_size": "h1",
-        "description": "",
-        "text_size": "text-base",
-        "show_button_on_top": false,
-        "button_label": "@garage_store",
-        "button_link": "",
-        "button_style": "btn--underline",
-        "button_icon": "none",
-        "direction": "left",
-        "speed": 0.1,
-        "pause_on_hover": true,
-        "column_gap": "medium",
-        "show_section_divider": false,
-        "divider_width": "fixed",
-        "padding_top": 60,
-        "padding_bottom": 60
       }
     }
   },
@@ -1863,17 +1401,12 @@
     "custom_content_HPgFTK",
     "collection_list_Azm9te",
     "collection_tabs_VexkkR",
-    "favorite_products_6Tg9Pn",
     "lookbook_slider_9zCdQJ",
     "custom_content_JxRy7x",
     "buttons_with_icon_7zH9F3",
     "featured_collection_RWUfH9",
     "image_with_text_aXhRxw",
-    "testimonials_mLThk7",
     "slider_with_multicolumn_aJwbrc",
-    "scrolling_promotion_9Hng8m",
-    "buttons_with_icon_c8CzHV",
-    "multicolumn_Ff4Wbj",
-    "scrolling_gallery_image_wJyLJr"
+    "scrolling_promotion_9Hng8m"
   ]
 }
