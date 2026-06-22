@@ -405,6 +405,7 @@
         "hotspot_UXwwVW",
         "hotspot_fHtLKP"
       ],
+      "disabled": true,
       "settings": {
         "container": "fixed",
         "color_scheme": "",
