@@ -173,18 +173,20 @@
         "image": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/make-it-look-normal.png",
             "image_position": "left"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Sign up to get 10% OFF <br>your first order",
+            "heading": "Sign up to get all new offers",
             "text_size": "h2"
           }
         },
         "text": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>Sexy and sustainable goodies? Sign me up</p>",
             "text_size": "text-base"
@@ -193,7 +195,7 @@
         "form": {
           "type": "form",
           "settings": {
-            "button_label": "Get 10% OFF",
+            "button_label": "sign up",
             "button_icon": "none"
           }
         },
@@ -309,6 +311,7 @@
         "item_dQn9tr",
         "item_xfLhK8"
       ],
+      "disabled": true,
       "custom_css": [
         ".spotlight__item-content {max-width: 22rem;}"
       ],

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "breadcrumbs": {
@@ -29,6 +38,10 @@
             "heading_size": "h1"
           }
         },
+        "judge_me_reviews_preview_badge_TEpikA": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "meta": {
           "type": "meta",
           "settings": {
@@ -52,7 +65,7 @@
             "icon_1": "check",
             "heading_1": "Modern",
             "icon_2": "check",
-            "heading_2": "Eco-certified",
+            "heading_2": "Original",
             "icon_3": "check",
             "heading_3": "Warranty"
           }
@@ -62,12 +75,8 @@
           "settings": {
             "text_style": "body",
             "inventory_threshold": 10,
-            "show_inventory_quantity": true
+            "show_inventory_quantity": false
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -79,6 +88,12 @@
             "button_style": "normal",
             "size_title": "Size",
             "size_chart_from_page": ""
+          }
+        },
+        "custom_liquid_jJ8G33": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<a href=\"https://www.koreanbeautys.com/blogs/%D8%B4%D8%B1%D9%88%D8%AD%D8%A7%D8%AA-korean-beautys/how-to-check-original-korean-skincare\" style=\"\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    margin-top: 12px;\n    padding: 12px 20px;\n    background: linear-gradient(135deg, #5c1a42, #8b2d5e);\n    border-radius: 12px;\n    text-decoration: none;\n    transition: all 0.3s;\n    border: 1px solid rgba(244, 167, 195, 0.25);\n\">\n    <span style=\"font-size: 16px;\">✅</span>\n    <span style=\"\n        color: #ffffff;\n        font-size: 13px;\n        font-weight: 700;\n        font-family: 'Tajawal', sans-serif;\n    \">منتجات أصلية 100% — إزاي تتأكد؟</span>\n    <span style=\"color: #f4a7c3; font-size: 14px;\">←</span>\n</a>"
           }
         },
         "buy_buttons": {
@@ -95,20 +110,26 @@
             "layout": "vertical",
             "title_font": "body",
             "title_size": "text-base",
-            "icon_1": "car-simple",
-            "heading_1": "Free International Shipping over $500",
+            "icon_1": "truck",
+            "heading_1": "Free shipping over 3000",
             "icon_2": "arrow-up-left",
-            "heading_2": "Free Returns Within 30 days",
+            "heading_2": "Free Returns Within 14 days",
             "icon_3": "star-four",
             "heading_3": ""
           }
         },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
         "pickup_availability": {
           "type": "pickup_availability",
+          "disabled": true,
           "settings": {}
         },
         "promotion_alert_L7ipQp": {
           "type": "promotion_alert",
+          "disabled": true,
           "settings": {
             "text_color": "#049b6e",
             "icon": "lightning",
@@ -143,30 +164,6 @@
             "show_below_product_media": true
           }
         },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Product Details",
-            "heading_size": "h4",
-            "icon": "none",
-            "content": "<p>Designed with care and crafted from premium materials, our products combine durability, comfort, and timeless style. Each piece is thoughtfully made to enhance your living space, offering a perfect balance of functionality and elegance that complements any home and suits your unique lifestyle.</p>",
-            "page": "",
-            "default_open": false,
-            "show_below_product_media": true
-          }
-        },
-        "collapsible-row-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Materials & Care",
-            "heading_size": "h4",
-            "icon": "none",
-            "content": "<p>Carefully crafted from durable, sustainable materials, each piece is designed for long-lasting use and timeless style. For proper care, wipe gently with a soft, damp cloth to remove dust and dirt. Avoid using harsh chemicals, abrasive cleaners, or excessive moisture to protect the finish and maintain its pristine look.</p>",
-            "page": "",
-            "default_open": false,
-            "show_below_product_media": true
-          }
-        },
         "payment_info": {
           "type": "payment_info",
           "settings": {
@@ -195,6 +192,7 @@
         },
         "sticky_atc_bar_7HgNgP": {
           "type": "sticky-atc-bar",
+          "disabled": true,
           "settings": {
             "visibility": "all",
             "style": "minimalist",
@@ -203,29 +201,39 @@
             "show_dynamic_checkout_buttons": false,
             "show_quantity": true
           }
+        },
+        "judge_me_reviews_review_widget_pGhLXm": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
         }
       },
       "block_order": [
         "badges",
         "title",
+        "judge_me_reviews_preview_badge_TEpikA",
         "meta",
         "price",
         "icon_with_text",
         "inventory",
-        "description",
         "variant_picker",
+        "custom_liquid_jJ8G33",
         "buy_buttons",
         "icon_with_text_UAYgQU",
+        "description",
         "pickup_availability",
         "promotion_alert_L7ipQp",
         "complementary",
         "collapsible-row-1",
-        "collapsible-row-2",
-        "collapsible-row-3",
         "payment_info",
         "divider_pPz3Kw",
         "social_sharing",
-        "sticky_atc_bar_7HgNgP"
+        "sticky_atc_bar_7HgNgP",
+        "judge_me_reviews_review_widget_pGhLXm"
       ],
       "custom_css": [
         "@media (min-width: 1280px) {.product {padding-inline: 5rem; }}"
@@ -242,162 +250,6 @@
         "enable_video_looping": true,
         "padding_top": 0,
         "padding_bottom": 60
-      }
-    },
-    "testimonials_8JHr3L": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial_dhi3Xf": {
-          "type": "testimonial",
-          "settings": {
-            "heading": "Testimonials",
-            "text": "<p>“I am extremely happy about both design and comfort. I am a furniture designer myself, and your product makes me happy.”</p>",
-            "author": "Stephanie L.",
-            "bio": "Verified Buyer"
-          }
-        },
-        "testimonial_D7Mq7i": {
-          "type": "testimonial",
-          "settings": {
-            "heading": "Testimonials",
-            "text": "<p>The story behind, sustainable production, and the risk-free feeling with the free return policy make this a great choice.</p>",
-            "author": "Rachel M.",
-            "bio": "Verified Buyer"
-          }
-        },
-        "testimonial_33tAjm": {
-          "type": "testimonial",
-          "settings": {
-            "heading": "Testimonials",
-            "text": "<p>“High-quality furniture, crafted with passion and care, fantastic in appearance and use, reasonably priced, and excellent custome.”</p>",
-            "author": "Emily J.",
-            "bio": "Verified Buyer"
-          }
-        },
-        "testimonial_dDRMwy": {
-          "type": "testimonial",
-          "settings": {
-            "heading": "Testimonials",
-            "text": "<p>The craftsmanship, eco-friendly materials, and excellent customer service truly make this product an outstanding standout.</p>",
-            "author": "Sarah T.",
-            "bio": "Verified Buyer"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_dhi3Xf",
-        "testimonial_D7Mq7i",
-        "testimonial_33tAjm",
-        "testimonial_dDRMwy"
-      ],
-      "settings": {
-        "container": "fixed",
-        "color_scheme": "scheme-3",
-        "section_header_alignment": "left",
-        "section_header_alignment_mobile": "inherit",
-        "subheading": "",
-        "heading": "Clients Love Us",
-        "highlight_style": "none",
-        "highlight_font_style": "italic",
-        "highlight_style_color": "",
-        "highlight_text_color": "",
-        "heading_size": "h2",
-        "description": "",
-        "text_size": "text-base",
-        "layout": "standard",
-        "card_color_scheme": "",
-        "card_content_color_scheme": "",
-        "card_image_ratio": "adapt",
-        "card_heading_size": "h4",
-        "card_text_size": "text-base",
-        "author_info_layout": "vertical",
-        "card_trigger_behavior": "click",
-        "show_image": true,
-        "show_author_image": true,
-        "columns_desktop": 3,
-        "column_gap": "2xs",
-        "row_gap": "inherit",
-        "enable_slider": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "show_progress_bar": true,
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "show_section_divider": false,
-        "divider_width": "fixed"
-      }
-    },
-    "tabs_content_8rnbnj": {
-      "type": "tabs-content",
-      "blocks": {
-        "image_with_text_iLTdLe": {
-          "type": "image_with_text",
-          "settings": {
-            "navigation_title": "Specifications",
-            "desktop_image_position": "left",
-            "image_aspect_ratio": "adapt",
-            "heading": "Inspired to create a chair where the back and arms are moulded from a single piece of plywood",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h3",
-            "subheading": "",
-            "description": "<p>Inspired to create a chair where the back and arms are moulded from a single piece of plywood, Hecht and Colin describe employing a process similar to that a tailor might use to cut a pattern in fabric. This approach resulted in the beautiful structure wherein the moulded back and arms component is supported by a simple A-frame wood dowel construction. One of the benefits of this design is an increase in comfort due to natural movement in the plywood back.</p>",
-            "description_size": "text-base",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "btn--primary",
-            "button_icon": "none"
-          }
-        },
-        "image_with_text_LQUEir": {
-          "type": "image_with_text",
-          "settings": {
-            "navigation_title": "About Brand",
-            "desktop_image_position": "left",
-            "image_aspect_ratio": "adapt",
-            "heading": "Danish Design With Global Outlook",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h3",
-            "subheading": "",
-            "description": "<p>The good design concepts at the heart of Danish design are functionality, beauty and the needs of the many. This is a strong tradition. And when a tradition is strong enough, it leaves room for innovation that allows us to always move forward.</p>",
-            "description_size": "text-base",
-            "button_label": "Shop More Products",
-            "button_style": "btn--primary",
-            "button_icon": "none"
-          }
-        },
-        "tab_xGBJeM": {
-          "type": "tab",
-          "settings": {
-            "navigation_title": "Shipping & Return",
-            "content": "",
-            "custom_liquid": "",
-            "page": "shipping-return"
-          }
-        }
-      },
-      "block_order": [
-        "image_with_text_iLTdLe",
-        "image_with_text_LQUEir",
-        "tab_xGBJeM"
-      ],
-      "custom_css": [
-        "@media (min-width: 1024px) {.tabs__panel {padding-inline: 5rem; }}"
-      ],
-      "settings": {
-        "container": "fixed",
-        "color_scheme": "",
-        "navigation_style": "headings",
-        "navigation_alignment": "start",
-        "padding_top": 60,
-        "padding_bottom": 0,
-        "show_section_divider": false,
-        "divider_width": "fixed"
       }
     },
     "multicolumn_Mxt4d3": {
@@ -478,6 +330,7 @@
         "column_6mMR7m",
         "column_Lix6qc"
       ],
+      "disabled": true,
       "settings": {
         "container": "fixed",
         "color_scheme": "",
@@ -590,6 +443,7 @@
         },
         "description_ym9hXF": {
           "type": "description",
+          "disabled": true,
           "settings": {
             "text_line_limit": "3-lines",
             "show_view_more_button": false
@@ -671,6 +525,7 @@
           "type": "button",
           "settings": {
             "button_label": "Explore More Details",
+            "button_link": "",
             "button_style": "btn--primary",
             "button_icon": "none"
           }
@@ -682,6 +537,7 @@
         "text_nF69XB",
         "button_fQzFTq"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (min-width: 1024px) {.image-with-text__wrapper {padding-inline: 5rem; } .image-with-text__content {--text-margin-top: 2rem; }}",
         ".image-with-text__content {max-width: 52rem;}"
@@ -778,6 +634,7 @@
         "lookbook_card_hotspot_p44hjW",
         "lookbook_card_hotspot_3GJzqy"
       ],
+      "disabled": true,
       "custom_css": [
         ".swipe-mobile {--column-width-mobile: 82vw;}"
       ],
@@ -853,9 +710,10 @@
             "highlight_text_color": "",
             "heading_size": "h4",
             "heading_font": "heading",
-            "text": "<p>All orders over $500 are delivered to your doorstep at no extra charge.</p>",
+            "text": "<p>All orders over 3000EGP are delivered to your doorstep at no extra charge.</p>",
             "text_size": "text-base",
             "button_label": "Shipping Details",
+            "button_link": "shopify://pages/delivery-and-return-policy",
             "button_style": "btn--plain",
             "button_icon": "caret-right"
           }
@@ -866,16 +724,17 @@
             "icon": "chat",
             "max_width": 60,
             "max_width_mb": 60,
-            "title": "30-Days Free Returns",
+            "title": "14-Days Free Returns",
             "highlight_style": "none",
             "highlight_font_style": "italic",
             "highlight_style_color": "",
             "highlight_text_color": "",
             "heading_size": "h4",
             "heading_font": "heading",
-            "text": "<p>Enjoy the freedom of stress-free shopping with our hassle-free and return policy.</p>",
+            "text": "<p>we ensure that all of our products are 100% original if it is not you can return them</p>",
             "text_size": "text-base",
             "button_label": "Return Policy",
+            "button_link": "shopify://policies/refund-policy",
             "button_style": "btn--plain",
             "button_icon": "caret-right"
           }
@@ -896,6 +755,7 @@
             "text": "<p>Shop with confidence knowing your payments are secure and your information</p>",
             "text_size": "text-base",
             "button_label": "More About Payment",
+            "button_link": "",
             "button_style": "btn--plain",
             "button_icon": "caret-right"
           }
@@ -952,6 +812,7 @@
           "type": "gallery",
           "settings": {
             "color_scheme": "",
+            "image_link": "",
             "social_media": "instagram",
             "heading": "thisisaaccount"
           }
@@ -960,6 +821,7 @@
           "type": "gallery",
           "settings": {
             "color_scheme": "",
+            "image_link": "",
             "social_media": "instagram",
             "heading": "furniturelover"
           }
@@ -968,6 +830,7 @@
           "type": "gallery",
           "settings": {
             "color_scheme": "",
+            "image_link": "",
             "social_media": "instagram",
             "heading": "thisisaaccount"
           }
@@ -976,6 +839,7 @@
           "type": "gallery",
           "settings": {
             "color_scheme": "",
+            "image_link": "",
             "social_media": "instagram",
             "heading": "baddyjam"
           }
@@ -984,6 +848,7 @@
           "type": "gallery",
           "settings": {
             "color_scheme": "scheme-1",
+            "image_link": "",
             "social_media": "instagram",
             "heading": "liamwealthy"
           }
@@ -992,6 +857,7 @@
           "type": "gallery",
           "settings": {
             "color_scheme": "scheme-1",
+            "image_link": "",
             "social_media": "instagram",
             "heading": "baddyjam"
           }
@@ -1000,6 +866,7 @@
           "type": "gallery",
           "settings": {
             "color_scheme": "scheme-1",
+            "image_link": "",
             "social_media": "instagram",
             "heading": "liamwealthy"
           }
@@ -1014,6 +881,7 @@
         "gallery_3CDe4q",
         "gallery_AtjdbC"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-2",
         "section_header_alignment": "center",
@@ -1029,6 +897,7 @@
         "text_size": "text-base",
         "show_button_on_top": false,
         "button_label": "@garage_store",
+        "button_link": "",
         "button_style": "btn--underline",
         "button_icon": "none",
         "direction": "left",
@@ -1045,8 +914,6 @@
   "order": [
     "breadcrumbs",
     "main",
-    "testimonials_8JHr3L",
-    "tabs_content_8rnbnj",
     "multicolumn_Mxt4d3",
     "lookbook_banner_UAnED3",
     "quick_comparison_table_p9rdxW",
