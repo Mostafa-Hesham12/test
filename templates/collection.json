@@ -225,48 +225,6 @@
         "divider_width": "fixed"
       }
     },
-    "rich_text_dgPtDV": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_kVf6qj": {
-          "type": "heading",
-          "settings": {
-            "heading": "About Garage",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h3"
-          }
-        },
-        "text_xtLQE8": {
-          "type": "text",
-          "settings": {
-            "text": "<p>From classic wood and metal to contemporary acrylic and glass, each material brings unique advantages to furniture design. Wood offers timeless strength and natural warmth, while metal adds resilience and industrial charm. Acrylic and glass, on the other hand, bring a modern touch, providing sleek, versatile options for contemporary spaces. The choice of material is not just about appearance; it defines durability and functionality, ensuring each piece serves its purpose beautifully.</p><p>When selecting furniture, it’s important to think beyond aesthetics. The right pieces create a cohesive atmosphere that balances beauty, practicality, and longevity. Minimalist designs, with their clean lines and simplicity, appeal to those who value modern elegance. However, traditional styles like Victorian, Art Deco, or Mid-Century Modern captivate with their intricate details and timeless craftsmanship, offering a sense of history and character that enriches any space.</p><p>This guide explores a variety of furniture styles and materials, helping you discover what aligns with your preferences and needs. Whether you lean toward contemporary sophistication or classic charm, choosing the right furniture ensures your space reflects your unique personality while meeting functional requirements. With the right selections, you can create a harmonious and inviting home.</p>",
-            "text_size": "text-base",
-            "text_line_limit": "5-lines",
-            "button_style": "btn--underline",
-            "button_icon": "none"
-          }
-        }
-      },
-      "block_order": [
-        "heading_kVf6qj",
-        "text_xtLQE8"
-      ],
-      "custom_css": [],
-      "settings": {
-        "container": "fixed",
-        "color_scheme": "scheme-10",
-        "use_color_scheme_in_container": true,
-        "content_spacing": "standard",
-        "content_alignment": "left",
-        "padding_top": 0,
-        "padding_bottom": 60,
-        "show_section_divider": false,
-        "divider_width": "fixed"
-      }
-    },
     "buttons_with_icon_MjeR8i": {
       "type": "buttons-with-icon",
       "blocks": {
@@ -363,6 +321,7 @@
         "button_item_7tzdU9",
         "button_item_idaFU3"
       ],
+      "disabled": true,
       "settings": {
         "container": "fixed",
         "color_scheme": "",
@@ -404,7 +363,7 @@
           "type": "text",
           "settings": {
             "text_link": "",
-            "text": "30 Days Free Returns",
+            "text": "14 Days Free Returns",
             "text_size": "h4",
             "text_opacity": 100,
             "use_custom_color": false,
@@ -432,25 +391,13 @@
             "use_custom_color": false,
             "custom_color": "#000000"
           }
-        },
-        "text_dGmg9m": {
-          "type": "text",
-          "settings": {
-            "text_link": "",
-            "text": "Sustainable Materials",
-            "text_size": "h4",
-            "text_opacity": 100,
-            "use_custom_color": false,
-            "custom_color": "#000000"
-          }
         }
       },
       "block_order": [
         "text_gijz7Q",
         "text_3TVCPg",
         "text_iD6689",
-        "text_CtJBtL",
-        "text_dGmg9m"
+        "text_CtJBtL"
       ],
       "custom_css": [],
       "settings": {
@@ -470,7 +417,6 @@
     "banner",
     "collection_list_slider_NqYFU7",
     "product-grid",
-    "rich_text_dgPtDV",
     "buttons_with_icon_MjeR8i",
     "scrolling_promotion_Fy9Yhn"
   ]
