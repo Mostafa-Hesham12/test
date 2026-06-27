@@ -63,11 +63,11 @@
             "title_font": "body-bolder",
             "title_size": "text-base",
             "icon_1": "check",
-            "heading_1": "Modern",
+            "heading_1": "100% Original",
             "icon_2": "check",
-            "heading_2": "Original",
+            "heading_2": "First-Hand Suppliers",
             "icon_3": "check",
-            "heading_3": "Warranty"
+            "heading_3": ""
           }
         },
         "inventory": {
@@ -111,7 +111,7 @@
             "title_font": "body",
             "title_size": "text-base",
             "icon_1": "truck",
-            "heading_1": "Free shipping over 3000",
+            "heading_1": "Free shipping over 2500",
             "icon_2": "arrow-up-left",
             "heading_2": "Free Returns Within 14 days",
             "icon_3": "star-four",
