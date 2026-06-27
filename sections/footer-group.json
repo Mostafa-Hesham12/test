@@ -223,9 +223,9 @@
         "link_mJ6QMc": {
           "type": "link",
           "settings": {
-            "text": "About",
-            "url": "",
-            "icon": "map-pin"
+            "text": "Bundles",
+            "url": "shopify://collections/bundles",
+            "icon": "gift"
           }
         }
       },
