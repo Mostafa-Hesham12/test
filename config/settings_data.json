@@ -9,6 +9,7 @@
  */
 {
   "current": {
+    "enable_rtl": true,
     "logo_width": 150,
     "logo_width_mobile": 110,
     "color_badge_hot": "#1d349a",
