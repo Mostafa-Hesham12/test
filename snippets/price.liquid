@@ -13,11 +13,11 @@
   {% render 'price', product: product %}
 {%- enddoc -%}
 {%- liquid
-  assign selected_variant = product.selected_or_first_available_variant
+assign selected_variant = product.selected_or_first_available_variant
   if use_variant
     assign target = selected_variant
   else
-    assign target = product
+    assign target = product.variants.first
   endif
 
   assign compare_at_price = target.compare_at_price
@@ -45,10 +45,9 @@
     assign money_price_min = price_min | money_with_currency
     assign money_price_max = price_max | money_with_currency
   endif
-  if target == product and product.price_varies
-    assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+  if use_variant == false and product.price_varies
+    assign money_price = target.price | money
   endif
-
   assign on_sale = false
   if compare_at_price > price
     assign on_sale = true
