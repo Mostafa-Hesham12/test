@@ -89,12 +89,12 @@
         "show_social_media_icons": true,
         "enable_language_selector": false,
         "enable_country_selector": false,
-        "header_top_padding_top": 20,
-        "header_top_padding_bottom": 20,
+        "header_top_padding_top": 33,
+        "header_top_padding_bottom": 0,
         "navigation_color_scheme": "",
         "navigation_content_alignment": "center",
-        "navigation_padding_top": 0,
-        "navigation_padding_bottom": 12
+        "navigation_padding_top": 3,
+        "navigation_padding_bottom": 0
       }
     }
   },

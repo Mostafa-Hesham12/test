@@ -15,49 +15,44 @@
         "featured_collection_J6hxH9": {
           "type": "featured_collection",
           "settings": {
-            "collection": "abib-egypt",
-            "image": "shopify://shop_images/abib-logo.png",
-            "title": "Abib"
+            "collection": "hot-deals",
+            "image": "shopify://shop_images/HOTDEALS.webp",
+            "title": "Deals"
           }
         },
         "featured_collection_MtDhPH": {
           "type": "featured_collection",
           "settings": {
-            "collection": "anua-egypt",
-            "image": "shopify://shop_images/anua-logo.png",
-            "title": "Anua"
+            "collection": "cleansers-1",
+            "title": ""
           }
         },
         "featured_collection_HwzPfD": {
           "type": "featured_collection",
           "settings": {
-            "collection": "beauty-of-joseon-egypt",
-            "image": "shopify://shop_images/beauty-of-joseon-logo.png",
-            "title": "Beauty of Joseon"
+            "collection": "moisturizers-1",
+            "title": ""
           }
         },
         "featured_collection_jQXtir": {
           "type": "featured_collection",
           "settings": {
-            "collection": "cosrx-egypt",
-            "image": "shopify://shop_images/cosrx-logo.png",
-            "title": "cosrx"
+            "collection": "serums",
+            "title": ""
           }
         },
         "featured_collection_L9N3Tg": {
           "type": "featured_collection",
           "settings": {
-            "collection": "celimax-egypt",
-            "image": "shopify://shop_images/celimax-logo.png",
-            "title": "Celimax"
+            "collection": "treatment",
+            "title": ""
           }
         },
         "featured_collection_eBphH3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "dr-althea-egypt",
-            "image": "shopify://shop_images/dr-althea-logo.png",
-            "title": "Dr. Althea"
+            "collection": "2x-collection",
+            "title": ""
           }
         },
         "featured_collection_4H9LzM": {
@@ -231,6 +226,35 @@
     "featured_collection_bdaamt": {
       "type": "featured-collection",
       "blocks": {
+        "collection_MhWpzC": {
+          "type": "collection",
+          "settings": {
+            "collection": "hot-deals",
+            "title": "Hot Deals",
+            "show_banner": true,
+            "color_scheme": "scheme-4",
+            "card_link": "",
+            "banner_image": "shopify://shop_images/Gemini_Generated_Image_1iwe9q1iwe9q1iwe.png",
+            "image_overlay_opacity": 8,
+            "content_position": "top-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Collections",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "Button label",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
         "collection_ydJPzX": {
           "type": "collection",
           "settings": {
@@ -262,6 +286,7 @@
         }
       },
       "block_order": [
+        "collection_MhWpzC",
         "collection_ydJPzX"
       ],
       "custom_css": [],
