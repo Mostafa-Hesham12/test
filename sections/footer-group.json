@@ -207,17 +207,17 @@
             "text": "Home"
           }
         },
+        "products_eYYkE8": {
+          "type": "products",
+          "settings": {
+            "text": "Hot Deals",
+            "collection": "hot-deals"
+          }
+        },
         "cart_gnnwxQ": {
           "type": "cart",
           "settings": {
             "text": "Cart"
-          }
-        },
-        "products_eYYkE8": {
-          "type": "products",
-          "settings": {
-            "text": "Products",
-            "collection": ""
           }
         },
         "link_mJ6QMc": {
@@ -231,11 +231,10 @@
       },
       "block_order": [
         "home_AP8mmy",
-        "cart_gnnwxQ",
         "products_eYYkE8",
+        "cart_gnnwxQ",
         "link_mJ6QMc"
       ],
-      "disabled": true,
       "settings": {
         "enable_sticky_bar": true,
         "show_text": true
