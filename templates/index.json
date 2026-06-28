@@ -51,56 +51,51 @@
         "featured_collection_eBphH3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "2x-collection",
+            "collection": "bundles",
             "title": ""
           }
         },
         "featured_collection_4H9LzM": {
           "type": "featured_collection",
           "settings": {
-            "collection": "medicube-egypt",
-            "image": "shopify://shop_images/medicube-logo.png",
-            "title": "medicube"
+            "collection": "hair-care",
+            "title": ""
           }
         },
         "featured_collection_mFCdUY": {
           "type": "featured_collection",
           "settings": {
-            "collection": "mary-and-may-egypt",
-            "image": "shopify://shop_images/mary-may-logo.png",
-            "title": "Mary&May"
+            "collection": "lip-care",
+            "title": ""
           }
         },
         "featured_collection_gxdACj": {
           "type": "featured_collection",
           "settings": {
-            "collection": "numbuzin-egypt",
-            "image": "shopify://shop_images/numbuzin-logo.png",
-            "title": "numbuzin"
+            "collection": "tools-devices",
+            "title": ""
           }
         },
         "featured_collection_NkFYeg": {
           "type": "featured_collection",
           "settings": {
-            "collection": "round-lab-egypt",
-            "image": "shopify://shop_images/round-lab-logo.png",
-            "title": "Round Lab"
+            "collection": "perfumes",
+            "title": ""
           }
         },
         "featured_collection_GW3kAL": {
           "type": "featured_collection",
           "settings": {
-            "collection": "skin1004-egypt",
-            "image": "shopify://shop_images/skin1004-logo.png",
-            "title": "SKIN1004"
+            "collection": "eye-care-1",
+            "title": ""
           }
         },
         "featured_collection_J6V8fx": {
           "type": "featured_collection",
           "settings": {
-            "collection": "tirtir-egypt",
-            "image": "shopify://shop_images/tirtir-logo.png",
-            "title": "TIRTIR"
+            "collection": "new-arrivals",
+            "image": "shopify://shop_images/new_arrival-_canva_d5697c56-4cc7-4233-8d03-3bc4ec86d939.webp",
+            "title": ""
           }
         }
       },
