@@ -507,62 +507,56 @@
     "collection_list_Azm9te": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_KdFqFq": {
+        "featured_collection_jfGr9A": {
           "type": "featured_collection",
           "settings": {
-            "collection": "cleansers-1",
-            "image": "shopify://shop_images/korean-cleansers.png",
-            "title": "cleansers"
+            "collection": "blackhead-prone",
+            "title": ""
           }
         },
-        "featured_collection_d8XGnb": {
+        "featured_collection_nrgzUq": {
           "type": "featured_collection",
           "settings": {
-            "collection": "moisturizers-1",
-            "image": "shopify://shop_images/korean-moisturizers.png",
-            "title": "Moisturizers"
+            "collection": "fine-lines-wrinkles",
+            "title": ""
           }
         },
-        "featured_collection_FzRWDn": {
+        "featured_collection_janfkt": {
           "type": "featured_collection",
           "settings": {
-            "collection": "serums",
-            "image": "shopify://shop_images/korean-serums.png",
-            "title": "Serums"
+            "collection": "dryness",
+            "title": ""
           }
         },
-        "featured_collection_at4gCr": {
+        "featured_collection_DD7qXb": {
           "type": "featured_collection",
           "settings": {
-            "collection": "toners",
-            "image": "shopify://shop_images/korean-toners.png",
-            "title": "Toners"
+            "collection": "acne-blemishes",
+            "title": ""
           }
         },
-        "featured_collection_F69pQy": {
+        "featured_collection_bYUKjz": {
           "type": "featured_collection",
           "settings": {
-            "collection": "eye-care-1",
-            "image": "shopify://shop_images/korean-eye-care.png",
-            "title": "Eye care"
+            "collection": "sensitive-rosacea-prone",
+            "title": ""
           }
         },
-        "featured_collection_JV9tDT": {
+        "featured_collection_3gVjxc": {
           "type": "featured_collection",
           "settings": {
-            "collection": "sunscreens",
-            "image": "shopify://shop_images/korean-sun-care.png",
-            "title": "Sun Care"
+            "collection": "dark-spots",
+            "title": ""
           }
         }
       },
       "block_order": [
-        "featured_collection_KdFqFq",
-        "featured_collection_d8XGnb",
-        "featured_collection_FzRWDn",
-        "featured_collection_at4gCr",
-        "featured_collection_F69pQy",
-        "featured_collection_JV9tDT"
+        "featured_collection_jfGr9A",
+        "featured_collection_nrgzUq",
+        "featured_collection_janfkt",
+        "featured_collection_DD7qXb",
+        "featured_collection_bYUKjz",
+        "featured_collection_3gVjxc"
       ],
       "custom_css": [],
       "settings": {
@@ -571,7 +565,7 @@
         "section_header_alignment": "left",
         "section_header_alignment_mobile": "inherit",
         "subheading": "",
-        "heading": "Shop By Categories",
+        "heading": "Shop By Concern",
         "highlight_style": "none",
         "highlight_font_style": "italic",
         "highlight_style_color": "",
