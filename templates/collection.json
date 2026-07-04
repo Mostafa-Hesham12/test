@@ -58,7 +58,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "abib-egypt",
-            "image": "shopify://shop_images/abib-logo.png",
             "title": "Abib"
           }
         },

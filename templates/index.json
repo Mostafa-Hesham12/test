@@ -372,7 +372,7 @@
       ],
       "settings": {
         "container": "fixed",
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
         "layout": "horizontal",
         "content_alignment": "center",
         "content_alignment_mobile": "center",
@@ -511,6 +511,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "blackhead-prone",
+            "image": "shopify://shop_images/kbs-pores-blackheads-1.webp",
             "title": ""
           }
         },
@@ -518,6 +519,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "fine-lines-wrinkles",
+            "image": "shopify://shop_images/kbs-deep-wrinkles-to-smooth-skin-2746578561.webp",
             "title": ""
           }
         },
@@ -525,6 +527,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "dryness",
+            "image": "shopify://shop_images/kbs_sdq3q891560651-6516-1-2-1.webp",
             "title": ""
           }
         },
