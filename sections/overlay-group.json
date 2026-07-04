@@ -173,27 +173,28 @@
         "image": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/make-it-look-normal.png",
+            "image": "shopify://shop_images/Discount.jpg",
+            "image_mobile": "shopify://shop_images/Discount.jpg",
             "image_position": "left"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Sign up to get all new offers",
+            "heading": "Only For 24H",
             "text_size": "h2"
           }
         },
         "text": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "<p>Sexy and sustainable goodies? Sign me up</p>",
+            "text": "<p>Use Code: EGYPT10</p>",
             "text_size": "text-base"
           }
         },
         "form": {
           "type": "form",
+          "disabled": true,
           "settings": {
             "button_label": "sign up",
             "button_icon": "none"
@@ -201,6 +202,7 @@
         },
         "socials": {
           "type": "socials",
+          "disabled": true,
           "settings": {}
         }
       },
@@ -211,7 +213,6 @@
         "form",
         "socials"
       ],
-      "disabled": true,
       "settings": {
         "enable": true,
         "show_for_homepage_only": true,
