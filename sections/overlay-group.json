@@ -190,14 +190,15 @@
           "type": "heading",
           "settings": {
             "heading": "5% On All Orders",
-            "text_size": "h2"
+            "text_size": "h1"
           }
         },
-        "text": {
-          "type": "text",
+        "code_xfzMmM": {
+          "type": "code",
           "settings": {
-            "text": "<p>Use Code: KBS5</p>",
-            "text_size": "text-lg"
+            "discount_code": "KBS5",
+            "apply_button": "Copy code",
+            "button_icon": "none"
           }
         },
         "form": {
@@ -218,7 +219,7 @@
         "image",
         "text_iphqTx",
         "heading",
-        "text",
+        "code_xfzMmM",
         "form",
         "socials"
       ],
