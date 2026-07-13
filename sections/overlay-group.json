@@ -172,6 +172,7 @@
       "blocks": {
         "image": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Discount.jpg",
             "image_mobile": "shopify://shop_images/Discount.jpg",
@@ -181,14 +182,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Only For 24H",
+            "heading": "5% On All Orders",
             "text_size": "h2"
+          }
+        },
+        "text_iphqTx": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Only For 48h!</h4>",
+            "text_size": "text-base"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Use Code: EGYPT10</p>",
+            "text": "<p>Use Code: KBS5</p>",
             "text_size": "text-base"
           }
         },
@@ -209,11 +217,11 @@
       "block_order": [
         "image",
         "heading",
+        "text_iphqTx",
         "text",
         "form",
         "socials"
       ],
-      "disabled": true,
       "settings": {
         "enable": true,
         "show_for_homepage_only": true,
