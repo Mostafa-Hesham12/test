@@ -155,6 +155,18 @@
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
+            "heading": "Gallery",
+            "heading_size": "h4",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.gallery | metafield_tag }}",
+            "page": "content",
+            "default_open": true,
+            "show_below_product_media": true
+          }
+        },
+        "collapsible_tab_JQznpB": {
+          "type": "collapsible_tab",
+          "settings": {
             "heading": "Features",
             "heading_size": "h4",
             "icon": "none",
@@ -253,6 +265,7 @@
         "promotion_alert_L7ipQp",
         "complementary",
         "collapsible-row-1",
+        "collapsible_tab_JQznpB",
         "collapsible_tab_exGKMJ",
         "collapsible_tab_j38hwK",
         "payment_info",
