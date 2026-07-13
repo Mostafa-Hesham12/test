@@ -179,13 +179,6 @@
             "image_position": "left"
           }
         },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "5% On All Orders",
-            "text_size": "h2"
-          }
-        },
         "text_iphqTx": {
           "type": "text",
           "settings": {
@@ -193,11 +186,18 @@
             "text_size": "text-base"
           }
         },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "5% On All Orders",
+            "text_size": "h2"
+          }
+        },
         "text": {
           "type": "text",
           "settings": {
             "text": "<p>Use Code: KBS5</p>",
-            "text_size": "text-base"
+            "text_size": "text-lg"
           }
         },
         "form": {
@@ -216,8 +216,8 @@
       },
       "block_order": [
         "image",
-        "heading",
         "text_iphqTx",
+        "heading",
         "text",
         "form",
         "socials"
