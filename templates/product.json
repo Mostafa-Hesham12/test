@@ -176,6 +176,18 @@
             "show_below_product_media": true
           }
         },
+        "collapsible_tab_j38hwK": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Ingredients",
+            "heading_size": "h4",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.custom.ingredients | metafield_tag }}</p>",
+            "page": "content",
+            "default_open": true,
+            "show_below_product_media": true
+          }
+        },
         "payment_info": {
           "type": "payment_info",
           "settings": {
@@ -242,6 +254,7 @@
         "complementary",
         "collapsible-row-1",
         "collapsible_tab_exGKMJ",
+        "collapsible_tab_j38hwK",
         "payment_info",
         "divider_pPz3Kw",
         "social_sharing",
