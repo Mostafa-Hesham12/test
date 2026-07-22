@@ -216,7 +216,7 @@
         "slide_U9bPyj"
       ],
       "settings": {
-        "container": "fixed",
+        "container": "full",
         "slide_height": "large",
         "show_controls": true,
         "autoplay": true,
