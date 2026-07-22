@@ -236,7 +236,7 @@
             "title": "Hot Deals",
             "show_banner": true,
             "color_scheme": "scheme-4",
-            "card_link": "",
+            "card_link": "shopify://collections/hot-deals",
             "banner_image": "shopify://shop_images/Gemini_Generated_Image_1iwe9q1iwe9q1iwe.png",
             "image_overlay_opacity": 8,
             "content_position": "top-left",
