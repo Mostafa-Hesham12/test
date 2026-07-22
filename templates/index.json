@@ -229,6 +229,34 @@
     "featured_collection_bdaamt": {
       "type": "featured-collection",
       "blocks": {
+        "collection_i4bG6G": {
+          "type": "collection",
+          "settings": {
+            "collection": "clearance",
+            "title": "",
+            "show_banner": false,
+            "color_scheme": "scheme-1",
+            "card_link": "shopify://collections/clearance",
+            "image_overlay_opacity": 0,
+            "content_position": "top-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Collections",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "Button label",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
         "collection_MhWpzC": {
           "type": "collection",
           "settings": {
@@ -289,6 +317,7 @@
         }
       },
       "block_order": [
+        "collection_i4bG6G",
         "collection_MhWpzC",
         "collection_ydJPzX"
       ],
