@@ -167,7 +167,7 @@
             "background": "shopify://shop_images/Untitled_design_87.jpg",
             "background_mobile": "shopify://shop_images/Copy_of_Untitled_Design_1.jpg",
             "image_overlay_opacity": 0,
-            "content_position": "bottom-center",
+            "content_position": "middle-center",
             "text_alignment": "center",
             "subheading": "",
             "title": "",
