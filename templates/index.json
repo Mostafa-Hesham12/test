@@ -160,6 +160,31 @@
     "slideshow_q3U4Jn": {
       "type": "slideshow",
       "blocks": {
+        "slide_fHWT3r": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "background": "shopify://shop_images/Untitled_design_87.jpg",
+            "background_mobile": "shopify://shop_images/Copy_of_Untitled_Design_1.jpg",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-center",
+            "text_alignment": "center",
+            "subheading": "",
+            "title": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1",
+            "description": "",
+            "description_size": "text-base",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/hot-deals",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "enable_preload_image": false
+          }
+        },
         "slide_JhU8hg": {
           "type": "slide",
           "settings": {
@@ -212,11 +237,12 @@
         }
       },
       "block_order": [
+        "slide_fHWT3r",
         "slide_JhU8hg",
         "slide_U9bPyj"
       ],
       "settings": {
-        "container": "full",
+        "container": "fixed",
         "slide_height": "large",
         "show_controls": true,
         "autoplay": true,
