@@ -56,6 +56,16 @@
           "type": "price",
           "settings": {}
         },
+        "timer_C8Rxkd": {
+          "type": "timer",
+          "settings": {
+            "text_color": "#c4301c",
+            "type": "evergreen",
+            "duration": "every_24_hrs",
+            "time": "2025/08/20 03:45 PM",
+            "text": "Sales end in"
+          }
+        },
         "icon_with_text": {
           "type": "icon-with-text",
           "settings": {
@@ -242,6 +252,7 @@
         "judge_me_reviews_preview_badge_TEpikA",
         "meta",
         "price",
+        "timer_C8Rxkd",
         "icon_with_text",
         "inventory",
         "variant_picker",
