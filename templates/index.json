@@ -678,45 +678,63 @@
         "featured_collection_jfGr9A": {
           "type": "featured_collection",
           "settings": {
-            "collection": "blackhead-prone",
-            "image": "shopify://shop_images/kbs-pores-blackheads-1.webp",
+            "collection": "anua-egypt",
             "title": ""
           }
         },
         "featured_collection_nrgzUq": {
           "type": "featured_collection",
           "settings": {
-            "collection": "fine-lines-wrinkles",
-            "image": "shopify://shop_images/kbs-deep-wrinkles-to-smooth-skin-2746578561.webp",
+            "collection": "celimax-egypt",
             "title": ""
           }
         },
         "featured_collection_janfkt": {
           "type": "featured_collection",
           "settings": {
-            "collection": "dryness",
-            "image": "shopify://shop_images/kbs_sdq3q891560651-6516-1-2-1.webp",
+            "collection": "numbuzin-egypt",
             "title": ""
           }
         },
         "featured_collection_DD7qXb": {
           "type": "featured_collection",
           "settings": {
-            "collection": "acne-blemishes",
+            "collection": "arencia-egypt",
             "title": ""
           }
         },
         "featured_collection_bYUKjz": {
           "type": "featured_collection",
           "settings": {
-            "collection": "sensitive-rosacea-prone",
+            "collection": "skin1004-egypt",
             "title": ""
           }
         },
         "featured_collection_3gVjxc": {
           "type": "featured_collection",
           "settings": {
-            "collection": "dark-spots",
+            "collection": "dr-althea-egypt",
+            "title": ""
+          }
+        },
+        "featured_collection_x88i8d": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "axis-y-egypt",
+            "title": ""
+          }
+        },
+        "featured_collection_R7QAMj": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "medicube-egypt",
+            "title": ""
+          }
+        },
+        "featured_collection_4arVYy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beauty-of-joseon-egypt",
             "title": ""
           }
         }
@@ -727,17 +745,19 @@
         "featured_collection_janfkt",
         "featured_collection_DD7qXb",
         "featured_collection_bYUKjz",
-        "featured_collection_3gVjxc"
+        "featured_collection_3gVjxc",
+        "featured_collection_x88i8d",
+        "featured_collection_R7QAMj",
+        "featured_collection_4arVYy"
       ],
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "container": "fixed",
         "color_scheme": "",
-        "section_header_alignment": "left",
+        "section_header_alignment": "center",
         "section_header_alignment_mobile": "inherit",
         "subheading": "",
-        "heading": "Shop By Concern",
+        "heading": "TOP K-BEAUTY BRANDS",
         "highlight_style": "none",
         "highlight_font_style": "italic",
         "highlight_style_color": "",
@@ -745,15 +765,15 @@
         "heading_size": "h2",
         "description": "",
         "text_size": "text-base",
-        "button_label": "Shop All Products",
-        "button_link": "shopify://collections/all-products",
+        "button_label": "See All Brands",
+        "button_link": "shopify://pages/shop-by-brand-1",
         "button_style": "btn--plain",
         "button_icon": "caret-right",
         "card_color_scheme": "",
         "card_style": "standard",
         "card_heading_size": "text-base",
         "card_text_line_limit": "none",
-        "card_image_ratio": "adapt",
+        "card_image_ratio": "1/1",
         "card_image_width": "full",
         "card_image_padding": "none",
         "rounded_card_image": false,
