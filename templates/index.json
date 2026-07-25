@@ -252,6 +252,129 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "featured_collection_7wBWMe": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_6j9mNR": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-arrivals",
+            "title": "",
+            "show_banner": false,
+            "color_scheme": "scheme-1",
+            "card_link": "",
+            "image_overlay_opacity": 0,
+            "content_position": "top-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Collections",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "See More",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collection_6j9mNR"
+      ],
+      "name": "t:sections.featured-collection.presets__1.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "NEW K-BEAUTY PRODUCTS",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": true,
+        "navigation_position": "bottom",
+        "pcard_image_ratio": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "promotion_banner_VCkmzP": {
+      "type": "promotion-banner",
+      "blocks": {
+        "subheading_xKzbww": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Flash Sale now on!",
+            "subheading_icon": "none"
+          }
+        },
+        "timer_6FyFrY": {
+          "type": "timer",
+          "settings": {
+            "type": "evergreen",
+            "number_size": "h1",
+            "duration": "every_month",
+            "time": "2025/06/28 03:45 PM"
+          }
+        },
+        "text_QWap4d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Save On 5% On All Order!</p>",
+            "text_color": "base-text"
+          }
+        },
+        "code_FWe4HN": {
+          "type": "code",
+          "settings": {
+            "discount_code": "kbsummer",
+            "button_label": "Use Code: KBS5",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_xKzbww",
+        "timer_6FyFrY",
+        "text_QWap4d",
+        "code_FWe4HN"
+      ],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-4",
+        "layout": "horizontal",
+        "content_alignment": "center",
+        "content_alignment_mobile": "center",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
     "featured_collection_bdaamt": {
       "type": "featured-collection",
       "blocks": {
@@ -312,41 +435,11 @@
             "button_style": "btn--primary",
             "button_icon": "none"
           }
-        },
-        "collection_ydJPzX": {
-          "type": "collection",
-          "settings": {
-            "collection": "new-arrivals",
-            "title": "New Arrivals",
-            "show_banner": true,
-            "color_scheme": "scheme-inverse",
-            "card_link": "",
-            "banner_image": "shopify://shop_images/new-arrival-korean-skin-care.png",
-            "image_overlay_opacity": 20,
-            "content_position": "split-bottom-button",
-            "content_alignment": "center",
-            "subheading": "",
-            "subheading_style": "",
-            "heading": "New Arrivals",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h2",
-            "heading_size_mobile": "inherit",
-            "heading_size_custom": 18,
-            "description": "",
-            "text_size": "text-base",
-            "button_label": "See more",
-            "button_style": "btn--primary",
-            "button_icon": "none"
-          }
         }
       },
       "block_order": [
         "collection_i4bG6G",
-        "collection_MhWpzC",
-        "collection_ydJPzX"
+        "collection_MhWpzC"
       ],
       "custom_css": [],
       "settings": {
@@ -355,7 +448,7 @@
         "section_header_alignment": "left",
         "section_header_alignment_mobile": "inherit",
         "subheading": "",
-        "heading": "New Arrivals",
+        "heading": "Last Chance!",
         "highlight_style": "none",
         "highlight_font_style": "italic",
         "highlight_style_color": "",
@@ -384,56 +477,75 @@
         "divider_width": "fixed"
       }
     },
-    "promotion_banner_VCkmzP": {
-      "type": "promotion-banner",
+    "featured_collection_aBaUeU": {
+      "type": "featured-collection",
       "blocks": {
-        "subheading_xKzbww": {
-          "type": "subheading",
+        "collection_rGzcW8": {
+          "type": "collection",
           "settings": {
-            "subheading": "Flash Sale now on!",
-            "subheading_icon": "none"
-          }
-        },
-        "timer_6FyFrY": {
-          "type": "timer",
-          "settings": {
-            "type": "evergreen",
-            "number_size": "h1",
-            "duration": "every_month",
-            "time": "2025/06/28 03:45 PM"
-          }
-        },
-        "text_QWap4d": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Save On 5% On All Order!</p>",
-            "text_color": "base-text"
-          }
-        },
-        "code_FWe4HN": {
-          "type": "code",
-          "settings": {
-            "discount_code": "kbsummer",
-            "button_label": "Use Code: KBS5",
+            "collection": "best-seller-2",
+            "title": "K-BEAUTY MUST HAVES",
+            "show_banner": false,
+            "color_scheme": "",
+            "card_link": "",
+            "image_overlay_opacity": 0,
+            "content_position": "top-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Collections",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "See More",
             "button_style": "btn--primary",
             "button_icon": "none"
           }
         }
       },
       "block_order": [
-        "subheading_xKzbww",
-        "timer_6FyFrY",
-        "text_QWap4d",
-        "code_FWe4HN"
+        "collection_rGzcW8"
       ],
+      "name": "t:sections.featured-collection.presets__1.name",
       "settings": {
         "container": "fixed",
-        "color_scheme": "scheme-4",
-        "layout": "horizontal",
-        "content_alignment": "center",
-        "content_alignment_mobile": "center",
-        "padding_top": 40,
-        "padding_bottom": 0
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "K-BEAUTY MUST HAVES",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": true,
+        "navigation_position": "bottom",
+        "pcard_image_ratio": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
       }
     },
     "custom_content_HPgFTK": {
@@ -617,6 +729,7 @@
         "featured_collection_bYUKjz",
         "featured_collection_3gVjxc"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "container": "fixed",
@@ -1496,8 +1609,10 @@
   "order": [
     "collection_list_slider_6qbNfj",
     "slideshow_q3U4Jn",
-    "featured_collection_bdaamt",
+    "featured_collection_7wBWMe",
     "promotion_banner_VCkmzP",
+    "featured_collection_bdaamt",
+    "featured_collection_aBaUeU",
     "custom_content_HPgFTK",
     "collection_list_Azm9te",
     "collection_tabs_VexkkR",
