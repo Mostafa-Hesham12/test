@@ -378,35 +378,6 @@
     "featured_collection_bdaamt": {
       "type": "featured-collection",
       "blocks": {
-        "collection_i4bG6G": {
-          "type": "collection",
-          "settings": {
-            "collection": "clearance",
-            "title": "",
-            "show_banner": true,
-            "color_scheme": "scheme-1",
-            "card_link": "shopify://collections/clearance",
-            "banner_image": "shopify://shop_images/ClearanceSaleRetailPriceSignsShelfSigns_1200x1200_crop_center_b06788e7-f103-435a-9250-d6cc4e97f473.webp",
-            "image_overlay_opacity": 0,
-            "content_position": "split-bottom-button",
-            "content_alignment": "left",
-            "subheading": "",
-            "subheading_style": "",
-            "heading": "Clearance",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h2",
-            "heading_size_mobile": "inherit",
-            "heading_size_custom": 18,
-            "description": "",
-            "text_size": "text-base",
-            "button_label": "See more",
-            "button_style": "btn--primary",
-            "button_icon": "none"
-          }
-        },
         "collection_MhWpzC": {
           "type": "collection",
           "settings": {
@@ -435,11 +406,40 @@
             "button_style": "btn--primary",
             "button_icon": "none"
           }
+        },
+        "collection_i4bG6G": {
+          "type": "collection",
+          "settings": {
+            "collection": "clearance",
+            "title": "",
+            "show_banner": true,
+            "color_scheme": "scheme-1",
+            "card_link": "shopify://collections/clearance",
+            "banner_image": "shopify://shop_images/ClearanceSaleRetailPriceSignsShelfSigns_1200x1200_crop_center_b06788e7-f103-435a-9250-d6cc4e97f473.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "split-bottom-button",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Clearance",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "See more",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
         }
       },
       "block_order": [
-        "collection_i4bG6G",
-        "collection_MhWpzC"
+        "collection_MhWpzC",
+        "collection_i4bG6G"
       ],
       "custom_css": [],
       "settings": {
