@@ -565,7 +565,7 @@
         "content_overflow": true,
         "navigation_position": "bottom",
         "pcard_image_ratio": "1/1",
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": true,
         "show_progress_bar": true,
         "padding_top": 50,
