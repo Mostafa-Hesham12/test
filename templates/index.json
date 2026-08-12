@@ -185,6 +185,31 @@
             "enable_preload_image": false
           }
         },
+        "slide_U9bPyj": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-inverse",
+            "background": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_12_00_19_AM.png",
+            "background_mobile": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_12_00_19_AM.png",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-center",
+            "text_alignment": "center",
+            "subheading": "",
+            "title": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1",
+            "description": "",
+            "description_size": "text-base",
+            "button_label": "Shop Now!",
+            "button_link": "shopify://collections/summer-sale",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "enable_preload_image": false
+          }
+        },
         "slide_WjPgJF": {
           "type": "slide",
           "settings": {
@@ -234,38 +259,13 @@
             "button_icon": "none",
             "enable_preload_image": true
           }
-        },
-        "slide_U9bPyj": {
-          "type": "slide",
-          "settings": {
-            "color_scheme": "scheme-inverse",
-            "background": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_12_00_19_AM.png",
-            "background_mobile": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_12_00_19_AM.png",
-            "image_overlay_opacity": 0,
-            "content_position": "bottom-center",
-            "text_alignment": "center",
-            "subheading": "",
-            "title": "",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "hd1",
-            "description": "",
-            "description_size": "text-base",
-            "button_label": "Shop Now!",
-            "button_link": "shopify://collections/summer-sale",
-            "button_style": "btn--primary",
-            "button_icon": "none",
-            "enable_preload_image": false
-          }
         }
       },
       "block_order": [
         "slide_fHWT3r",
+        "slide_U9bPyj",
         "slide_WjPgJF",
-        "slide_JhU8hg",
-        "slide_U9bPyj"
+        "slide_JhU8hg"
       ],
       "settings": {
         "container": "fixed",
