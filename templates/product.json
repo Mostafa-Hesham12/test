@@ -198,6 +198,15 @@
             "show_below_product_media": true
           }
         },
+        "product_gallery_CHxQXL": {
+          "type": "product_gallery",
+          "settings": {
+            "heading": "Gallery",
+            "heading_size": "h4",
+            "default_open": false,
+            "show_below_product_media": true
+          }
+        },
         "payment_info": {
           "type": "payment_info",
           "settings": {
@@ -266,6 +275,7 @@
         "collapsible_tab_JQznpB",
         "collapsible_tab_exGKMJ",
         "collapsible_tab_j38hwK",
+        "product_gallery_CHxQXL",
         "payment_info",
         "divider_pPz3Kw",
         "social_sharing",

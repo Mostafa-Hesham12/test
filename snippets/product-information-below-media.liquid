@@ -14,8 +14,22 @@
         <div data-block-id="{{ block.id }}" class="{{ block_classes }}" {{ block.shopify_attributes }}></div>
       {%- when 'collapsible_tab' -%}
         <div data-block-id="{{ block.id }}" class="{{ block_classes }}" {{ block.shopify_attributes }}></div>
-        {%- when 'product_gallery' -%}
-  <div data-block-id="{{ block.id }}" class="{{ block_classes }}" {{ block.shopify_attributes }}></div>
+   {%- when 'product_gallery' -%}
+  {%- if product.metafields.custom.gallery.value != blank -%}
+    {%- assign gallery_below_section_id = section.id | append: '-below-media' -%}
+
+    <div
+      data-block-id="{{ block.id }}"
+      class="{{ block_classes }}"
+      {{ block.shopify_attributes }}
+    >
+      {%- render 'product-gallery-collapsible',
+        block: block,
+        section_id: gallery_below_section_id,
+        product: product
+      -%}
+    </div>
+  {%- endif -%}
       {%- when 'complementary' -%}
         <div
           data-block-id="{{ block.id }}"
