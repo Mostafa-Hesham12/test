@@ -12,6 +12,7 @@
     "enable_rtl": true,
     "logo_width": 150,
     "logo_width_mobile": 110,
+    "favicon": "shopify://shop_images/Koreanbeautys.png",
     "color_badge_hot": "#1d349a",
     "color_badge_new": "#0d8756",
     "type_body_font": "instrument_sans_n5",
@@ -137,7 +138,6 @@
         "disabled": false,
         "settings": {
           "theme_id": "",
-          "block_flags_css": false,
           "block_lib_css": false,
           "rtl_css": "body {\n  direction: rtl;\n}"
         }
