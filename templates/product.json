@@ -68,6 +68,7 @@
         },
         "icon_with_text": {
           "type": "icon-with-text",
+          "disabled": true,
           "settings": {
             "layout": "horizontal",
             "title_font": "body-bolder",
@@ -78,6 +79,12 @@
             "heading_2": "First-Hand Suppliers",
             "icon_3": "check",
             "heading_3": ""
+          }
+        },
+        "custom_liquid_jJ8G33": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product-detail__custom-liquid\">\n  <a href=\"https://www.koreanbeautys.com/blogs/%D8%B4%D8%B1%D9%88%D8%AD%D8%A7%D8%AA-korean-beautys/how-to-check-original-korean-skincare\" class=\"product-authenticity-badge\">\n    <div class=\"authenticity-content\">\n      <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"authenticity-icon\">\n        <path d=\"M10 0L12.9389 2.93892L17.0711 2.92893L17.0711 7.06107L20 10L17.0711 12.9389L17.0711 17.0711L12.9389 17.0711L10 20L7.06107 17.0711L2.92893 17.0711L2.92893 12.9389L0 10L2.92893 7.06107L2.92893 2.92893L7.06107 2.92893L10 0Z\" fill=\"#4CAF50\"></path>\n        <path d=\"M8 10L9.5 11.5L12.5 8.5\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      </svg>\n      <div class=\"authenticity-texts\">\n        <span class=\"authenticity-text\">100% Authentic Products.<br>Sourced directly from Korea to you.</span>\n        <span class=\"authenticity-cta\">\n          <span>اعرف إزاي تتأكد إن منتجك أصلي وشوف الفواتير</span>\n          <span class=\"authenticity-arrow\">←</span>\n        </span>\n      </div>\n    </div>\n  </a>\n<style>\n  .product-authenticity-badge {\n    display: block;\n    margin: 15px 0;\n    padding: 12px 15px;\n    border: 1px solid #e8e8e8;\n    border-radius: 4px;\n    background-color: #f9f9f9;\n    text-decoration: none;\n    transition: all 0.3s ease;\n    cursor: pointer;\n  }\n\n  .product-authenticity-badge:hover {\n    background-color: #f0f7f0;\n    border-color: #4CAF50;\n  }\n\n  .authenticity-content {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n  }\n\n  .authenticity-icon {\n    flex-shrink: 0;\n  }\n\n  .authenticity-texts {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n  }\n\n  .authenticity-text {\n    font-size: 14px;\n    color: #333;\n    font-weight: 500;\n  }\n\n  .authenticity-cta {\n    display: flex;\n    align-items: center;\n    gap: 5px;\n    font-size: 12.5px;\n    color: #4CAF50;\n    font-weight: 700;\n    font-family: 'Tajawal', sans-serif;\n  }\n\n  .authenticity-arrow {\n    font-size: 15px;\n    transition: transform 0.3s ease;\n  }\n\n  .product-authenticity-badge:hover .authenticity-arrow {\n    transform: translateX(-4px);\n  }\n</style>\n</div>"
           }
         },
         "inventory": {
@@ -98,12 +105,6 @@
             "button_style": "normal",
             "size_title": "Size",
             "size_chart_from_page": ""
-          }
-        },
-        "custom_liquid_jJ8G33": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<a href=\"https://www.koreanbeautys.com/blogs/%D8%B4%D8%B1%D9%88%D8%AD%D8%A7%D8%AA-korean-beautys/how-to-check-original-korean-skincare\" style=\"\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    margin-top: 12px;\n    padding: 12px 20px;\n    background: linear-gradient(135deg, #5c1a42, #8b2d5e);\n    border-radius: 12px;\n    text-decoration: none;\n    transition: all 0.3s;\n    border: 1px solid rgba(244, 167, 195, 0.25);\n\">\n    <span style=\"font-size: 16px;\">✅</span>\n    <span style=\"\n        color: #ffffff;\n        font-size: 13px;\n        font-weight: 700;\n        font-family: 'Tajawal', sans-serif;\n    \">منتجات أصلية 100% — إزاي تتأكد؟</span>\n    <span style=\"color: #f4a7c3; font-size: 14px;\">←</span>\n</a>"
           }
         },
         "buy_buttons": {
@@ -263,9 +264,9 @@
         "price",
         "timer_C8Rxkd",
         "icon_with_text",
+        "custom_liquid_jJ8G33",
         "inventory",
         "variant_picker",
-        "custom_liquid_jJ8G33",
         "buy_buttons",
         "icon_with_text_UAYgQU",
         "description",
