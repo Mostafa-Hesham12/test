@@ -107,6 +107,13 @@
             "size_chart_from_page": ""
           }
         },
+        "text_nfHadz": {
+          "type": "text",
+          "settings": {
+            "text": "Expiry Date: {{ product.metafields.custom.expiry_date | metafield_tag }}",
+            "text_style": "body"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -267,6 +274,7 @@
         "custom_liquid_jJ8G33",
         "inventory",
         "variant_picker",
+        "text_nfHadz",
         "buy_buttons",
         "icon_with_text_UAYgQU",
         "description",
