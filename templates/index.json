@@ -278,6 +278,75 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "image_with_text_Nq9qtm": {
+      "type": "image-with-text",
+      "blocks": {
+        "badge_yrxNRV": {
+          "type": "badge",
+          "settings": {
+            "color_scheme": "",
+            "text": "Get the bundle for EGP 1,999 instead of EGP 2,300",
+            "image": "shopify://shop_images/Untitleddesign_89.jpg",
+            "position_mobile": "right"
+          }
+        },
+        "subheading_3j996e": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "&nbsp;THE BRIGHT & FRESH DUO&nbsp;"
+          }
+        },
+        "heading_JPHPCj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Brighter-Looking Skin. Freshness That Lasts.&nbsp;",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2"
+          }
+        },
+        "text_T9e4z7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair ARENCIA Vitamin C Booster Shot with medicube Vanilla & Pistachio Deodorant for a daily duo that helps improve the look of uneven tone while keeping you fresh and beautifully scented.</p>",
+            "subtext_color": true
+          }
+        },
+        "button_UmVjzQ": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP THE DUO",
+            "button_link": "shopify://products/calm-correct-duo-ex-anua-niacinamide-10-txa-4-serum-purito-seoul-oat-in-calming-gel-cream-copy",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "badge_yrxNRV",
+        "subheading_3j996e",
+        "heading_JPHPCj",
+        "text_T9e4z7",
+        "button_UmVjzQ"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "image": "shopify://shop_images/25873cf2-a812-4d80-9377-ee42bf40ffc2.png",
+        "image_position": "left",
+        "image_width": 50,
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "inherit",
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "featured_collection_7wBWMe": {
       "type": "featured-collection",
       "blocks": {
@@ -1876,6 +1945,7 @@
   "order": [
     "collection_list_slider_6qbNfj",
     "slideshow_q3U4Jn",
+    "image_with_text_Nq9qtm",
     "featured_collection_7wBWMe",
     "promotion_banner_VCkmzP",
     "lookbook_banner_tPcjqP",
