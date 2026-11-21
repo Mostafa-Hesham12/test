@@ -162,6 +162,7 @@
       "blocks": {
         "slide_fHWT3r": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "color_scheme": "scheme-1",
             "background": "shopify://shop_images/Untitled_design_87.jpg",
@@ -241,13 +242,13 @@
           "type": "slide",
           "settings": {
             "color_scheme": "scheme-inverse",
-            "background": "shopify://shop_images/new-arrival-korean-skincare-iteams.png",
-            "background_mobile": "shopify://shop_images/new-arrival-korean-skincare-iteams_a859c991-adde-4024-ab60-fe8a19346150.png",
-            "image_overlay_opacity": 30,
+            "background": "shopify://shop_images/koreanbeautys_Black_Friday_1.jpg",
+            "background_mobile": "shopify://shop_images/koreanbeautys_Black_Friday_1.jpg",
+            "image_overlay_opacity": 0,
             "content_position": "middle-center",
             "text_alignment": "center",
-            "subheading": "100% original",
-            "title": "New Season New Arrival",
+            "subheading": "",
+            "title": "",
             "highlight_style": "none",
             "highlight_font_style": "italic",
             "highlight_style_color": "",
@@ -255,8 +256,8 @@
             "heading_size": "hd1",
             "description": "",
             "description_size": "text-base",
-            "button_label": "Shop collection",
-            "button_link": "shopify://collections/new-arrivals",
+            "button_label": "",
+            "button_link": "",
             "button_style": "btn--primary",
             "button_icon": "none",
             "enable_preload_image": true
