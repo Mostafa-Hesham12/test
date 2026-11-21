@@ -439,9 +439,8 @@
         },
         "collection_6j9mNR": {
           "type": "collection",
-          "disabled": true,
           "settings": {
-            "collection": "new-arrivals",
+            "collection": "korean-beautys-steals",
             "title": "Black Friday Steals",
             "show_banner": false,
             "color_scheme": "scheme-1",
