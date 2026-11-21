@@ -280,14 +280,169 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "collection_list_with_banner_CdhcAM": {
+      "type": "collection-list-with-banner",
+      "blocks": {
+        "image_card_j79bkh": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/koreanbeautys_Black_Friday_1.jpg",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-center",
+            "content_alignment": "center",
+            "content_spacing": "medium",
+            "content_gap": "fitted",
+            "card_link": "",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "Button label",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "show_badge": false,
+            "badge_color_scheme": "",
+            "badge_shape": "circle",
+            "badge_position": "top-right",
+            "badge_subtext": "Save",
+            "badge_text": "99$",
+            "color_scheme_mobile": "",
+            "content_alignment_mobile": "center",
+            "enable_preload_image": false
+          }
+        },
+        "featured_collection_yafCYE": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_tq338P": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_rWYqrC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_YQ7tb9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_hCL4b3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_fBGQhm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_j79bkh",
+        "featured_collection_yafCYE",
+        "featured_collection_tq338P",
+        "featured_collection_rWYqrC",
+        "featured_collection_YQ7tb9",
+        "featured_collection_hCL4b3",
+        "featured_collection_fBGQhm"
+      ],
+      "disabled": true,
+      "name": "t:sections.collection-list-banner.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Korean Beautys Black Fridays Offers",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "card_color_scheme": "",
+        "card_image_ratio": "1/1",
+        "rounded_card_image": true,
+        "columns_desktop": 3,
+        "grid_bordered": true,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
     "featured_collection_7wBWMe": {
       "type": "featured-collection",
       "blocks": {
-        "collection_6j9mNR": {
+        "collection_pcXVWc": {
           "type": "collection",
           "settings": {
-            "collection": "new-arrivals",
+            "collection": "blck-friday-perfect-duo",
             "title": "",
+            "show_banner": false,
+            "color_scheme": "scheme-1",
+            "card_link": "",
+            "image_overlay_opacity": 0,
+            "content_position": "top-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Collections",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "Button label",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "collection_6j9mNR": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "new-arrivals",
+            "title": "Black Friday Steals",
             "show_banner": false,
             "color_scheme": "scheme-1",
             "card_link": "",
@@ -313,6 +468,7 @@
         }
       },
       "block_order": [
+        "collection_pcXVWc",
         "collection_6j9mNR"
       ],
       "name": "t:sections.featured-collection.presets__1.name",
@@ -322,7 +478,7 @@
         "section_header_alignment": "left",
         "section_header_alignment_mobile": "inherit",
         "subheading": "",
-        "heading": "Black Friday OFFER 1 - PERFECT DUO!",
+        "heading": "Korean Beautys Black Friday",
         "highlight_style": "none",
         "highlight_font_style": "italic",
         "highlight_style_color": "",
@@ -330,7 +486,7 @@
         "heading_size": "h1",
         "description": "",
         "text_size": "text-base",
-        "button_label": "Shop it Now!",
+        "button_label": "",
         "button_link": "shopify://collections/blck-friday-perfect-duo",
         "button_style": "btn--underline",
         "button_icon": "none",
@@ -2018,6 +2174,7 @@
   "order": [
     "collection_list_slider_6qbNfj",
     "slideshow_q3U4Jn",
+    "collection_list_with_banner_CdhcAM",
     "featured_collection_7wBWMe",
     "image_with_text_Nq9qtm",
     "featured_collection_QnQzxK",
