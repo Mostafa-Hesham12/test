@@ -507,6 +507,48 @@
         "divider_width": "fixed"
       }
     },
+    "rich_text_CLz3xL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pjmkMq": {
+          "type": "heading",
+          "settings": {
+            "heading": "&nbsp;KBFRIDAY10&nbsp;",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1"
+          }
+        },
+        "text_jzHyD3": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>10% OFF ON ALL ITEMS USING KBFRIDAY10 CODE!</strong></p>",
+            "text_size": "text-base",
+            "text_line_limit": "none",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pjmkMq",
+        "text_jzHyD3"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "use_color_scheme_in_container": false,
+        "content_spacing": "standard",
+        "content_alignment": "center",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
     "image_with_text_Nq9qtm": {
       "type": "image-with-text",
       "blocks": {
@@ -560,6 +602,7 @@
         "text_T9e4z7",
         "button_UmVjzQ"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.name",
       "settings": {
         "container": "fixed",
@@ -2176,6 +2219,7 @@
     "slideshow_q3U4Jn",
     "collection_list_with_banner_CdhcAM",
     "featured_collection_7wBWMe",
+    "rich_text_CLz3xL",
     "image_with_text_Nq9qtm",
     "featured_collection_QnQzxK",
     "promotion_banner_VCkmzP",
