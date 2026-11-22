@@ -189,14 +189,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "5% On All Orders",
+            "heading": "10% OFF ON ALL PRODUCTS!",
             "text_size": "h1"
           }
         },
         "code_xfzMmM": {
           "type": "code",
           "settings": {
-            "discount_code": "KBS5",
+            "discount_code": "KBFRIDAY10",
             "apply_button": "Copy code",
             "button_icon": "none"
           }
