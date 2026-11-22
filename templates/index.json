@@ -507,6 +507,58 @@
         "divider_width": "fixed"
       }
     },
+    "promotion_banner_VCkmzP": {
+      "type": "promotion-banner",
+      "blocks": {
+        "subheading_xKzbww": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Black Friday now on!",
+            "subheading_icon": "none"
+          }
+        },
+        "timer_6FyFrY": {
+          "type": "timer",
+          "settings": {
+            "type": "evergreen",
+            "number_size": "h1",
+            "duration": "every_month",
+            "time": "2025/06/28 03:45 PM"
+          }
+        },
+        "text_QWap4d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Save On 10% On All Products!</p>",
+            "text_color": "base-text"
+          }
+        },
+        "code_FWe4HN": {
+          "type": "code",
+          "settings": {
+            "discount_code": "KBFRIDAY10",
+            "button_label": "Use Code:  KBFRIDAY10",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_xKzbww",
+        "timer_6FyFrY",
+        "text_QWap4d",
+        "code_FWe4HN"
+      ],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-4",
+        "layout": "horizontal",
+        "content_alignment": "center",
+        "content_alignment_mobile": "center",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
     "rich_text_CLz3xL": {
       "type": "rich-text",
       "blocks": {
@@ -688,58 +740,6 @@
         "padding_bottom": 50,
         "show_section_divider": false,
         "divider_width": "fixed"
-      }
-    },
-    "promotion_banner_VCkmzP": {
-      "type": "promotion-banner",
-      "blocks": {
-        "subheading_xKzbww": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "Flash Sale now on!",
-            "subheading_icon": "none"
-          }
-        },
-        "timer_6FyFrY": {
-          "type": "timer",
-          "settings": {
-            "type": "evergreen",
-            "number_size": "h1",
-            "duration": "every_month",
-            "time": "2025/06/28 03:45 PM"
-          }
-        },
-        "text_QWap4d": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Save On 5% On All Order!</p>",
-            "text_color": "base-text"
-          }
-        },
-        "code_FWe4HN": {
-          "type": "code",
-          "settings": {
-            "discount_code": "kbsummer",
-            "button_label": "Use Code: KBS5",
-            "button_style": "btn--primary",
-            "button_icon": "none"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_xKzbww",
-        "timer_6FyFrY",
-        "text_QWap4d",
-        "code_FWe4HN"
-      ],
-      "settings": {
-        "container": "fixed",
-        "color_scheme": "scheme-4",
-        "layout": "horizontal",
-        "content_alignment": "center",
-        "content_alignment_mobile": "center",
-        "padding_top": 40,
-        "padding_bottom": 0
       }
     },
     "lookbook_banner_tPcjqP": {
@@ -2219,10 +2219,10 @@
     "slideshow_q3U4Jn",
     "collection_list_with_banner_CdhcAM",
     "featured_collection_7wBWMe",
+    "promotion_banner_VCkmzP",
     "rich_text_CLz3xL",
     "image_with_text_Nq9qtm",
     "featured_collection_QnQzxK",
-    "promotion_banner_VCkmzP",
     "lookbook_banner_tPcjqP",
     "featured_collection_UjcCLq",
     "featured_collection_bdaamt",
