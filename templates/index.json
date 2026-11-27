@@ -880,11 +880,11 @@
         "collection_i4bG6G": {
           "type": "collection",
           "settings": {
-            "collection": "clearance",
+            "collection": "1-50offer",
             "title": "",
             "show_banner": true,
             "color_scheme": "scheme-1",
-            "card_link": "shopify://collections/clearance",
+            "card_link": "shopify://collections/1-50offer",
             "banner_image": "shopify://shop_images/ClearanceSaleRetailPriceSignsShelfSigns_1200x1200_crop_center_b06788e7-f103-435a-9250-d6cc4e97f473.webp",
             "image_overlay_opacity": 0,
             "content_position": "split-bottom-button",
