@@ -410,6 +410,34 @@
     "featured_collection_7wBWMe": {
       "type": "featured-collection",
       "blocks": {
+        "collection_EAiYPK": {
+          "type": "collection",
+          "settings": {
+            "collection": "1-50offer",
+            "title": "1+50%",
+            "show_banner": false,
+            "color_scheme": "scheme-1",
+            "card_link": "",
+            "image_overlay_opacity": 0,
+            "content_position": "top-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Collections",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "Button label",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
         "collection_pcXVWc": {
           "type": "collection",
           "settings": {
@@ -468,6 +496,7 @@
         }
       },
       "block_order": [
+        "collection_EAiYPK",
         "collection_pcXVWc",
         "collection_6j9mNR"
       ],
